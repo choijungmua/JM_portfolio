@@ -15,7 +15,7 @@ function Home() {
             <div className="absolute">
               <div className="absolute bg-white rounded-md right-0 top-10 text-right p-3 whitespace-nowrap">
                 <p>일찍 일어나는 새가</p>
-                <p>빨리 지치고 빨리 잡아먹힌다</p>
+                <p>빨리 지치고 빨리 잡아먹힌다!!</p>
               </div>
               <img src={Profile} className="rounded-lg w-5/6" />
             </div>
