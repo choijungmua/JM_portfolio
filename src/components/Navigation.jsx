@@ -1,4 +1,4 @@
 function Navigation() {
-  return <h1>네비게이션</h1>;
+  return <div className="bg-black text-white p-3 flex ">네비게이션 바 </div>;
 }
 export default Navigation;
