@@ -1,10 +1,8 @@
-import Profile from "../assets/Profile.jpg";
-import BGIMG from "../assets/bgImg.jpg";
 import HomeTopIntro from "../components/HomeTopIntro";
 import Navigation from "../components/Navigation";
 import { useEffect, useRef, useState } from "react";
 import React from "react";
-
+import HomeBottomIntro from "../components/HomeBottomIntro";
 function Home() {
   // 페이지 전환
   const [xy, setxy] = useState({ x: 0, y: 0 });
@@ -66,48 +64,30 @@ function Home() {
     };
   }, []);
   return (
+    // 마우스 스크롤시 파워무브
     <div
       ref={handleWheel}
       className="overflow-y-auto h-screen cursor-none"
       onMouseMove={mouseHandler}
     >
+      {/* 마우스 휠  */}
       <div
-        className="absolute  z-[50] bg-red-600 left-[-15px] top-[-15px] opacity-70 rounded-full w-[30px] h-[30px]"
+        className="absolute  z-[50] bg-green-400 left-[-15px] top-[-15px] opacity-70 rounded-full w-[30px] h-[30px]"
         style={{ transform: `translate(${xy.x}px, ${xy.y}px)` }}
       />
       {/* 1section */}
-      <div className="flex bg-red-300 h-screen">
+      <div className="flex flex-col">
         <HomeTopIntro />
-      </div>
-      {/* Navigation */}
-      {/* <Navigation /> */}
-      {/* 2 section */}
-      <div className="w-full flex justify-between h-full py-20">
-        <div className="w-1/2 h-full -z-1">
-          <div className="justify-center mx-auto relative items-center flex w-full h-full">
-            <img src={BGIMG} className="w-full h-full flex" />
-            <div className="absolute">
-              {/* <div className="bg-white rounded-md right-0 top-10 text-right p-3 whitespace-nowrap">
-                <p>일찍 일어나는 새가</p>
-                <p>빨리 지치고 빨리 잡아먹힌다!!</p>
-              </div> */}
-              <img src={Profile} className="rounded-lg w-5/6 h-auto" />
-            </div>
-          </div>
-        </div>
-        <div className="flex  text-white w-1/2 h-full right-0 bg-black z-10 items-center justify-center">
-          <div className="flex flex-col gap-2">
-            <h2 className="font-bold text-2xl pb-3">안녕하세요</h2>
-            <p className="font-semibold">저는 프론트엔드 디벨로퍼에 도전하는</p>
-            <p className="font-semibold">
-              꿈을 찾아 나아가는 인재 최정무입니다.
-            </p>
-            <p className="font-semibold">
-              다음에 뭐 쓸지 생각해 오는 것을 숙제로 잡자
-            </p>
-          </div>
+        {/* Navigation */}
+        <div className="mt-[-104px]">
+          <Navigation />
         </div>
       </div>
+      {/* 2section */}
+      <HomeBottomIntro />
+      {/* Designed By */}
+
+      {/* Skills */}
     </div>
   );
 }
