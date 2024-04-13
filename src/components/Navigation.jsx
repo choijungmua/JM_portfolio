@@ -1,16 +1,20 @@
+import MainLogo from "../assets/MainLogo.png";
+import { AiOutlineHome } from "react-icons/ai";
+import { SlUser } from "react-icons/sl";
+import { SlFolderAlt } from "react-icons/sl";
 function Navigation() {
-  const liStyle = "border-x border-black p-1.5";
+  const liStyle = "border-x border-black p-1.5 w-[60px] text-center";
   return (
-    <div className="bg-white w-full flex text-black py-[40px] justify-around">
-      <p className="whitespace-nowrap items-center flex ">메인</p>
-      <div className="flex w-full items-center">
-        <ul className="flex gap-16 -black">
-          <li className={liStyle}>Home</li>
-          <li className={liStyle}>Skill</li>
-          <li className={liStyle}>ㅁㄹ</li>
-          <li className={liStyle}>ㅁㄹ</li>
-        </ul>
-        <p className="whitespace-nowrap items-center flex ">메인</p>
+    // 사이드바
+    <div className="absolute flex right-0 flex-col gap-5">
+      <div className="bg-white p-1 rounded-lg">
+        <AiOutlineHome size={20} />
+      </div>
+      <div className="bg-white p-1 rounded-lg">
+        <SlUser size={20} />
+      </div>
+      <div className="bg-white p-1 rounded-lg">
+        <SlFolderAlt size={20} />
       </div>
     </div>
   );

@@ -3,10 +3,10 @@ import Navigation from "../components/Navigation";
 import { useEffect, useRef, useState } from "react";
 import React from "react";
 import DesignedBy from ".././components/DesignedBy";
-import HomeBottomIntro from "../components/HomeBottomIntro";
 import { useRecoilValue } from "recoil";
 import mouseHover from "../atoms/mouseHover";
-
+import bgImg from "../assets/bg.jpg";
+import AboutMe from "../components/AboutMe";
 function Home() {
   const mouseHovered = useRecoilValue(mouseHover);
 
@@ -33,19 +33,34 @@ function Home() {
             left: 0,
             behavior: "smooth",
           });
-          // } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
-          //   console.log("현재 2페이지, down");
-          //   handleWheel.current.scrollTo({
-          //     top : pageHeight * 2,
-          //     left: 0,
-          //     behavior: "smooth",
-          //   });
+        } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
+          console.log("현재 2페이지, down");
+          handleWheel.current.scrollTo({
+            top: pageHeight * 2,
+            left: 0,
+            behavior: "smooth",
+          });
+        } else if (scrollTop >= pageHeight * 2 && scrollTop < pageHeight * 3) {
+          console.log("현재 3페이지, down");
+          handleWheel.current.scrollTo({
+            top: pageHeight * 3,
+            left: 0,
+            behavior: "smooth",
+          });
         }
       } else {
+        if (scrollTop >= pageHeight && scrollTop < pageHeight * 3) {
+          console.log("현재 3페이지, up");
+          handleWheel.current.scrollTo({
+            top: -pageHeight * 3,
+            left: 0,
+            behavior: "smooth",
+          });
+        }
         if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
           console.log("현재 2페이지, up");
           handleWheel.current.scrollTo({
-            top: 0,
+            top: -pageHeight * 2,
             left: 0,
             behavior: "smooth",
           });
@@ -53,7 +68,7 @@ function Home() {
         if (scrollTop >= 0 && scrollTop < pageHeight) {
           console.log("현재 1페이지, up");
           handleWheel.current.scrollTo({
-            top: 0,
+            top: -pageHeight * 2,
             left: 0,
             behavior: "smooth",
           });
@@ -70,35 +85,25 @@ function Home() {
     };
   }, []);
   return (
-    // 마우스 스크롤시 파워무브
     <div
       ref={handleWheel}
-      className="overflow-y-auto h-screen cursor-none pointer-events-auto"
+      className="bg-[#262626] w-full overflow-y-auto h-screen cursor-none pointer-events-auto"
       onMouseMove={mouseHandler}
     >
       {/* 마우스 휠  */}
       <div
-        className={`absolute  z-[-1] bg-[#00B894] ${
-          mouseHovered
-            ? "opacity-50  w-[100px] h-[100px] left-[-50px] top-[-50px] border-[5px] border-black"
-            : "opacity0"
+        className={`absolute bg-white z-50
         }  left-[-15px] 
         top-[-15px] rounded-full w-[30px] h-[30px]`}
         style={{ transform: `translate(${xy.x}px, ${xy.y}px)` }}
       />
-      {/* 1section */}
-      <div className="flex flex-col">
-        <HomeTopIntro />
-        {/* Navigation */}
-        <div className="mt-[-104px]">
-          <Navigation />
-        </div>
-      </div>
-      {/* 2section */}
-      <HomeBottomIntro />
-      {/* Designed By */}
-      <DesignedBy />
-      {/* Skills */}
+      {/* 네비게이션 */}
+
+      <Navigation />
+      {/* 1 section */}
+      <HomeTopIntro />
+      {/* About Me */}
+      <AboutMe />
     </div>
   );
 }
