@@ -2,6 +2,7 @@ import HomeTopIntro from "../components/HomeTopIntro";
 import Navigation from "../components/Navigation";
 import { useEffect, useRef, useState } from "react";
 import React from "react";
+import DesignedBy from ".././components/DesignedBy";
 import HomeBottomIntro from "../components/HomeBottomIntro";
 function Home() {
   // 페이지 전환
@@ -72,7 +73,7 @@ function Home() {
     >
       {/* 마우스 휠  */}
       <div
-        className="absolute  z-[50] bg-green-400 left-[-15px] top-[-15px] opacity-70 rounded-full w-[30px] h-[30px]"
+        className="absolute  z-[50] bg-[#00B894] left-[-15px] top-[-15px] opacity-70 rounded-full w-[30px] h-[30px]"
         style={{ transform: `translate(${xy.x}px, ${xy.y}px)` }}
       />
       {/* 1section */}
@@ -86,7 +87,7 @@ function Home() {
       {/* 2section */}
       <HomeBottomIntro />
       {/* Designed By */}
-
+      <DesignedBy />
       {/* Skills */}
     </div>
   );

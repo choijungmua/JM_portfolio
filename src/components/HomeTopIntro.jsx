@@ -1,9 +1,11 @@
 function HomeTopIntro() {
   return (
-    <div className=" bg-white text-black h-screen">
-      <h1 className="">이 포트폴리오 보면</h1>
-      <h1 className="">뽑고싶은 확률</h1>
-      <h1 className="">100%</h1>
+    <div className=" bg-white text-black h-screen flex justify-center flex-col items-center">
+      <h1 className="text-3xl mb-3 ">취업 성공 평균 확률</h1>
+      <div className="border-black border-2 opacity-20 w-[50px] mb-5" />
+      <h1 className="text-[#8BC34A] font-nanum-square-neo-heavy text-9xl">
+        5%
+      </h1>
     </div>
   );
 }
