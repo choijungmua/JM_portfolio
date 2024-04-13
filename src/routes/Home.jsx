@@ -4,7 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import React from "react";
 import DesignedBy from ".././components/DesignedBy";
 import HomeBottomIntro from "../components/HomeBottomIntro";
+import { useRecoilValue } from "recoil";
+import mouseHover from "../atoms/mouseHover";
+
 function Home() {
+  const mouseHovered = useRecoilValue(mouseHover);
+
   // 페이지 전환
   const [xy, setxy] = useState({ x: 0, y: 0 });
   const handleWheel = useRef();
@@ -68,12 +73,17 @@ function Home() {
     // 마우스 스크롤시 파워무브
     <div
       ref={handleWheel}
-      className="overflow-y-auto h-screen cursor-none"
+      className="overflow-y-auto h-screen cursor-none pointer-events-auto"
       onMouseMove={mouseHandler}
     >
       {/* 마우스 휠  */}
       <div
-        className="absolute  z-[50] bg-[#00B894] left-[-15px] top-[-15px] opacity-70 rounded-full w-[30px] h-[30px]"
+        className={`absolute  z-[-1] bg-[#00B894] ${
+          mouseHovered
+            ? "opacity-50  w-[100px] h-[100px] left-[-50px] top-[-50px] border-[5px] border-black"
+            : "opacity0"
+        }  left-[-15px] 
+        top-[-15px] rounded-full w-[30px] h-[30px]`}
         style={{ transform: `translate(${xy.x}px, ${xy.y}px)` }}
       />
       {/* 1section */}
