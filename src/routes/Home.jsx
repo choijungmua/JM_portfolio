@@ -87,8 +87,9 @@ function Home() {
   return (
     <div
       ref={handleWheel}
-      className="bg-[#262626] w-full overflow-y-auto h-screen cursor-none pointer-events-auto"
-      onMouseMove={mouseHandler}
+      //추가 cursor-none pointer-events-auto
+      className="bg-[#262626] w-full overflow-y-auto h-screen "
+      // onMouseMove={mouseHandler}
     >
       {/* 마우스 휠  */}
       <div

@@ -14,27 +14,34 @@ function HomeTopIntro() {
   const [mouseHoverer, setMouseHover] = useRecoilState(mouseHover); // 변경된 부분
   const mouseHovered = useRecoilValue(mouseHover);
   return (
-    <div className="text-white overflow-hidden relative flex-col h-screen flex justify-center items-center">
-      <div className="flex relative justify-center items-center z-20">
-        <div className="rounded-full z-10 w-[300px] h-[300px] overflow-hidden absolute">
-          <img src={Profile} className="" />
-        </div>
-        <div className="rounded-full w-[340px] h-[340px] bg-white opacity-20 absolute" />
-        <div className="rounded-full w-[400px] h-[400px] bg-[#22a68e] opacity-20 absolute" />
-      </div>
-      <div className="z-[10] rounded-2xl shadow-2xl bg-[#24282e] w-[400px] flex-col gap-3 pt-24 h-[400px] flex justify-center items-center">
-        <p className="font-nanum-square-neo-heavy mt-24 text-4xl ">
-          CHOI JUNGMU
+    <div className="text-white overflow-hidden relative h-screen flex">
+      <div className="flex flex-col  mt-56 ml-24">
+        <p>웹으로 세상을 바꾸고 싶은 최정무의</p>
+
+        <div className="border-b-2 my-1 relative" />
+
+        <p className="font-nanum-square-neo-heavy text-6xl">
+          GROW
+          <span className="text-green-400"> DEVELOPER</span>
+          <span className="text-green-400 absolute opacity-15 ml-[-380px] mt-[5px]">
+            {" "}
+            DEVELOPER
+          </span>
         </p>
-        <p>FRONTEND DEVELOPER</p>
-        <div className="flex gap-5 mt-16">
-          <BsInstagram size={20} />
-          <RxNotionLogo size={20} />
-          <AiFillGithub size={20} />
-        </div>
+        <p className="font-nanum-square-neo-light text-6xl text-right">
+          PORTPOLIO
+        </p>
       </div>
-      <img src={bgImg} alt="bgImg" className="float-left opacity-15 absolute" />
-      <div className="bottom-12 absolute animate-bounce flex flex-col items-center">
+
+      <div className="">
+        <p>프론트엔드로서의 나란?</p>
+      </div>
+      {/* <div className="flex gap-5 mt-16"> */}
+      {/* <BsInstagram size={20} />
+        <RxNotionLogo size={20} />
+        <AiFillGithub size={20} /> */}
+      {/* </div> */}
+      <div className="bottom-12 absolute animate-bounce flex flex-col justify-center items-center">
         <p className="text-xs mb-[-6px] font-nanum-square-neo-Light">더보기</p>
         <CgChevronDoubleDown size={28} />
       </div>
