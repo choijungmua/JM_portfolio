@@ -102,7 +102,9 @@ function Home() {
 
       <Navigation />
       {/* 1 section */}
-      <HomeTopIntro />
+      <div className="relative w-full h-full flex">
+        <HomeTopIntro />
+      </div>
       {/* About Me */}
       <AboutMe />
     </div>
