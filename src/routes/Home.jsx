@@ -13,6 +13,16 @@ function Home() {
   // 페이지 전환
   const [xy, setxy] = useState({ x: 0, y: 0 });
   const handleWheel = useRef();
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://unpkg.com/@h0rn0chse/night-sky/dist/bundle.min.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   const mouseHandler = (e) => {
     const mouseX = e.clientX;
     const mouseY = e.clientY;
@@ -91,6 +101,18 @@ function Home() {
       className="bg-[#262626] w-full overflow-y-auto h-screen "
       // onMouseMove={mouseHandler}
     >
+      <div className="w-full h-full absolute">
+        <night-sky
+          id="nightSky"
+          className="w-[full] h-[full] overflow-hidden absolute"
+          layers="3"
+          density="20"
+          velocity-x="40"
+          velocity-y="40"
+          star-color="#FFF"
+          background-color="transparent"
+        ></night-sky>
+      </div>
       {/* 마우스 휠  */}
       <div
         className={`absolute bg-white z-50
@@ -98,6 +120,7 @@ function Home() {
         top-[-15px] rounded-full w-[30px] h-[30px]`}
         style={{ transform: `translate(${xy.x}px, ${xy.y}px)` }}
       />
+
       {/* 네비게이션 */}
 
       <Navigation />

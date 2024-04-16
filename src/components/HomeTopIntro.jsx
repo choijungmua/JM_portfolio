@@ -60,15 +60,6 @@ function HomeTopIntro() {
     setFireHover((hover) => !hover);
   };
 
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://unpkg.com/@h0rn0chse/night-sky/dist/bundle.min.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
   return (
     <div className="text-white w-full overflow-hidden relative h-full flex-col justify-center items-center flex">
       {/* <StyledAnimation className="text-green-400 flex items-center font-nanum-square-neo-heavy text-9xl absolute opacity-20">
@@ -77,18 +68,7 @@ function HomeTopIntro() {
       <StyledAnimation2 className="text-green-400 flex items-center font-nanum-square-neo-heavy text-9xl absolute opacity-20">
         노력하자~
       </StyledAnimation2> */}
-      <div className="w-full h-full absolute">
-        <night-sky
-          id="nightSky"
-          className="w-[full] h-[full] overflow-hidden absolute"
-          layers="3"
-          density="20"
-          velocity-x="40"
-          velocity-y="40"
-          star-color="#FFF"
-          background-color="transparent"
-        ></night-sky>
-      </div>
+
       <div className=" absolute flex w-full">
         <img src={whitewire} alt="" className="w-[500px] mt-72  opacity-10" />
         <img
