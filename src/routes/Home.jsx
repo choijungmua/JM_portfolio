@@ -101,10 +101,10 @@ function Home() {
       className="bg-[#262626] w-full overflow-y-auto h-screen "
       // onMouseMove={mouseHandler}
     >
-      <div className="w-full h-full absolute">
+      <div className="w-full h-full absolute pointer-events-none inset-0">
         <night-sky
           id="nightSky"
-          className="w-[full] h-[full] overflow-hidden absolute"
+          className="w-[full] h-[full] overflow-hidden absolute "
           layers="3"
           density="20"
           velocity-x="40"

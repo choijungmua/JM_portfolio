@@ -1,22 +1,62 @@
-import { ReactTyped } from "react-typed";
-import { BsFillPersonVcardFill, BsBook } from "react-icons/bs";
-import { AiOutlineCheck } from "react-icons/ai";
-import Next from "../assets/next.png";
-import Javascript from "../assets/javascript.png";
-import React from "../assets/React.png";
-import Recoil from "../assets/Recoil.png";
-import Sass from "../assets/sass.png";
-import Styled from "../assets/styledcomponents.png";
-import Tailwind from "../assets/tailwind.png";
-import HTML5 from "../assets/HTML.png";
-import CSS3 from "../assets/CSS.png";
+// copyright - Choi Jung mu
+// 2024-04-17 Update
+//  업데이트 내용
+//  gsap 사용 익히기
 
-import Me from "../assets/Me.jpg";
-const imgSize = "w-[50px]";
+// import The React
+import React from "react";
+import { useRef } from "react";
+
+// import The gsap
+// What is gsap?
+// gsap이란 특정 애니메이션 라이브러리 입니다.
+// npm i gsap, (만약 React에서 사용하려고 한다면 npm i @react/gsap으로 다운받으면 됨.)
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import MotionPathPlugin from "gsap/MotionPathPlugin";
+import ScrollToPlugin from "gsap/ScrollToPlugin";
+
+// gsap plugin
+gsap.registerPlugin(useGSAP, MotionPathPlugin, ScrollToPlugin);
 function AboutMe() {
+  // Ref
+  const container = useRef();
+  const moving = useRef();
+
+  // GSAP 값
+  useGSAP(() => {
+    // gsap.to(window, { duration: 2, scrollTo: 800 });
+    gsap.to(".box", {
+      xPercent: -50,
+      yPercent: -50,
+      transformOrigin: "50% 50%",
+    });
+    gsap.to(".box", {
+      duration: 1,
+      motionPath: {
+        path: "#path",
+        ease: "power1.inOut",
+        end: 0.9,
+        autoRotate: true,
+      },
+    });
+  });
+
   return (
-    <div className="w-full h-full flex bg-black flex-col text-white">
-      Skills
+    <div className="pointer-events-auto w-full h-full flex bg-black text-white">
+      <div ref={container} className="flex items-start">
+        {/* MotionPathPlugin 모션의 이동값 */}
+        <path
+          id="path"
+          fill=""
+          className=""
+          d="M16,204 C30,166 116,50 262,48 412,48 466,126 518,182 584,250 656,310 754,310 928,310 994,194 1008,148
+"
+        />
+        <div ref={moving} className="box font-nanum-square-neo-heavy text-6xl">
+          Skills
+        </div>
+      </div>
     </div>
   );
 }
