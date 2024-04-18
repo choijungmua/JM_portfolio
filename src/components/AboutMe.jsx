@@ -15,9 +15,10 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import MotionPathPlugin from "gsap/MotionPathPlugin";
 import ScrollToPlugin from "gsap/ScrollToPlugin";
+import ScrollTrigger from "gsap/ScrollTrigger";
 
 // gsap plugin
-gsap.registerPlugin(useGSAP, MotionPathPlugin, ScrollToPlugin);
+gsap.registerPlugin(useGSAP, MotionPathPlugin, ScrollToPlugin, ScrollTrigger);
 function AboutMe() {
   // Ref
   const container = useRef();
@@ -39,18 +40,23 @@ function AboutMe() {
         end: 0.9,
         autoRotate: true,
       },
+      scrollTrigger: {
+        start: "top center",
+        trigger: ".container", // 대상 설정 - '.box2'에 왔을 때 시작
+        markers: true,
+      },
     });
   });
 
   return (
     <div className="pointer-events-auto w-full h-full flex bg-black text-white">
-      <div ref={container} className="flex items-start">
+      <div ref={container} className="container flex items-start">
         {/* MotionPathPlugin 모션의 이동값 */}
         <path
           id="path"
           fill=""
           className=""
-          d="M16,204 C30,166 116,50 262,48 412,48 466,126 518,182 584,250 656,310 754,310 928,310 994,194 1008,148
+          d="M-200,204 C30,166 116,50 262,48 412,48 466,126 518,182 584,250 656,310 754,310 928,310 1500,400 1900,50
 "
         />
         <div ref={moving} className="box font-nanum-square-neo-heavy text-6xl">

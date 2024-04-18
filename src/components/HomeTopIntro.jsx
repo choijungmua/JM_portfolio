@@ -1,52 +1,62 @@
+// copyright - Choi Jung mu
+// 2024-04-18 Update
+//  업데이트 내용
+//  gsap 사용 익히기
+
+// import the React
+import { useEffect, useState } from "react";
+
+// import the icons
 import { RxNotionLogo } from "react-icons/rx";
 import { AiFillGithub } from "react-icons/ai";
-import { useState } from "react";
 import { CgChevronDoubleDown } from "react-icons/cg";
-import Profile from "../assets/Profile.jpg";
-import { ReactTyped } from "react-typed";
+
+// import the IMG
 import FrontEndHover from "../assets/FrontEndHover.gif";
 import Fire from "../assets/Fire.gif";
-import styled, { keyframes } from "styled-components";
+import Profile from "../assets/Profile.jpg";
 import wiretext from "../assets/wiretext.svg";
 import whitewire from "../assets/whitewire.svg";
 import wire from "../assets/wire.svg";
-import { useEffect } from "react";
-// const textMove = keyframes`
-// 0% {
-//   transform: translateX(150vw);
+// import The gsap Animation
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+// import the react
+import { useRef } from "react";
 
-// }
-// }
-// 100% {
-//   transform: translateX(-50vw);
+// import The Components
+import SNSComponent from "./SNSComponent";
 
-// }
-// `;
-// const StyledAnimation = styled.div`
-//   width: 250%;
-//   rotate: 12deg;
-//   animation: ${textMove} 24s infinite;
-// `;
-// const textMove2 = keyframes`
-// 0% {
-//   transform: translateX(150vw);
+// import another
+import { ReactTyped } from "react-typed";
 
-// }
-// }
-// 100% {
-//   transform: translateX(150vw);
-
-// }
-// `;
-// const StyledAnimation2 = styled.div`
-//   width: 250%;
-//   rotate: 340deg;
-//   animation: ${textMove2} 15s infinite;
-// `;
+gsap.registerPlugin(useGSAP);
 
 function HomeTopIntro() {
+  // Ref
+  const container = useRef();
+
+  // 변수선언
   const [frontEndMouseHover, setFrontEndMouseHover] = useState(1);
   const [fireHover, setFireHover] = useState(1);
+  useGSAP(() => {
+    gsap.fromTo(
+      ".mainText",
+      {
+        y: 100,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.9,
+        duration: 3,
+        ease: "power4.out",
+      }
+    );
+  });
+  // 함수선언부
+  // 이미지 선택 시 이미지변경
   const HandleFrontEndHover = (e) => {
     setFrontEndMouseHover((hover) => !hover);
   };
@@ -59,16 +69,11 @@ function HomeTopIntro() {
   const HandleFireLeave = (e) => {
     setFireHover((hover) => !hover);
   };
-
   return (
-    <div className="text-white w-full overflow-hidden relative h-full flex-col justify-center items-center flex">
-      {/* <StyledAnimation className="text-green-400 flex items-center font-nanum-square-neo-heavy text-9xl absolute opacity-20">
-        개발 잘하고싶다~
-      </StyledAnimation>
-      <StyledAnimation2 className="text-green-400 flex items-center font-nanum-square-neo-heavy text-9xl absolute opacity-20">
-        노력하자~
-      </StyledAnimation2> */}
-
+    <div
+      ref={container}
+      className="text-white w-full overflow-hidden relative h-full flex-col justify-center items-center flex"
+    >
       <div className=" absolute flex w-full">
         <img src={whitewire} alt="" className="w-[500px] mt-72  opacity-10" />
         <img
@@ -83,12 +88,13 @@ function HomeTopIntro() {
         />
       </div>
       <div className="flex">
+        {/* 메인 텍스트 */}
         <div className="flex flex-col">
-          <p>웹으로 세상을 바꾸고 싶은 최정무의</p>
+          <p className="mainText ">웹으로 세상을 바꾸고 싶은 최정무의</p>
 
           <div className="border-b-2 my-1 relative" />
 
-          <p className="font-nanum-square-neo-heavy text-6xl">
+          <p className="mainText text font-nanum-square-neo-heavy text-6xl">
             GROW
             <span className="text-green-400 absolute ml-2"> DEVELOPER</span>
             <span className="text-green-400 absolute mt-1.5 ml-1.5 opacity-15">
@@ -96,7 +102,7 @@ function HomeTopIntro() {
             </span>
             <span className="opacity-0">DEVELOPER</span>
           </p>
-          <p className="font-nanum-square-neo-light text-6xl text-right">
+          <p className="mainText font-nanum-square-neo-light text-6xl text-right">
             PORTPOLIO
           </p>
         </div>
@@ -111,6 +117,7 @@ function HomeTopIntro() {
           />
         </div>
         <div className="flex justify-center flex-col text-center px-6">
+          {/* 타이핑 텍스트 */}
           <ReactTyped
             strings={["안녕하세요 프론트엔드 개발자 최정무입니다 :)"]}
             typeSpeed={60}
@@ -147,17 +154,7 @@ function HomeTopIntro() {
           </div>
           <div className="flex justify-center gap-5 mt-16">
             <div className="rounded-2xl border-2 border-white flex justify-center items-center "></div>
-            {/* <BsInstagram size={25} /> */}
-            <div className="flex gap-6 items-center justify-center">
-              <span className="flex flex-col  items-center justify-center text-xs gap-1">
-                <RxNotionLogo size={25} className="hover:size-8" />
-                <p className="">Notion</p>
-              </span>
-              <span className="flex flex-col items-center justify-center text-xs gap-1">
-                <AiFillGithub size={25} className="hover:size-8" />
-                <p className=" ">GitHub</p>
-              </span>
-            </div>
+            <SNSComponent />
             <div className="rounded-2xl border-2 border-white "></div>
           </div>
         </div>

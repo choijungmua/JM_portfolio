@@ -1,104 +1,54 @@
+// copyright - Choi Jung mu
+// 2024-04-18 Update
+//  업데이트 내용
+//  gsap 사용 익히기
+
+// import the React
+import React from "react";
+import { useEffect, useRef, useState } from "react";
+
+// import the section
 import HomeTopIntro from "../components/HomeTopIntro";
 import Navigation from "../components/Navigation";
-import { useEffect, useRef, useState } from "react";
-import React from "react";
-import DesignedBy from ".././components/DesignedBy";
-import { useRecoilValue } from "recoil";
-import mouseHover from "../atoms/mouseHover";
-import bgImg from "../assets/bg.jpg";
 import AboutMe from "../components/AboutMe";
+
+// import The gsap
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 function Home() {
-  const mouseHovered = useRecoilValue(mouseHover);
-
-  // 페이지 전환
   const [xy, setxy] = useState({ x: 0, y: 0 });
-  const handleWheel = useRef();
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://unpkg.com/@h0rn0chse/night-sky/dist/bundle.min.js";
-    script.async = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
 
-  const mouseHandler = (e) => {
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
-    setxy({ x: mouseX, y: mouseY });
-  };
-  useEffect(() => {
-    const wheelChangeHandler = (e) => {
-      e.preventDefault();
-      const { scrollTop } = handleWheel.current;
-      const pageHeight = window.innerHeight;
-      const { deltaY } = e;
+  // 밤하늘 별빛 script 가져오기
+  // useEffect(() => {
+  //   const script = document.createElement("script");
+  //   script.src = "https://unpkg.com/@h0rn0chse/night-sky/dist/bundle.min.js";
+  //   script.async = true;
+  //   document.body.appendChild(script);
+  //   return () => {
+  //     document.body.removeChild(script);
+  //   };
+  // }, []);
 
-      if (deltaY > 0) {
-        if (scrollTop >= 0 && scrollTop < pageHeight) {
-          console.log("현재 1페이지, down");
-          handleWheel.current.scrollTo({
-            top: pageHeight,
-            left: 0,
-            behavior: "smooth",
-          });
-        } else if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
-          console.log("현재 2페이지, down");
-          handleWheel.current.scrollTo({
-            top: pageHeight * 2,
-            left: 0,
-            behavior: "smooth",
-          });
-        } else if (scrollTop >= pageHeight * 2 && scrollTop < pageHeight * 3) {
-          console.log("현재 3페이지, down");
-          handleWheel.current.scrollTo({
-            top: pageHeight * 3,
-            left: 0,
-            behavior: "smooth",
-          });
-        }
-      } else {
-        if (scrollTop >= pageHeight && scrollTop < pageHeight * 3) {
-          console.log("현재 3페이지, up");
-          handleWheel.current.scrollTo({
-            top: -pageHeight * 3,
-            left: 0,
-            behavior: "smooth",
-          });
-        }
-        if (scrollTop >= pageHeight && scrollTop < pageHeight * 2) {
-          console.log("현재 2페이지, up");
-          handleWheel.current.scrollTo({
-            top: -pageHeight * 2,
-            left: 0,
-            behavior: "smooth",
-          });
-        }
-        if (scrollTop >= 0 && scrollTop < pageHeight) {
-          console.log("현재 1페이지, up");
-          handleWheel.current.scrollTo({
-            top: -pageHeight * 2,
-            left: 0,
-            behavior: "smooth",
-          });
-        }
-      }
-    };
+  useGSAP(() => {
+    gsap.utils.toArray(".section").forEach((section, i) => {
+      ScrollTrigger.create({
+        trigger: section,
+        start: "top top",
+        pin: false,
+        pinSpacing: false,
+      });
+    });
+    ScrollTrigger.create({
+      snap: 1,
+    });
+  });
 
-    const currentRef = handleWheel.current;
-    currentRef.addEventListener("wheel", wheelChangeHandler);
-
-    // 이벤트 리스너 해제
-    return () => {
-      currentRef.removeEventListener("wheel", wheelChangeHandler);
-    };
-  }, []);
   return (
     <div
-      ref={handleWheel}
       //추가 cursor-none pointer-events-auto
-      className="bg-[#262626] w-full overflow-y-auto h-screen "
+      className="bg-[#262626] w-full  h-screen "
       // onMouseMove={mouseHandler}
     >
       <div className="w-full h-full absolute pointer-events-none inset-0">
@@ -125,11 +75,13 @@ function Home() {
 
       <Navigation />
       {/* 1 section */}
-      <div className="relative w-full h-full flex">
+      <div className="section relative w-full h-full flex">
         <HomeTopIntro />
       </div>
       {/* About Me */}
-      <AboutMe />
+      <div className=" section relative w-full h-full flex">
+        <AboutMe />
+      </div>
     </div>
   );
 }

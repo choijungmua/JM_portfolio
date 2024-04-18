@@ -3,7 +3,6 @@ import { AiOutlineHome } from "react-icons/ai";
 import { SlUser } from "react-icons/sl";
 import { SlFolderAlt } from "react-icons/sl";
 function Navigation() {
-  const liStyle = "border-x border-black p-1.5 w-[60px] text-center";
   return (
     // 사이드바
     <div className="absolute flex right-0 flex-col gap-5">
