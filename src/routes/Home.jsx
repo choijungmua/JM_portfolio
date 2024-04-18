@@ -11,6 +11,7 @@ import { useEffect, useRef, useState } from "react";
 import HomeTopIntro from "../components/HomeTopIntro";
 import Navigation from "../components/Navigation";
 import AboutMe from "../components/AboutMe";
+import PortPolio from "../components/PortPolio";
 
 // import The gsap
 import gsap from "gsap";
@@ -31,19 +32,20 @@ function Home() {
   //   };
   // }, []);
 
-  useGSAP(() => {
-    gsap.utils.toArray(".section").forEach((section, i) => {
-      ScrollTrigger.create({
-        trigger: section,
-        start: "top top",
-        pin: false,
-        pinSpacing: false,
-      });
-    });
-    ScrollTrigger.create({
-      snap: 1,
-    });
-  });
+  // useGSAP(() => {
+  //   gsap.utils.toArray(".section").forEach((section) => {
+  //     ScrollTrigger.create({
+  //       trigger: section,
+  //       start: "top 0",
+  //       pinSpacing: false,
+  //       delay: 1,
+  //       // ease: "power1.inOut",
+  //     });
+  //   });
+  //   ScrollTrigger.create({
+  //     snap: 0,
+  //   });
+  // });
 
   return (
     <div
@@ -75,12 +77,15 @@ function Home() {
 
       <Navigation />
       {/* 1 section */}
-      <div className="section relative w-full h-full flex">
-        <HomeTopIntro />
+      <div className=" section relative w-full h-full flex">
+        <HomeTopIntro className="" />
       </div>
       {/* About Me */}
-      <div className=" section relative w-full h-full flex">
+      <div className="section relative w-full h-[200vh]">
         <AboutMe />
+      </div>
+      <div className="section bg-gray-900 relative w-full h-[300vh]">
+        <PortPolio />
       </div>
     </div>
   );
