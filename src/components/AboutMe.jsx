@@ -6,7 +6,8 @@
 // import The React
 import React, { useEffect, useState } from "react";
 import { useRef } from "react";
-
+// import the img
+import commendation from "../assets/commendation.png";
 // import The gsap
 // What is gsap?
 // gsap이란 특정 애니메이션 라이브러리 입니다.
@@ -22,65 +23,34 @@ function AboutMe() {
   const moving = useRef();
   // 텍스트를 저장하는 상수
   const frontEndText =
-    "FRONTENDDEVELOPERFRONTENDDEVELOPERFRONTENDDEVELOPERFRONTENDDEVELOPERFRONTENDDEVELOPERFRONTENDDEVELOPERFRONTENDDEVELOPERFRONTENDDEVELOPER";
+    "SKillSKillSKillSKillSKillSKillSKillSKillSKillSKillSKillSKill";
   // 변수
 
+  let skills = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".frontText",
+      scrub: true,
+      end: "top top ",
+    },
+  });
   useEffect(() => {
     //스크롤시 FrontEnd Text 움직이기
+
     gsap.to(".frontText", {
       scrollTrigger: {
-        trigger: ".frontTextCont",
-        start: "bottom bottom start",
-        end: "top end",
+        trigger: ".frontText",
         duration: 3,
         scrub: true,
       },
+      xPercent: 10,
       opacity: 0,
-      xPercent: -50,
-    });
-
-    gsap.to(".frontTextCenter", {
-      scrollTrigger: {
-        trigger: ".frontTextCont",
-        start: "bottom bottom start",
-        end: "top end",
-        opacity: 0,
-        duration: 3,
-        scrub: true,
-      },
-      xPercent: 50,
     });
 
     // Skill 글씨 -300에서 0까지 움직이기
-    gsap.fromTo(
-      "#h2",
-      {
-        x: -300,
-
-        scrollTrigger: {
-          trigger: ".SkillContainer",
-          start: "top center start",
-          scrub: true,
-          markers: true,
-          ease: "power5.easeInOut",
-
-          duration: 3,
-        },
-      },
-      {
-        x: 0,
-        scrollTrigger: {
-          trigger: ".SkillContainer",
-          scrub: true,
-          start: "top center start",
-          end: "center center end",
-          ease: "power5.easeInOut",
-          duration: 3,
-        },
-      },
-
-      {}
-    );
+    skills.to("#skills", {
+      xPercent: 100,
+      duration: 1,
+    });
   }, []); // useEffect 내에서 의존성 배열이 빈 배열로 지정되었습니다.
 
   return (
@@ -88,20 +58,21 @@ function AboutMe() {
       {/* Front Text */}
       <div className="frontTextCont flex w-full h-[288px]">
         <div className="frontText text-green-400 flex flex-col justify-start font-nanum-square-neo-heavy text-8xl items-center w-full">
-          <p className="frontText">{frontEndText}</p>
-          <p className="frontTextCenter text-white">
-            DELOPERFRONTENDDEVELOPERFRONTENDDEVELOPERFRONTEND
+          <p className="frontText mr-96">{frontEndText}</p>
+          <p className="frontText text-white mr-96">
+            SKillSKillSKillSKillSKillSKillSKillSKillSKillSKillSKillSKillSKill
           </p>
-          <p className="frontText">{frontEndText}</p>
+          <p className="mr-96 frontText">{frontEndText}</p>
         </div>
       </div>
       {/* Skill Text */}
       <div className="SkillContainer flex w-full">
-        <h2 className="ml-8 flex text-6xl font-nanum-square-neo-heavy" id="h2">
+        <h2 className="flex text-6xl font-nanum-square-neo-heavy" id="skills">
           Skills.
         </h2>
       </div>
-      <div className="w-full h-full flex bg-slate-50"></div>
+      <div className="skillSec1 w-full h-[300vh] flex bg-white"></div>
+      gdgd
     </div>
   );
 }

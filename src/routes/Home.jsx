@@ -22,15 +22,15 @@ function Home() {
   const [xy, setxy] = useState({ x: 0, y: 0 });
 
   // 밤하늘 별빛 script 가져오기
-  // useEffect(() => {
-  //   const script = document.createElement("script");
-  //   script.src = "https://unpkg.com/@h0rn0chse/night-sky/dist/bundle.min.js";
-  //   script.async = true;
-  //   document.body.appendChild(script);
-  //   return () => {
-  //     document.body.removeChild(script);
-  //   };
-  // }, []);
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.src = "https://unpkg.com/@h0rn0chse/night-sky/dist/bundle.min.js";
+    script.async = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
 
   // useGSAP(() => {
   //   gsap.utils.toArray(".section").forEach((section) => {
@@ -50,7 +50,7 @@ function Home() {
   return (
     <div
       //추가 cursor-none pointer-events-auto
-      className="bg-[#262626] w-full  h-screen "
+      className="bg-black w-full  h-screen "
       // onMouseMove={mouseHandler}
     >
       <div className="w-full h-full absolute pointer-events-none inset-0">

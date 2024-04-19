@@ -3,6 +3,8 @@
 //  업데이트 내용
 //  gsap 사용 익히기
 
+// import the SCSS
+import "./Styles/Animation.css";
 // import the React
 import { useEffect, useState } from "react";
 
@@ -39,38 +41,61 @@ function HomeTopIntro() {
   // 변수선언
   const [frontEndMouseHover, setFrontEndMouseHover] = useState(1);
   const [fireHover, setFireHover] = useState(1);
-  useGSAP(() => {
-    let tween = gsap.fromTo(
-      ".animationText",
-      {
-        x: -1000,
-        y: 800,
-        opacity: 0,
-        scale: 0,
-      },
-      {
-        x: 0,
-        y: 0,
-        opacity: 1,
-        stagger: 0.9,
-        duration: 5,
-        scale: 1,
-        ease: "power4.out",
-      }
-    );
-    tween.timeScale(3);
-  });
 
+  const animationMainText = gsap.timeline();
+  const animationSubText = gsap.timeline();
   useEffect(() => {
-    gsap.to(".Header", {
-      scrollTrigger: {
-        trigger: ".TopIntro",
-        start: "top top",
-        scrub: true,
+    animationMainText.to(".TopIntro", 0.8, {
+      // opacity: 1,
+      ease: "power4.out",
+      delay: 1,
+    });
+    animationMainText.to(".TopIntro", 0.5, {
+      scaleX: 0,
+      ease: "power4.out",
+      delay: 1,
+    });
+    animationMainText.to(".animationMainText", 1.5, {
+      y: 800,
+      ease: "power4.out",
+      skewY: 5,
+      stagger: {
+        amount: 0.3,
       },
-      yPercent: 50,
-      scale: 7,
-      opacity: 0,
+    });
+
+    animationMainText.to(".animationMainText", 1.5, {
+      y: 800,
+      ease: "power4.out",
+      skewY: 3,
+      stagger: {
+        amount: 0.3,
+      },
+    });
+    animationMainText.from(".ball", 1.3, {
+      x: 300,
+      y: 200,
+      borderRadius: "none",
+      ease: "power4.out",
+      direction: 1,
+      delay: 0.1,
+      skewY: 3,
+    });
+    animationMainText.to(".ball", 1, {
+      x: 300,
+      y: 200,
+      borderRadius: "9999px",
+      ease: "power4.out",
+      delay: 0.1,
+      skewY: 3,
+    });
+    animationMainText.to(".ball", 1, {
+      x: -200,
+      y: -150,
+      borderRadius: "none",
+      ease: "power4.out",
+      delay: 0.1,
+      skewY: 3,
     });
   }, []);
   const HandleFrontEndHover = (e) => {
@@ -88,39 +113,30 @@ function HomeTopIntro() {
   return (
     <div
       ref={container}
-      className="TopIntro text-white w-full overflow-hidden relative h-full flex-col justify-center items-center flex"
+      className="overflow-hidden text-white w-full relative h-full flex-col justify-center items-center flex"
     >
-      <div className="Header absolute flex w-full">
-        <img src={whitewire} alt="" className="w-[500px] mt-72  opacity-10" />
-        <img
-          src={wiretext}
-          alt=""
-          className="w-[600px] mt-[-200px] opacity-50"
-        />
-        <img
-          src={wire}
-          alt=""
-          className="absolute right-0 w-[800px] top-40  opacity-20"
-        />
+      <div className="TopIntro opacity-100 flex z-50 bg-black flex-row w-full h-full justify-center items-center">
+        <div className="absolute flex text-white">FRONTENDDEVELOPER</div>
       </div>
-      <div className="animationText flex">
-        {/* 메인 텍스트 */}
-        <div className="flex flex-col">
-          <p className=" ">웹으로 세상을 바꾸고 싶은 최정무의</p>
-
-          <div className="border-b-2 my-1 relative" />
-
-          <p className=" text font-nanum-square-neo-heavy text-6xl">
-            GROW
-            <span className="text-green-400 absolute ml-2"> DEVELOPER</span>
-            <span className="text-green-400 absolute mt-1.5 ml-1.5 opacity-15">
-              DEVELOPER
-            </span>
-            <span className="opacity-0">DEVELOPER</span>
-          </p>
-          <p className=" font-nanum-square-neo-light text-6xl text-right">
-            PORTPOLIO
-          </p>
+      <div className="absolute text-[150px] w-full h-full flex flex-col font-nanum-square-neo-heavy">
+        <div className="textContainer">
+          <p className="animationMainText">JUNGMU</p>
+        </div>
+        <div className="textContainer">
+          <p className="animationMainText whitespace">FRONTEND WEB</p>
+        </div>
+        <div className="textContainer">
+          <p className="animationMainText">PORTPOLIO</p>
+        </div>
+        <div className="w-full h-full flex justify-center absolute items-center">
+          <div className="ball w-[100px] h-[100px] bg-red-300 rounded rounded-full"></div>
+        </div>
+        <div className="flex font-nanum-square-neo-Bold text-5xl hidden gap-6 justify-center w-full">
+          <span>Skill</span>
+          <span>Portpolio</span>
+          <span>Design</span>
+          <span>AboutMe</span>
+          <span>ContactMe</span>
         </div>
       </div>
     </div>
