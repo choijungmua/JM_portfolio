@@ -1,7 +1,7 @@
 // copyright - Choi Jung mu
-// 2024-04-18 Update
+// 2024-04-21 Update
 //  업데이트 내용
-//  gsap 사용 익히기
+//  gsap로 Main 페이지 꾸미기
 
 // import the SCSS
 import "./Styles/Animation.css";
@@ -20,6 +20,9 @@ import Profile from "../assets/Profile.jpg";
 import wiretext from "../assets/wiretext.svg";
 import whitewire from "../assets/whitewire.svg";
 import wire from "../assets/wire.svg";
+import grow from "../assets/grow.gif";
+import talk from "../assets/talk.gif";
+import design from "../assets/design.gif";
 // import The gsap Animation
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -59,6 +62,7 @@ function HomeTopIntro() {
       y: 800,
       ease: "power4.out",
       skewY: 5,
+      delay: 1,
       stagger: {
         amount: 0.3,
       },
@@ -68,34 +72,11 @@ function HomeTopIntro() {
       y: 800,
       ease: "power4.out",
       skewY: 3,
+      delay: 1,
+
       stagger: {
         amount: 0.3,
       },
-    });
-    animationMainText.from(".ball", 1.3, {
-      x: 300,
-      y: 200,
-      borderRadius: "none",
-      ease: "power4.out",
-      direction: 1,
-      delay: 0.1,
-      skewY: 3,
-    });
-    animationMainText.to(".ball", 1, {
-      x: 300,
-      y: 200,
-      borderRadius: "9999px",
-      ease: "power4.out",
-      delay: 0.1,
-      skewY: 3,
-    });
-    animationMainText.to(".ball", 1, {
-      x: -200,
-      y: -150,
-      borderRadius: "none",
-      ease: "power4.out",
-      delay: 0.1,
-      skewY: 3,
     });
   }, []);
   const HandleFrontEndHover = (e) => {
@@ -115,28 +96,39 @@ function HomeTopIntro() {
       ref={container}
       className="overflow-hidden text-white w-full relative h-full flex-col justify-center items-center flex"
     >
-      <div className="TopIntro opacity-100 flex z-50 bg-black flex-row w-full h-full justify-center items-center">
+      <div className="TopIntro flex z-50 bg-black flex-row w-full h-full justify-center items-center">
         <div className="absolute flex text-white">FRONTENDDEVELOPER</div>
       </div>
-      <div className="absolute text-[150px] w-full h-full flex flex-col font-nanum-square-neo-heavy">
-        <div className="textContainer">
-          <p className="animationMainText">JUNGMU</p>
-        </div>
-        <div className="textContainer">
-          <p className="animationMainText whitespace">FRONTEND WEB</p>
-        </div>
-        <div className="textContainer">
-          <p className="animationMainText">PORTPOLIO</p>
-        </div>
-        <div className="w-full h-full flex justify-center absolute items-center">
-          <div className="ball w-[100px] h-[100px] bg-red-300 rounded rounded-full"></div>
-        </div>
-        <div className="flex font-nanum-square-neo-Bold text-5xl hidden gap-6 justify-center w-full">
-          <span>Skill</span>
-          <span>Portpolio</span>
-          <span>Design</span>
-          <span>AboutMe</span>
-          <span>ContactMe</span>
+      {/* Main */}
+      <div className="absolute  w-[60%] h-full flex ">
+        <div className="w-full h-full flex flex-col mt-36">
+          {/* mainText */}
+          <h1 className="text-5xl relative z-10 font-nanum-square-neo-heavy">
+            <p className="mb-1">Nice to meet you!</p>
+            <p>
+              I'm{" "}
+              <span className="border-b-4 pb-1 border-b-green-400">
+                Choi Jung Mu.
+              </span>
+            </p>
+          </h1>
+          {/* subText */}
+          <div className="text-center">
+            <h3 className="mt-12 text-2xl font-nanum-square-neo- mb-3">
+              <span className=" font-nanum-square-neo-heavy text-4xl text-green-400">
+                Choi Jung Mu
+              </span>
+              는 어떤사람인가요?
+            </h3>
+            <h3 className="text-lg">
+              <p>올바른 성장이란 무엇일까를 고민하고 있습니다.</p>
+              {/* <p>좋은 커뮤니케이션이 되기 위해 분위기를 바꾸려고합니다.</p> */}
+              {/* <p>심미성과 편리성을 갖춘 웹을 만들기 위해 고민합니다.</p> */}
+            </h3>
+          </div>
+          <div className="relative h-full flex justify-center">
+            <img src={design} alt="" />
+          </div>
         </div>
       </div>
     </div>
