@@ -66,27 +66,27 @@ function Home() {
         ></night-sky>
       </div>
       {/* 마우스 휠  */}
-      <div
+      {/* <div
         className={`absolute bg-white z-50
         }  left-[-15px] 
         top-[-15px] rounded-full w-[30px] h-[30px]`}
         style={{ transform: `translate(${xy.x}px, ${xy.y}px)` }}
-      />
+      /> */}
 
       {/* 네비게이션 */}
 
-      <Navigation />
+      {/* <Navigation /> */}
       {/* 1 section */}
       <div className=" section relative w-full h-full flex">
         <HomeTopIntro className="" />
       </div>
-      {/* About Me */}
+      {/* About Me
       <div className="section relative w-full h-[200vh]">
         <AboutMe />
       </div>
       <div className="section bg-gray-900 relative w-full h-[300vh]">
         <PortPolio />
-      </div>
+      </div> */}
     </div>
   );
 }
