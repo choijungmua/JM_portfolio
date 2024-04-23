@@ -1,19 +1,47 @@
-// copyright - Choi Jung mu
-// 2024-04-22 Update
-//  업데이트 내용
-//  gsap로 Main 페이지 꾸미기
+import { useEffect } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Profile from "../../assets/Profile.jpg";
+
+gsap.registerPlugin(ScrollTrigger);
+
 function SubText() {
-  // subText
+  useEffect(() => {
+    // ScrollTrigger를 사용하여 스크롤 위치를 조절하여 가로 스크롤 시뮬레이션
+    gsap.to(".work ul", {
+      x: () =>
+        -(document.querySelector(".work ul").offsetWidth - window.innerWidth),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".work",
+        start: "center center",
+        end: "+=300%",
+        scrub: 1,
+      },
+    });
+  }, []);
+
   return (
-    <div className="w-full h-full flex justify-start text-left">
-      <div className="flex  justify-center items-center w-1/2 h-full text-xl flex-col gap-0.5">
-        <p id="SubTextMove1">안녕하세요 신입 프론트엔드 개발자 최정무입니다.</p>
-        <p id="SubTextMove2">풀 스택을 목표로 성장하고 있습니다.</p>
-        <p id="SubTextMove3">
-          편안한 마음으로 봐주셨으면 좋겠습니다. 감사합니다.{" "}
-        </p>
-      </div>
+    <div>
+      <section className="work h-screen border border-red-200 overflow-x-auto">
+        <ul className="flex py-[3%] px-[30%]">
+          <li className="w-[700px] p-[100px] flex-shrink-0">
+            <div className="block w-[100%] relative">
+              <div className="imgBox relative">
+                <img src={Profile} alt="" className="w-[100%]" />
+              </div>
+              <div className="textBox absolute left-0 bottom-[10%] shadow-xl">
+                <p className="title text-6xl">Site name</p>
+                <p className="text en2 text-xl pl-[5px]">
+                  UI/UX Design, web Publishing
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </section>
     </div>
   );
 }
+
 export default SubText;
