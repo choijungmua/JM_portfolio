@@ -1,7 +1,7 @@
 // copyright - Choi Jung mu
 // 2024-04-18 Update
 //  업데이트 내용
-//  gsap 사용 익히기
+//  gsap로 메인화면 꾸미기
 
 // import the React
 import React from "react";
@@ -12,12 +12,12 @@ import HomeTopIntro from "../components/HomeTopIntro";
 import Navigation from "../components/Navigation";
 import AboutMe from "../components/AboutMe";
 import PortPolio from "../components/PortPolio";
-
 // import The gsap
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import SubText from "../components/HomeComp/SubText";
+import MainText from "../components/HomeComp/MainText";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 function Home() {
   const [xy, setxy] = useState({ x: 0, y: 0 });
@@ -33,24 +33,9 @@ function Home() {
   //   };
   // }, []);
 
-  // useGSAP(() => {
-  //   gsap.utils.toArray(".section").forEach((section) => {
-  //     ScrollTrigger.create({
-  //       trigger: section,
-  //       start: "top 0",
-  //       pinSpacing: false,
-  //       delay: 1,
-  //       // ease: "power1.inOut",
-  //     });
-  //   });
-  //   ScrollTrigger.create({
-  //     snap: 0,
-  //   });
-  // });
-
   return (
-    <div>
-      <div className="w-[100vw] h-[100vh]"></div>
+    <div className="bg-black text-white">
+      <MainText />
       <SubText />
     </div>
   );

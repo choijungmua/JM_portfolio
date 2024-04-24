@@ -1,5 +1,5 @@
 // copyright - Choi Jung mu
-// 2024-04-22 Update
+// 2024-04-24 Update
 //  업데이트 내용
 //  gsap로 Main 페이지 꾸미기
 
@@ -13,11 +13,11 @@ import TextPlugin from "gsap/TextPlugin";
 // import the react
 import { useRef } from "react";
 
+import react from "../../assets/react.gif";
 gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
-
-// timeline
-let textTimeLine = gsap.timeline();
 function MainText() {
+  // timeline
+  let textTimeLine = gsap.timeline();
   useEffect(() => {
     textTimeLine.to("#yourElement", 1, {
       delay: 0.5,
@@ -41,11 +41,39 @@ function MainText() {
       background: "orange",
     });
   }, []);
+
   return (
     <div>
-      <p id="yourElement" className="text-white text-2xl"></p>
-      <p id="yourElement1" className="text-white text-2xl"></p>
-      <p id="yourElement2" className="text-white text-2xl"></p>
+      <div className="w-full h-full absolute pointer-events-none inset-0">
+        <night-sky
+          id="nightSky"
+          className="w-[full] h-[full] overflow-hidden absolute "
+          layers="3"
+          density="20"
+          velocity-x="40"
+          velocity-y="40"
+          star-color="#FFF"
+          background-color="transparent"
+        ></night-sky>
+      </div>
+      <div className="w-[100vw] h-[100vh] justify-center">
+        <div className="w-full h-full flex justify-center absolute "></div>
+        <div className="absolute flex flex-col text-6xl gap-1 pt-36 ml-24 font-nanum-square-neo-heavy ">
+          <p>Front End Developer</p>
+          <p>Choi Jung Mu Portfolio</p>
+        </div>
+        <div className="flex w-full justify-center">
+          <div className="flex bottom-36 absolute text-xl">
+            <div className="flex items-center flex-col">
+              <img src={react} alt="" className="flex w-[100px] h-[100px]" />
+              <p className="mb-3 text-2xl">개발자로서 생각하는 가치관</p>
+              <p>얼마나 내가 웹에 대해 진정성을 가지는가.</p>
+              <p>내가 만든 웹의 완성도를 얼마나 높이는가</p>
+              <p>사용자 중심적인 웹을 만들기위해 노력하는가.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
