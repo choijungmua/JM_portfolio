@@ -13,7 +13,7 @@ function SubText() {
     const ulElement = ulRef.current;
     if (!ulElement) return;
 
-    let scrollTween = gsap.to(sections, {
+    gsap.to(sections, {
       xPercent: -100 * (sections.length - 1),
       ease: "none",
       scrollTrigger: {
@@ -22,7 +22,7 @@ function SubText() {
         end: "500%",
         pin: true,
         scrub: 1,
-        markers: true,
+        // markers: true,
         snap: {
           snapTo: 1 / (sections.length - 1),
           inertia: false,

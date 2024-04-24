@@ -40,33 +40,36 @@ function MainText() {
       ease: "none",
       background: "orange",
     });
+    gsap.to(".reactImg", {
+      scale: 10,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".mainCont",
+        start: "top top",
+        end: "bottom center",
+        duration: 1,
+        scrub: 1,
+        // markers: true,
+      },
+    });
   }, []);
 
   return (
     <div>
-      <div className="w-full h-full absolute pointer-events-none inset-0">
-        <night-sky
-          id="nightSky"
-          className="w-[full] h-[full] overflow-hidden absolute "
-          layers="3"
-          density="20"
-          velocity-x="40"
-          velocity-y="40"
-          star-color="#FFF"
-          background-color="transparent"
-        ></night-sky>
-      </div>
-      <div className="w-[100vw] h-[100vh] justify-center">
-        <div className="w-full h-full flex justify-center absolute "></div>
-        <div className="absolute flex flex-col text-6xl gap-1 pt-36 ml-24 font-nanum-square-neo-heavy ">
-          <p>Front End Developer</p>
+      <div className="mainCont w-[100vw] h-[100vh]">
+        <div className="absolute flex flex-col text-4xl gap-1 w-full mt-24 items-center font-nanum-square-neo-heavy ">
+          <p className="text-6xl">Front End Developer</p>
           <p>Choi Jung Mu Portfolio</p>
         </div>
         <div className="flex w-full justify-center">
-          <div className="flex bottom-36 absolute text-xl">
+          <div className="flex bottom-36 absolute text-base">
             <div className="flex items-center flex-col">
-              <img src={react} alt="" className="flex w-[100px] h-[100px]" />
-              <p className="mb-3 text-2xl">개발자로서 생각하는 가치관</p>
+              <img
+                src={react}
+                alt=""
+                className="reactImg flex w-[100px] h-[100px]"
+              />
+              <p className="mb-3 text-xl">개발자로서 생각하는 가치관</p>
               <p>얼마나 내가 웹에 대해 진정성을 가지는가.</p>
               <p>내가 만든 웹의 완성도를 얼마나 높이는가</p>
               <p>사용자 중심적인 웹을 만들기위해 노력하는가.</p>

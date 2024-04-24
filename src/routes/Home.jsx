@@ -8,34 +8,32 @@ import React from "react";
 import { useEffect, useRef, useState } from "react";
 
 // import the section
-import HomeTopIntro from "../components/HomeTopIntro";
-import Navigation from "../components/Navigation";
-import AboutMe from "../components/AboutMe";
-import PortPolio from "../components/PortPolio";
+import Navigation from "../components/HomeComp/Navigation";
+import NightSky from "../components/UI/NightSky";
 // import The gsap
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import SubText from "../components/HomeComp/SubText";
 import MainText from "../components/HomeComp/MainText";
+import SkilledBy from "../components/HomeComp/SkilledBy";
+import Footer from "../components/HomeComp/Footer";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 function Home() {
   const [xy, setxy] = useState({ x: 0, y: 0 });
 
-  // 밤하늘 별빛 script 가져오기
-  // useEffect(() => {
-  //   const script = document.createElement("script");
-  //   script.src = "https://unpkg.com/@h0rn0chse/night-sky/dist/bundle.min.js";
-  //   script.async = true;
-  //   document.body.appendChild(script);
-  //   return () => {
-  //     document.body.removeChild(script);
-  //   };
-  // }, []);
-
   return (
     <div className="bg-black text-white">
+      <NightSky />
+
+      {/* Navigation */}
+      <Navigation />
+      {/* MainPage */}
       <MainText />
+      {/* <Footer /> */}
+      {/* Skills */}
+      <SkilledBy />
+      {/* Horizontal */}
       <SubText />
     </div>
   );
