@@ -1,0 +1,24 @@
+.cardContainer {
+  perspective: 1100px;
+  // 부모의 자식 요소가 3 차원의 애니메이션 효과를 가질때, 1100px의 거리에서 보는 원근감을 줌
+  .item {
+    transition: 0.4s;
+    transform-style: preserve-3d;
+    position: relative;
+  }
+  .front {
+    background-color: red;
+    z-index: 1;
+    backface-visibility: hidden;
+    position: absolute;
+  }
+  .back {
+    position: absolute;
+    background: royalblue;
+    transform: rotateY(180deg);
+  }
+}
+// 호버 시 뒤집기
+.cardContainer:hover .item {
+  transform: rotateY(180deg);
+}
