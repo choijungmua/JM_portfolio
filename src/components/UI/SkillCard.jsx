@@ -1,11 +1,24 @@
 import CSS from "../../assets/CSS.png";
 import "./../Styles/Animation.scss";
-function SkillCard() {
+import { useState } from "react";
+import { useRecoilState } from "recoil";
+import gientCard from "../../atoms/gientCard";
+function SkillCard({ MainText, SubText, Icon, Explain }) {
+  const [Card, setCard] = useRecoilState(gientCard);
+  const cardClick = () => {
+    setCard((card) => !card);
+  };
   return (
-    <div className="w-full h-full cardContainer flex justify-center items-center">
-      <div className="item w-full h-full">
-        <div className="front w-full h-full ">앞면</div>
-        <div className="back w-full h-full">뒷면</div>
+    <div className="w-full h-full cardContainer flex flex-start ">
+      <div onClick={cardClick} className="item w-full h-full">
+        <div className="front w-full h-full ">
+          <p>{MainText}</p>
+          <p>{SubText}</p>
+          <p>{Icon}</p>
+        </div>
+        <div className="back w-full h-full">
+          <p>{Explain}</p>
+        </div>
       </div>
     </div>
     // <div className="w-full h-full">

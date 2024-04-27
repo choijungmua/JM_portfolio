@@ -10,9 +10,12 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import wire from "../../assets/wire.svg";
 import Iphone from "../UI/Iphone";
 import SkillCard from "../UI/SkillCard";
+import { useRecoilValue } from "recoil";
+import gientCard from "../../atoms/gientCard";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function SkilledBy() {
+  const Card = useRecoilValue(gientCard);
   useGSAP(() => {
     gsap.from(".animationMy", {
       x: window.innerWidth,
@@ -78,6 +81,16 @@ function SkilledBy() {
       },
     });
   }, []);
+  useEffect(() => {
+    gsap.to(".Skill2", {
+      w: "gd",
+      y: "gd",
+      width: "400px",
+      height: "500px",
+      duration: 1,
+      ease: "ease-in-out",
+    });
+  });
   return (
     <div className="">
       <div className="absolute mySkillsCont w-[100vw] h-[100vh] flex justify-center items-center ">
@@ -92,37 +105,44 @@ function SkilledBy() {
           <span className="mainSkillsLeft mr-2">My</span>
           <span className="mainSkillsRight">Skills</span>
         </p>
-        <div className="w-full h-full flex flex-col justify-center items-center">
-          <p className="my-12">형상관리</p>
-          <div className="skillCardCont1 flex justify-center gap-10 mb-24 ">
-            <div className="skillCard w-[200px] h-[250px] rounded-3xl">
-              <SkillCard />
+        {!Card ? (
+          <div className="w-full h-full flex flex-col justify-center items-center">
+            <p className="my-12">형상관리</p>
+            <div className="flex justify-center  gap-10 mb-24 ">
+              <div className="gd w-[200px] h-[250px]">
+                <SkillCard
+                  MainText={"MainText"}
+                  SubText={"SubText"}
+                  Icon={"Icon"}
+                  Explain={"Explain"}
+                />
+              </div>
+              <div className="w-[200px] h-[250px]">
+                <SkillCard />
+              </div>
+              <div className="w-[200px] h-[250px]">
+                <SkillCard />
+              </div>
             </div>
-            <div className="skillCard w-[200px] h-[250px] rounded-3xl">
-              <SkillCard />
+            <div className="flex justify-center items-center gap-10 ">
+              <div className="w-[200px] h-[250px]">
+                <SkillCard />
+              </div>
+              <div className="w-[200px] h-[250px]">
+                <SkillCard />
+              </div>
+              <div className="w-[200px] h-[250px]">
+                <SkillCard />
+              </div>
             </div>
-            <div className="skillCard w-[200px] h-[250px] rounded-3xl">
-              <SkillCard />
-            </div>
-            <div className="skillCard w-[200px] h-[250px] rounded-3xl">
-              <SkillCard />
-            </div>
-          </div>{" "}
-          <div className="skillCardCont2 flex justify-center gap-10 ">
-            <div className="skillCard w-[200px] h-[250px] rounded-3xl">
-              <SkillCard />
-            </div>
-            <div className="skillCard w-[200px] h-[250px] rounded-3xl">
-              <SkillCard />
-            </div>
-            <div className="skillCard w-[200px] h-[250px] rounded-3xl">
-              <SkillCard />
-            </div>
-            <div className="skillCard w-[200px] h-[250px] rounded-3xl">
+          </div>
+        ) : (
+          <div className="w-full h-full flex flex-col justify-center items-center">
+            <div className="Skill2 w-[200px] h-[250px]">
               <SkillCard />
             </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
