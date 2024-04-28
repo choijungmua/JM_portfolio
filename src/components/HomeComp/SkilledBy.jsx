@@ -1,5 +1,5 @@
 // copyright - Choi Jung mu
-// 2024-04-26 Update
+// 2024-04-28 Update
 //  업데이트 내용
 //  gsap로 Skills 꾸미기
 
@@ -83,12 +83,13 @@ function SkilledBy() {
   }, []);
   useEffect(() => {
     gsap.to(".Skill2", {
-      w: "gd",
-      y: "gd",
       width: "400px",
       height: "500px",
-      duration: 1,
-      ease: "ease-in-out",
+      ease: "ease-in",
+    });
+    gsap.to("#Card", {
+      rotateY: "360deg",
+      ease: "ease-in",
     });
   });
   return (
@@ -108,31 +109,54 @@ function SkilledBy() {
         {!Card ? (
           <div className="w-full h-full flex flex-col justify-center items-center">
             <p className="my-12">형상관리</p>
-            <div className="flex justify-center  gap-10 mb-24 ">
-              <div className="gd w-[200px] h-[250px]">
+            <div className="w-full h-full flex gap-5 justify-center items-center">
+              <div id="Card" className="gd w-[200px] h-[250px]">
                 <SkillCard
-                  MainText={"MainText"}
-                  SubText={"SubText"}
-                  Icon={"Icon"}
+                  MainText={"GitHub"}
+                  SubText={"깃허브로 커밋 할 수 있습니다."}
+                  Icon={"github"}
                   Explain={"Explain"}
                 />
               </div>
-              <div className="w-[200px] h-[250px]">
-                <SkillCard />
+              <div id="Card" className="w-[200px] h-[250px]">
+                <SkillCard
+                  MainText={"GitHub"}
+                  SubText={"깃허브로 커밋 할 수 있습니다."}
+                  Icon={"github"}
+                  Explain={"Explain"}
+                />
               </div>
-              <div className="w-[200px] h-[250px]">
-                <SkillCard />
+              <div id="Card" className="w-[200px] h-[250px]">
+                <SkillCard
+                  MainText={"GitHub"}
+                  SubText={"깃허브로 커밋 할 수 있습니다."}
+                  Icon={"github"}
+                  Explain={"Explain"}
+                />
               </div>
-            </div>
-            <div className="flex justify-center items-center gap-10 ">
-              <div className="w-[200px] h-[250px]">
-                <SkillCard />
+              <div id="Card" className="w-[200px] h-[250px]">
+                <SkillCard
+                  MainText={"GitHub"}
+                  SubText={"깃허브로 커밋 할 수 있습니다."}
+                  Icon={"github"}
+                  Explain={"Explain"}
+                />
               </div>
-              <div className="w-[200px] h-[250px]">
-                <SkillCard />
+              <div id="Card" className="w-[200px] h-[250px]">
+                <SkillCard
+                  MainText={"GitHub"}
+                  SubText={"깃허브로 커밋 할 수 있습니다."}
+                  Icon={"github"}
+                  Explain={"Explain"}
+                />
               </div>
-              <div className="w-[200px] h-[250px]">
-                <SkillCard />
+              <div id="Card" className="w-[200px] h-[250px]">
+                <SkillCard
+                  MainText={"GitHub"}
+                  SubText={"깃허브로 커밋 할 수 있습니다."}
+                  Icon={"github"}
+                  Explain={"Explain"}
+                />
               </div>
             </div>
           </div>

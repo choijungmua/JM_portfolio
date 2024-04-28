@@ -7,14 +7,13 @@
     position: relative;
   }
   .front {
-    background-color: red;
     z-index: 1;
     backface-visibility: hidden;
     position: absolute;
   }
   .back {
     position: absolute;
-    background: royalblue;
+    backface-visibility: hidden;
     transform: rotateY(180deg);
   }
 }
