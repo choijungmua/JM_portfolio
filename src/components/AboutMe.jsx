@@ -1,79 +1,74 @@
-// copyright - Choi Jung mu
-// 2024-04-18 Update
-//  업데이트 내용
-//  ScrollTrigger로 스크롤시 변경
-
-// import The React
-import React, { useEffect, useState } from "react";
-import { useRef } from "react";
-// import the img
-import commendation from "../assets/commendation.png";
-// import The gsap
-// What is gsap?
-// gsap이란 특정 애니메이션 라이브러리 입니다.
-// npm i gsap, (만약 React에서 사용하려고 한다면 npm i @react/gsap으로 다운받으면 됨.)
+// import React and other necessary libraries
+import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import Vane from "../assets/Vane.png";
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
-// gsap plugin
-gsap.registerPlugin(useGSAP, ScrollTrigger);
 function AboutMe() {
-  // Ref
-  const moving = useRef();
-  // 텍스트를 저장하는 상수
-  const frontEndText =
-    "SKillSKillSKillSKillSKillSKillSKillSKillSKillSKillSKillSKill";
-  // 변수
+  // Create a ref for the about section
+  const aboutRef = useRef(null);
 
-  let skills = gsap.timeline({
-    scrollTrigger: {
-      trigger: ".frontText",
-      scrub: true,
-      end: "top top ",
-    },
-  });
   useEffect(() => {
-    //스크롤시 FrontEnd Text 움직이기
+    const timeI = gsap.timeline({}); // 무한 반복하는 타임라인 생성
+    const timeRound = gsap.timeline({ delay: 2 }); // 무한 반복하는 타임라인 생성
+    const timeBar = gsap.timeline({}); // 무한 반복하는 타임라인 생성
 
-    gsap.to(".frontText", {
-      scrollTrigger: {
-        trigger: ".frontText",
-        duration: 3,
-        scrub: true,
-      },
-      xPercent: 10,
-      opacity: 0,
+    timeI.to(".isText", {
+      rotationX: 360,
+      yoyo: true,
+      repeat: -1,
+      delay: 3,
+      duration: 2, // 1초 동안 회전
+      ease: "none", // easing 효과 없음
+    });
+    timeRound.to("#roundMove", {
+      rotationY: 180,
+      x: "600px",
+      yoyo: true,
+      repeat: -1,
+      duration: 4,
+      ease: "power4.inOut",
+    });
+    gsap.from("#CHOIJUNGMU", {
+      rotationX: 180,
+      duration: 2,
+      ease: "power1.inOut",
     });
 
-    // Skill 글씨 -300에서 0까지 움직이기
-    skills.to("#skills", {
-      xPercent: 100,
-      duration: 1,
-    });
-  }, []); // useEffect 내에서 의존성 배열이 빈 배열로 지정되었습니다.
+    return () => {
+      timeI.kill(); // 컴포넌트가 언마운트 될 때 애니메이션 종료
+    };
+  }, []);
 
   return (
-    <div className="pointer-events-auto overflow-hidden flex-col w-full h-full flex bg-black text-white">
-      {/* Front Text */}
-      <div className="frontTextCont flex w-full h-[288px]">
-        <div className="frontText text-green-400 flex flex-col justify-start font-nanum-square-neo-heavy text-8xl items-center w-full">
-          <p className="frontText mr-96">{frontEndText}</p>
-          <p className="frontText text-white mr-96">
-            SKillSKillSKillSKillSKillSKillSKillSKillSKillSKillSKillSKillSKill
+    <div ref={aboutRef} className="flex flex-col justify-center items-center">
+      <div className="text-[150px] w-[70%] font-nanum-square-neo-heavy">
+        <p className="text-left flex text-violet-400">
+          Who <p className="isText ml-4"> i</p>s
+        </p>
+        <div className="w-1/2 bg-white flex h-[10px] rounded-full"></div>
+        <div className="flex flex-row">
+          <p id="CHOIJUNGMU" className="whitespace-nowrap flex">
+            CHO<p className="isText mr-8"> i</p> JUNG MU
           </p>
-          <p className="mr-96 frontText">{frontEndText}</p>
+          <p className="animate-bounce">?</p>
+        </div>
+        <div>
+          <div className="w-[800px] h-[200px] bg-gray-900 rounded-full items-center flex">
+            <div className="text-6xl w-full h-full justify-center items-center flex">
+              #열정 #노력 #배움
+            </div>
+            <div
+              id="roundMove"
+              className="rounded-full opacity-30 bg-white flex w-[200px] h-[200px] absolute"
+            ></div>
+          </div>
         </div>
       </div>
-      {/* Skill Text */}
-      <div className="SkillContainer flex w-full">
-        <h2 className="flex text-6xl font-nanum-square-neo-heavy" id="skills">
-          Skills.
-        </h2>
-      </div>
-      <div className="skillSec1 w-full h-[300vh] flex bg-white"></div>
-      gdgd
     </div>
   );
 }
+
 export default AboutMe;

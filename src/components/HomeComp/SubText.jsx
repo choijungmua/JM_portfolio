@@ -5,38 +5,38 @@ import Profile from "../../assets/Profile.jpg";
 import { useGSAP } from "@gsap/react";
 function SubText() {
   const container = useRef(null);
-  const ulRef = useRef(null);
-  gsap.registerPlugin(useGSAP, ScrollTrigger);
-  const sections = gsap.utils.toArray(".section");
-  useGSAP(() => {
-    // ScrollTrigger를 사용하여 스크롤 위치를 조절하여 가로 스크롤 시뮬레이션
-    const ulElement = ulRef.current;
-    if (!ulElement) return;
+  // const ulRef = useRef(null);
+  // gsap.registerPlugin(useGSAP, ScrollTrigger);
+  // const sections = gsap.utils.toArray(".section");
+  // useGSAP(() => {
+  //   // ScrollTrigger를 사용하여 스크롤 위치를 조절하여 가로 스크롤 시뮬레이션
+  //   const ulElement = ulRef.current;
+  //   if (!ulElement) return;
 
-    gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".work",
-        start: "center center",
-        end: "500%",
-        pin: true,
-        scrub: 1,
-        // markers: true,
-        snap: {
-          snapTo: 1 / (sections.length - 1),
-          inertia: false,
-          duration: { min: 0.1, max: 0.1 },
-        },
-        invalidateOnRefresh: true,
-        // anticipatePin: 1,
-      },
-    });
-  }, []);
+  //   gsap.to(sections, {
+  //     xPercent: -100 * (sections.length - 1),
+  //     ease: "none",
+  //     scrollTrigger: {
+  //       trigger: ".work",
+  //       start: "center center",
+  //       end: "500%",
+  //       pin: true,
+  //       scrub: 1,
+  //       // markers: true,
+  //       snap: {
+  //         snapTo: 1 / (sections.length - 1),
+  //         inertia: false,
+  //         duration: { min: 0.1, max: 0.1 },
+  //       },
+  //       invalidateOnRefresh: true,
+  //       // anticipatePin: 1,
+  //     },
+  //   });
+  // }, []);
 
   return (
     <div ref={container} className="overflow-hidden">
-      <section className="z-10 work h-screen ">
+      {/* <section className="z-10 work h-screen ">
         <ul ref={ulRef} className="flex flex-nowrap py-[3%] px-[30%] ">
           <li className="w-[600px] p-[100px] flex-shrink-0 section">
             <div className="block w-[100%] relative">
@@ -105,7 +105,7 @@ function SubText() {
           </li>
         </ul>
       </section>
-      <div className="w-[100vw] h-[300vh]"></div>
+      <div className="w-[100vw] h-[300vh]"></div> */}
     </div>
   );
 }

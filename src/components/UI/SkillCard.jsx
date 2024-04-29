@@ -11,18 +11,18 @@ function SkillCard({ MainText, SubText, Icon, Explain }) {
     setCard((card) => !card);
   };
   return (
-    <div className="w-full h-full cardContainer flex flex-start text-center text-black">
+    <div className=" cardContainer w-[200px] h-[250px] flex flex-start text-center text-black">
       <div onClick={cardClick} className="item w-full h-full rounded-3xl  ">
-        <div className="front w-full h-full  rounded-3xl text-center bg-white text-black">
+        <div className="front w-full h-full  rounded-3xl text-center flex flex-col items-center justify-center bg-white text-black">
           <p>{MainText}</p>
           <p>{SubText}</p>
           {Icon === "github" && (
-            <div>
-              <img src={github} alt="" className="w-1/2 h-1/2" />
+            <div className="w-full flex justify-center">
+              <img src={github} alt="" className="w-1/2" />
             </div>
           )}
         </div>
-        <div className="back w-full h-full rounded-3xl ">
+        <div className="back w-full h-full rounded-3xl bg-white ">
           <p>{Explain}</p>
         </div>
       </div>

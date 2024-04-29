@@ -16,6 +16,7 @@ gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function SkilledBy() {
   const Card = useRecoilValue(gientCard);
+  const cardArray = gsap.utils.toArray("#Card");
   useGSAP(() => {
     gsap.from(".animationMy", {
       x: window.innerWidth,
@@ -42,19 +43,6 @@ function SkilledBy() {
       },
     });
 
-    gsap.to(".mySkillsRound", {
-      scale: 5,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".mySkillsCont",
-        start: "top center",
-        end: "300 center",
-        scrub: 1,
-        duration: 1,
-        // markers: true,
-      },
-    });
-
     gsap.from(".mainSkillsLeft", {
       x: -window.innerWidth,
       ease: "none",
@@ -64,7 +52,7 @@ function SkilledBy() {
         end: "20% 100%",
         scrub: 1,
         duration: 1,
-        markers: true,
+        // markers: true,
       },
     });
 
@@ -77,7 +65,7 @@ function SkilledBy() {
         end: "20% 100%",
         scrub: 1,
         duration: 1,
-        markers: true,
+        // markers: true,
       },
     });
   }, []);
@@ -86,31 +74,45 @@ function SkilledBy() {
       width: "400px",
       height: "500px",
       ease: "ease-in",
+      rotateY: "360deg",
     });
-    gsap.to("#Card", {
+    gsap.to("#cardArray", {
       rotateY: "360deg",
       ease: "ease-in",
+      scrollTrigger: {
+        markers: true,
+        trigger: "#cardArray",
+        scrub: 1,
+        start: "center bottom",
+        end: "center center",
+      },
     });
   });
   return (
     <div className="">
-      <div className="absolute mySkillsCont w-[100vw] h-[100vh] flex justify-center items-center ">
-        <div className="mySkillsRound w-36 h-36 opacity-30 rounded-full bg-white"></div>
-      </div>
-      <div className="skillCont relative w-[100vw] h-[100vh] flex justify-center items-center flex-col text-6xl gap-2 absolute font-nanum-square-neo-ExtraBold">
+      <div className="skillCont opacity-50 flex justify-center items-center flex-col text-9xl gap-2 font-nanum-square-neo-ExtraBold">
         <p className="animationMy">My</p>
         <p className="animationSkills">Skills</p>
       </div>
-      <div className="mainSkillCont h-[100vh]">
-        <p className="mb-24 w-full flex justify-center text-2xl font-nanum-square-neo-heavy">
+      <div className="mainSkillCont">
+        {/* <p className="mb-24 w-full flex justify-center text-2xl font-nanum-square-neo-heavy">
           <span className="mainSkillsLeft mr-2">My</span>
           <span className="mainSkillsRight">Skills</span>
-        </p>
+        </p> */}
         {!Card ? (
           <div className="w-full h-full flex flex-col justify-center items-center">
             <p className="my-12">형상관리</p>
-            <div className="w-full h-full flex gap-5 justify-center items-center">
-              <div id="Card" className="gd w-[200px] h-[250px]">
+            <div className="w-full flex flex-col gap-5 justify-center items-center">
+              <div id="Card" className="flex">
+                <SkillCard
+                  MainText={"GitHub"}
+                  SubText={"깃허브로 커밋 할 수 있습니다."}
+                  Icon={"github"}
+                  Explain={"Explain"}
+                />
+                <p>ㅎㅇㅎㅇㅎㅇ</p>
+              </div>
+              <div id="Card" className="">
                 <SkillCard
                   MainText={"GitHub"}
                   SubText={"깃허브로 커밋 할 수 있습니다."}
@@ -118,7 +120,7 @@ function SkilledBy() {
                   Explain={"Explain"}
                 />
               </div>
-              <div id="Card" className="w-[200px] h-[250px]">
+              <div id="Card" className="">
                 <SkillCard
                   MainText={"GitHub"}
                   SubText={"깃허브로 커밋 할 수 있습니다."}
@@ -126,7 +128,7 @@ function SkilledBy() {
                   Explain={"Explain"}
                 />
               </div>
-              <div id="Card" className="w-[200px] h-[250px]">
+              <div id="Card" className="">
                 <SkillCard
                   MainText={"GitHub"}
                   SubText={"깃허브로 커밋 할 수 있습니다."}
@@ -134,7 +136,7 @@ function SkilledBy() {
                   Explain={"Explain"}
                 />
               </div>
-              <div id="Card" className="w-[200px] h-[250px]">
+              <div id="Card" className="">
                 <SkillCard
                   MainText={"GitHub"}
                   SubText={"깃허브로 커밋 할 수 있습니다."}
@@ -142,15 +144,7 @@ function SkilledBy() {
                   Explain={"Explain"}
                 />
               </div>
-              <div id="Card" className="w-[200px] h-[250px]">
-                <SkillCard
-                  MainText={"GitHub"}
-                  SubText={"깃허브로 커밋 할 수 있습니다."}
-                  Icon={"github"}
-                  Explain={"Explain"}
-                />
-              </div>
-              <div id="Card" className="w-[200px] h-[250px]">
+              <div id="Card" className=" ">
                 <SkillCard
                   MainText={"GitHub"}
                   SubText={"깃허브로 커밋 할 수 있습니다."}
@@ -159,10 +153,11 @@ function SkilledBy() {
                 />
               </div>
             </div>
+            <div className="w-1/2 mt-24 "></div>
           </div>
         ) : (
-          <div className="w-full h-full flex flex-col justify-center items-center">
-            <div className="Skill2 w-[200px] h-[250px]">
+          <div className="w-full h-full  flex flex-col justify-center items-center">
+            <div className="Skill2 absolute w-[200px] h-[250px]">
               <SkillCard />
             </div>
           </div>
