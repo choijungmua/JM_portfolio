@@ -43,7 +43,10 @@ function AboutMe() {
   }, []);
 
   return (
-    <div ref={aboutRef} className="flex flex-col justify-center items-center">
+    <div
+      ref={aboutRef}
+      className="flex w-full relative flex-col justify-center items-center"
+    >
       <div className="text-[150px] w-[70%] font-nanum-square-neo-heavy">
         <p className="text-left flex text-violet-400">
           Who <p className="isText ml-4"> i</p>s

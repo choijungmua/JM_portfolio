@@ -4,6 +4,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Vane from "../assets/Vane.png";
 import AboutMe from "./AboutMe";
+import Intro from "./Intro";
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,8 +32,12 @@ function SubAbout() {
       <section class="panel w-[100vw] flex">
         <AboutMe />
       </section>
-      <section class="panel bg-red-400 w-[100vw]">TWO</section>
-      <section class="panel bg-white w-[100vw]">THREE</section>
+
+      <section class="panel w-[100vw]">
+        {" "}
+        <Intro />
+      </section>
+      <section class="panel w-[100vw]">THREE</section>
     </div>
   );
 }

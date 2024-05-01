@@ -80,7 +80,6 @@ function SkilledBy() {
       rotateY: "360deg",
       ease: "ease-in",
       scrollTrigger: {
-        markers: true,
         trigger: "#cardArray",
         scrub: 1,
         start: "center bottom",
