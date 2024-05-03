@@ -45,7 +45,7 @@ function AboutMe() {
   return (
     <div
       ref={aboutRef}
-      className="flex w-full relative flex-col justify-center items-center"
+      className="flex w-[100vw] relative flex-col justify-center items-center"
     >
       <div className="text-[150px] w-[70%] font-nanum-square-neo-heavy">
         <p className="text-left flex text-violet-400">

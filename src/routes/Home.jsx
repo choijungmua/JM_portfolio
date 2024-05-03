@@ -30,6 +30,7 @@ function Home() {
       {/* Navigation */}
       <Navigation />
       {/* MainPage */}
+
       <MainText />
       {/* About Me */}
       {/* <AboutMe /> */}

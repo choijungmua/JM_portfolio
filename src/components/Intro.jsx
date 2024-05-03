@@ -7,94 +7,28 @@ gsap.registerPlugin(ScrollTrigger);
 
 function SubAbout() {
   // Create a ref for the about section
-  const timeKindly = gsap.timeline({}); // 무한 반복하는 타임라인 생성
   useEffect(() => {
-    timeKindly.to("#Text1", {
+    gsap.from("#Text", {
       x: 360,
       y: 150,
-      repeat: -1,
-      yoyo: 1,
-      duration: 0.2,
-      repeatDelay: 1,
-      ease: "none", // easing 효과 없음
-    });
-    timeKindly.to("#Text2", {
-      x: 360,
-      y: 150,
-      repeat: -1,
-      yoyo: 1,
-      duration: 0.2,
-      repeatDelay: 1,
-      ease: "none", // easing 효과 없음
-    });
-    timeKindly.to("#Text3", {
-      x: 360,
-      y: 150,
-      repeat: -1,
-      yoyo: 1,
-      duration: 0.2,
-      repeatDelay: 1,
-      ease: "none", // easing 효과 없음
-    });
-    timeKindly.to("#Text4", {
-      x: 360,
-      y: 150,
-      repeat: -1,
-      yoyo: 1,
-      duration: 0.2,
-      repeatDelay: 1,
-      ease: "none", // easing 효과 없음
-    });
-    timeKindly.to("#Text5", {
-      x: 360,
-      y: 150,
-      repeat: -1,
-      yoyo: 1,
-      duration: 0.2,
-      repeatDelay: 1,
-      ease: "none", // easing 효과 없음
-    });
-    timeKindly.to("#Text6", {
-      x: 360,
-      y: 150,
-      repeat: -1,
-      yoyo: 1,
-      duration: 0.2,
-      repeatDelay: 1,
-      ease: "none", // easing 효과 없음
-    });
-    timeKindly.to("#Text7", {
-      x: 360,
-      y: 150,
-      repeat: -1,
-      yoyo: 1,
-      duration: 0.2,
-      repeatDelay: 1,
-      ease: "none", // easing 효과 없음
-    });
-    timeKindly.to("#Text8", {
-      x: 360,
-      y: 150,
-      repeat: -1,
-      yoyo: 1,
-      duration: 0.2,
-      repeatDelay: 1,
+      scrollTrigger: {
+        trigger: "#textBox22",
+        markers: true,
+        scrub: true,
+        start: "center center",
+        end: "30% top",
+      },
       ease: "none", // easing 효과 없음
     });
   }, []);
 
   return (
-    <div id="textBox22" className="w-full h-full relative">
+    <div id="textBox22" className="w-[100vw] h-full relative">
       <div className="flex w-full h-full items-center">
-        <p className="flex overflow-hidden jsutify-center font-nanum-square-neo-Bold text-6xl whitespace-nowrap">
-          <p id="Text1">안녕하세요</p>
-          <p id="Text2">저는</p>
-          <p id="Text3">친절</p>
-          <p id="Text4">하고</p>
-          <p id="Text5">성장하는</p>
-          <p id="Text6">좋은</p>
-          <p id="Text7">개발자가</p>
-          <p id="Text8">되고싶습니다</p>
+        <p className="flex overflow-hidden justify-center font-nanum-square-neo-Bold text-6xl whitespace-nowrap">
+          <p id="Text" className="">
+            저는모든문제에쉽게접근하는개발자가되고싶습니다
+          </p>
         </p>
       </div>
     </div>
