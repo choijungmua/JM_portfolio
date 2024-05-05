@@ -38,7 +38,7 @@ function SubAbout() {
   }, []);
   return (
     <div className="w-full h-full overflow-hidden">
-      <div className="AboutCont w-[400vw] h-[100vh] flex flex-nowrap ">
+      <div className="AboutCont w-[500vw] h-[100vh] flex flex-nowrap ">
         <section className="panel w-[100vw] flex">
           <AboutMe />
         </section>
@@ -51,18 +51,7 @@ function SubAbout() {
           </div>
         </section>{" "}
         <section className="panel w-[100vw] h-[100vh] flex justify-center items-center">
-          <div className="w-1/2">
-            <img src={Profile} alt="" className="" />
-          </div>
-          <div className="w-full h-full text-center flex justify-center items-center font-nanum-square-neo-Bold text-2xl flex-col">
-            <p>안녕하세요</p>
-            <p>저의 키워드는 3가지로 나눌 수 있습니다.</p>
-            <div className="flex gap-4 font-nanum-square-neo-Bold">
-              <p className="text-green-400">열정</p>
-              <p className="text-red-400">노력</p>
-              <p className="text-blue-400">배움</p>
-            </div>
-          </div>
+          <EndIntro />
         </section>
       </div>
     </div>

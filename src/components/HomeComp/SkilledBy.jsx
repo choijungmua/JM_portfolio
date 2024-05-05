@@ -23,8 +23,8 @@ function SkilledBy() {
       ease: "none",
       scrollTrigger: {
         trigger: ".skillCont",
-        start: "top center",
-        end: "center center",
+        start: "bottom bottom",
+        end: "bottom bottom",
         duration: 1,
         scrub: 1,
         // markers: true,
@@ -35,8 +35,8 @@ function SkilledBy() {
       ease: "none",
       scrollTrigger: {
         trigger: ".skillCont",
-        start: "top center",
-        end: "center center",
+        start: "bottom bottom",
+        end: "bottom bottom",
         scrub: 1,
         duration: 1,
         // markers: true,
@@ -93,7 +93,7 @@ function SkilledBy() {
         <p className="animationMy">My</p>
         <p className="animationSkills">Skills</p>
       </div>
-      <div className="mainSkillCont">
+      <div className="mainSkillCont w-full h-full">
         {/* <p className="mb-24 w-full flex justify-center text-2xl font-nanum-square-neo-heavy">
           <span className="mainSkillsLeft mr-2">My</span>
           <span className="mainSkillsRight">Skills</span>
@@ -101,15 +101,14 @@ function SkilledBy() {
         {!Card ? (
           <div className="w-full h-full flex flex-col justify-center items-center">
             <p className="my-12">형상관리</p>
-            <div className="w-full flex flex-col gap-5 justify-center items-center">
-              <div id="Card" className="flex">
+            <div className="w-full h-full relative flex flex-row gap-5 justify-center items-center">
+              <div id="Card" className="">
                 <SkillCard
                   MainText={"GitHub"}
                   SubText={"깃허브로 커밋 할 수 있습니다."}
                   Icon={"github"}
                   Explain={"Explain"}
                 />
-                <p>ㅎㅇㅎㅇㅎㅇ</p>
               </div>
               <div id="Card" className="">
                 <SkillCard
@@ -152,13 +151,10 @@ function SkilledBy() {
                 />
               </div>
             </div>
-            <div className="w-1/2 mt-24 "></div>
           </div>
         ) : (
-          <div className="w-full h-full  flex flex-col justify-center items-center">
-            <div className="Skill2 absolute w-[200px] h-[250px]">
-              <SkillCard />
-            </div>
+          <div className="w-full h-full flex flex-col justify-center items-center">
+            <SkillCard />
           </div>
         )}
       </div>

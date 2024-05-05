@@ -20,22 +20,10 @@ function SubAbout() {
       ease: "none", // easing 효과 없음
     });
     gsap.to(".blurRoundBall", {
-      x: 3000,
-      scale: 200,
+      x: 2000,
+      scale: 100,
       scrollTrigger: {
         trigger: "#introCont",
-        markers: true,
-        scrub: true,
-        start: "center center",
-        end: "bottom top",
-      },
-      ease: "none", // easing 효과 없음
-    });
-    gsap.from(".blurRoundBall", {
-      opacity: 0,
-      scrollTrigger: {
-        trigger: "#introCont",
-        markers: true,
         scrub: true,
         start: "center center",
         end: "bottom top",
@@ -45,7 +33,7 @@ function SubAbout() {
   }, []);
 
   return (
-    <div id="introCont" className="w-[100vw] h-full relative overflow-hidden">
+    <div id="introCont" className="w-[100vw] h-full relative ">
       <div className="flex blur-3xl h-full flex-col justify-around gap-10 absolute">
         <div className="blurRoundBall w-[12px]  h-[12px] bg-red-400 rounded-full"></div>
         <div className="blurRoundBall w-[15px] h-[15px] bg-sky-400 rounded-full"></div>
@@ -55,7 +43,10 @@ function SubAbout() {
         <div className="blurRoundBall w-[14px] h-[14px] bg-purple-400 rounded-full"></div>
       </div>
       <div className="flex w-full h-full items-center">
-        <p className="flex overflow-hidden justify-center font-nanum-square-neo-Bold text-6xl whitespace-nowrap">
+        <p
+          className="flex overflow-hidden justify-start
+         font-nanum-square-neo-Bold text-6xl p-1 whitespace-nowrap"
+        >
           <p id="introText" className="">
             저는모든문제에쉽게접근하는개발자가되고싶습니다
           </p>
