@@ -8,6 +8,7 @@ import Intro from "./Intro";
 import Me from "../assets/Me.jpg";
 import EndIntro from "./EndIntro";
 import Profile from "../assets/Profile.jpg";
+import MiddleIntro from "./MiddleIntro";
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,9 +47,7 @@ function SubAbout() {
           <Intro />
         </section>
         <section className="panel w-[100vw] h-[100vh] flex justify-center items-center">
-          <div className="w-1/2">
-            <img src={Me} alt="" className="" />
-          </div>
+          <MiddleIntro />
         </section>{" "}
         <section className="panel w-[100vw] h-[100vh] flex justify-center items-center">
           <EndIntro />

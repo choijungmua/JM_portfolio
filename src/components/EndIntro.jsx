@@ -19,9 +19,12 @@ function EndIntro() {
       ease: "none", // easing 효과 없음
     });
   }, []);
+  const Passion = () => {
+    gsap.to("", {});
+  };
   return (
     <>
-      <div className="w-1/2">
+      <div className="w-1/2 flex items-center justify-center">
         <img src={Profile} alt="" className="" />
       </div>
       <div
@@ -31,10 +34,13 @@ function EndIntro() {
         <p>안녕하세요</p>
         <p>저의 키워드는 3가지로 나눌 수 있습니다.</p>
         <div className="flex gap-4 font-nanum-square-neo-Bold">
-          <p className="text-green-400">열정</p>
+          <p onClick={Passion} className="text-green-400">
+            열정
+          </p>
           <p className="text-red-400">노력</p>
           <p className="text-blue-400">배움</p>
         </div>
+        <p></p>
       </div>
     </>
   );
