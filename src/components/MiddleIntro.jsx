@@ -11,13 +11,13 @@ function SubAbout() {
   useEffect(() => {
     gsap.from("#meImg", {
       ease: "none",
-      y: 2000,
+      y: 1000,
       scrollTrigger: {
         trigger: ".meCont",
         scrub: 1,
         start: "center top",
         end: "bottom 20%",
-        markers: true,
+        // markers: true,
       },
     });
   }, []);

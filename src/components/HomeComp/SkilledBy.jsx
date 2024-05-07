@@ -88,11 +88,7 @@ function SkilledBy() {
     });
   });
   return (
-    <div className="">
-      <div className="skillCont opacity-50 flex justify-center items-center flex-col text-9xl gap-2 font-nanum-square-neo-ExtraBold">
-        <p className="animationMy">My</p>
-        <p className="animationSkills">Skills</p>
-      </div>
+    <div className="w-[100vw] h-[100vh]">
       <div className="mainSkillCont w-full h-full">
         {/* <p className="mb-24 w-full flex justify-center text-2xl font-nanum-square-neo-heavy">
           <span className="mainSkillsLeft mr-2">My</span>
@@ -100,55 +96,93 @@ function SkilledBy() {
         </p> */}
         {!Card ? (
           <div className="w-full h-full flex flex-col justify-center items-center">
-            <p className="my-12">형상관리</p>
-            <div className="w-full h-full relative flex flex-row gap-5 justify-center items-center">
-              <div id="Card" className="">
-                <SkillCard
-                  MainText={"GitHub"}
-                  SubText={"깃허브로 커밋 할 수 있습니다."}
-                  Icon={"github"}
-                  Explain={"Explain"}
-                />
+            <div className="skillCont absolute flex justify-center items-center flex-col text-9xl gap-2 font-nanum-square-neo-ExtraBold">
+              <p className="animationMy">My</p>
+              <p className="animationSkills">Skills</p>
+            </div>
+            <div className="w-full h-full relative flex flex-col gap-5 justify-center items-center">
+              <div className="flex gap-5">
+                <div id="Card" className="">
+                  <SkillCard
+                    MainText={"GitHub"}
+                    SubText={"깃허브로 branch와 merge를 쉽게 다룰 수 있습니다."}
+                    Icon={require("../../assets/github.png")}
+                    Explain={"Explain"}
+                  />
+                </div>
+                <div id="Card" className="">
+                  <SkillCard
+                    MainText={"React"}
+                    SubText={
+                      "React를 이용하여 웹을 제작 할 수 있으며 다양한 Hook들을 사용 할 수 있습니다."
+                    }
+                    Icon={require("../../assets/React.png")}
+                    Explain={"Explain"}
+                  />
+                </div>
+                <div id="Card" className="">
+                  <SkillCard
+                    MainText={"Recoil"}
+                    SubText={"Recoil을 이용하여 전역관리를 할 수 있습니다.."}
+                    Icon={require("../../assets/Recoil.png")}
+                    Explain={"Explain"}
+                  />
+                </div>
+                <div id="Card" className="">
+                  <SkillCard
+                    MainText={"Sass"}
+                    SubText={"Sass를 이용하여 CSS를 작성 할 수 있습니다.."}
+                    Icon={require("../../assets/sass.png")}
+                    Explain={"Explain"}
+                  />
+                </div>
+                <div id="Card" className="">
+                  <SkillCard
+                    MainText={"Next.js"}
+                    SubText={
+                      "Next.js로 목업, Vercel 배포를 이용할 수 있습니다."
+                    }
+                    Icon={require("../../assets/next.png")}
+                    Explain={"Explain"}
+                  />
+                </div>
               </div>
-              <div id="Card" className="">
-                <SkillCard
-                  MainText={"GitHub"}
-                  SubText={"깃허브로 커밋 할 수 있습니다."}
-                  Icon={"github"}
-                  Explain={"Explain"}
-                />
-              </div>
-              <div id="Card" className="">
-                <SkillCard
-                  MainText={"GitHub"}
-                  SubText={"깃허브로 커밋 할 수 있습니다."}
-                  Icon={"github"}
-                  Explain={"Explain"}
-                />
-              </div>
-              <div id="Card" className="">
-                <SkillCard
-                  MainText={"GitHub"}
-                  SubText={"깃허브로 커밋 할 수 있습니다."}
-                  Icon={"github"}
-                  Explain={"Explain"}
-                />
-              </div>
-              <div id="Card" className="">
-                <SkillCard
-                  MainText={"GitHub"}
-                  SubText={"깃허브로 커밋 할 수 있습니다."}
-                  Icon={"github"}
-                  Explain={"Explain"}
-                />
-              </div>
-              <div id="Card" className=" ">
-                <SkillCard
-                  MainText={"GitHub"}
-                  SubText={"깃허브로 커밋 할 수 있습니다."}
-                  Icon={"github"}
-                  Explain={"Explain"}
-                />
+              <div className="flex gap-5">
+                {" "}
+                <div id="Card" className=" ">
+                  <SkillCard
+                    MainText={"TailwindCSS"}
+                    SubText={"TailwindCSS를 이용하여 CSS를 작성할 수 있습니다."}
+                    Icon={require("../../assets/tailwind.png")}
+                    Explain={"Explain"}
+                  />
+                </div>
+                <div id="Card" className=" ">
+                  <SkillCard
+                    MainText={"Styled Components"}
+                    SubText={
+                      "Styled Components를 이용하여 CSS를 작성할 수 있습니다."
+                    }
+                    Icon={require("../../assets/styledcomponents.png")}
+                    Explain={"Explain"}
+                  />
+                </div>{" "}
+                <div id="Card" className=" ">
+                  <SkillCard
+                    MainText={"TypeScript"}
+                    SubText={"잘하기위해 노력할것입니다."}
+                    Icon={require("../../assets/github.png")}
+                    Explain={"Explain"}
+                  />
+                </div>
+                <div id="Card" className=" ">
+                  <SkillCard
+                    MainText={"NodeJs"}
+                    SubText={"잘하기위해 노력할것입니다."}
+                    Icon={require("../../assets/github.png")}
+                    Explain={"Explain"}
+                  />
+                </div>
               </div>
             </div>
           </div>
