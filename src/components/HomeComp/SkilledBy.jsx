@@ -96,7 +96,7 @@ function SkilledBy() {
         </p> */}
         {!Card ? (
           <div className="w-full h-full flex flex-col justify-center items-center">
-            <div className="skillCont absolute flex justify-center items-center flex-col text-9xl gap-2 font-nanum-square-neo-ExtraBold">
+            <div className="skillCont z-10 pointer-events-none opacity-40 absolute flex justify-center items-center flex-col text-[150px] gap-2 font-nanum-square-neo-ExtraBold">
               <p className="animationMy">My</p>
               <p className="animationSkills">Skills</p>
             </div>
@@ -128,11 +128,11 @@ function SkilledBy() {
                     Explain={"Explain"}
                   />
                 </div>
-                <div id="Card" className="">
+                <div id="Card" className=" ">
                   <SkillCard
-                    MainText={"Sass"}
-                    SubText={"Sass를 이용하여 CSS를 작성 할 수 있습니다.."}
-                    Icon={require("../../assets/sass.png")}
+                    MainText={"TypeScript"}
+                    SubText={"잘하기위해 노력할것입니다."}
+                    Icon={require("../../assets/github.png")}
                     Explain={"Explain"}
                   />
                 </div>
@@ -149,6 +149,14 @@ function SkilledBy() {
               </div>
               <div className="flex gap-5">
                 {" "}
+                <div id="Card" className=" ">
+                  <SkillCard
+                    MainText={"NodeJs"}
+                    SubText={"잘하기위해 노력할것입니다."}
+                    Icon={require("../../assets/github.png")}
+                    Explain={"Explain"}
+                  />
+                </div>
                 <div id="Card" className=" ">
                   <SkillCard
                     MainText={"TailwindCSS"}
@@ -169,17 +177,17 @@ function SkilledBy() {
                 </div>{" "}
                 <div id="Card" className=" ">
                   <SkillCard
-                    MainText={"TypeScript"}
-                    SubText={"잘하기위해 노력할것입니다."}
-                    Icon={require("../../assets/github.png")}
+                    MainText={"GSAP"}
+                    SubText={"GSAP로 웹 Animation을 제작 할 수 있습니다."}
+                    Icon={require("../../assets/gsap.png")}
                     Explain={"Explain"}
                   />
                 </div>
-                <div id="Card" className=" ">
+                <div id="Card" className="">
                   <SkillCard
-                    MainText={"NodeJs"}
-                    SubText={"잘하기위해 노력할것입니다."}
-                    Icon={require("../../assets/github.png")}
+                    MainText={"Sass"}
+                    SubText={"Sass를 이용하여 CSS를 작성 할 수 있습니다.."}
+                    Icon={require("../../assets/sass.png")}
                     Explain={"Explain"}
                   />
                 </div>
