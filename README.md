@@ -19,7 +19,7 @@ Skills 꾸미기
 - React
 - Tailwind CSS
 - npm
-- GSAP
+- GSAP- ScrollTrigger
 - Recoil
   > 코드리뷰
   > gsap를 이용하여 메인 페이지를 꾸미는데 디자인적인 요소와 나를 잘 표현하고 싶은데
