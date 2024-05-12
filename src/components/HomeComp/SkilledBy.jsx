@@ -100,8 +100,8 @@ function SkilledBy() {
               <p className="animationMy">My</p>
               <p className="animationSkills">Skills</p>
             </div>
-            <div className="w-full h-full relative flex flex-col gap-5 justify-center items-center">
-              <div className="flex gap-5">
+            <div className="skillCont w-full h-full relative flex flex-col gap-5 justify-center items-center">
+              <div className="animationMy flex gap-5">
                 <div id="Card" className="">
                   <SkillCard
                     MainText={"GitHub"}
@@ -132,7 +132,7 @@ function SkilledBy() {
                   <SkillCard
                     MainText={"TypeScript"}
                     SubText={"잘하기위해 노력할것입니다."}
-                    Icon={require("../../assets/github.png")}
+                    Icon={require("../../assets/TypeScript.png")}
                     Explain={"Explain"}
                   />
                 </div>
@@ -147,13 +147,13 @@ function SkilledBy() {
                   />
                 </div>
               </div>
-              <div className="flex gap-5">
+              <div className="animationSkills flex gap-5">
                 {" "}
-                <div id="Card" className=" ">
+                <div id="Card" className="">
                   <SkillCard
                     MainText={"NodeJs"}
                     SubText={"잘하기위해 노력할것입니다."}
-                    Icon={require("../../assets/github.png")}
+                    Icon={require("../../assets/NodeJs.png")}
                     Explain={"Explain"}
                   />
                 </div>
