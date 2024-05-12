@@ -17,10 +17,13 @@ function SkillCard({ MainText, SubText, Icon, Explain }) {
           </div>
         </div>
         <div className="back w-full h-full rounded-3xl bg-white ">
-          <p>{Explain}</p>
+          <div className="w-full h-full flex justify-center">
+            <button>하이</button>
+          </div>
+          {/* <p>{Explain}</p>
           <div className="h-1/2 mx-2 border-2 rounded-3xl border-black flex items-center justify-center">
             <p>{SubText}</p>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

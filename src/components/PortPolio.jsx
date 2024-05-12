@@ -12,37 +12,54 @@ import { useRef } from "react";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function PortPolio() {
-  const container = useRef();
-
-  useGSAP(
-    () => {
-      ScrollTrigger.create({
-        trigger: ".box-a",
-        start: "919",
-        end: "+=919",
-        pin: true,
+  useEffect(() => {
+    gsap.to("#portSection1", {
+      ease: "none",
+      x: 200,
+      width: 200,
+      rotate: 720,
+      duration: 0.2,
+      color: "white",
+      scrollTrigger: {
+        trigger: ".home",
+        scrub: 1,
+        start: "20% bottom",
+        end: "top bottom",
+      },
+    });
+    gsap.from("#portMainText", {
+      ease: "none",
+      opacity: 0,
+      y: 100,
+      color: "white",
+      scrollTrigger: {
+        trigger: ".home",
+        scrub: 1,
+        start: "center bottom",
+        end: "top bottom",
         markers: true,
-      });
-    },
-    { scope: container }
-  );
+      },
+    });
+  });
 
   return (
-    <main
-      className="home text-white h-[300vh] bg-gray-900 flex flex-col"
-      ref={container}
-    >
-      <div className="box box-a w-full h-full flex" data-speed="0.5">
-        a
+    <section className="home text-white h-[100vh] bg-black flex">
+      <div className="flex flex-col w-full h-full">
+        <div className="mb-24">
+          <p
+            id="portSection1"
+            className="text-black text-center font-nanum-square-neo-heavy text-3xl"
+          >
+            PortPolo
+          </p>
+        </div>
+        <div className="w-full flex justify-center">
+          <p id="portMainText" className="text-2xl">
+            SoloProJect
+          </p>
+        </div>
       </div>
-      <div className="box box-b w-full h-full flex" data-speed="0.8">
-        b
-      </div>
-      <div className="flex box w-full box-c h-full" data-speed="1.2">
-        c
-      </div>
-      <div className="line"></div>
-    </main>
+    </section>
   );
 }
 

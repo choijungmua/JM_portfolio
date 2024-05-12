@@ -1,7 +1,7 @@
 function Navigation() {
   return (
     // 사이드바
-    <div className="w-full sticky top-10 flex justify-center">
+    <div className="w-full sticky z-50 top-10 flex justify-center">
       <div className="w-1/4">
         {/* 원 4개 */}
         <div className="justify-between flex relative">

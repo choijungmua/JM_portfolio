@@ -19,6 +19,7 @@ import SubText from "../components/HomeComp/SubText";
 import MainText from "../components/HomeComp/MainText";
 import SkilledBy from "../components/HomeComp/SkilledBy";
 import Footer from "../components/HomeComp/Footer";
+import PortPolio from "../components/PortPolio";
 // import AboutMe from "../components/AboutMe";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 function Home() {
@@ -41,6 +42,8 @@ function Home() {
       <SkilledBy />
       {/* Horizontal */}
       <SubText />
+      {/* PortPoilo */}
+      <PortPolio />
     </div>
   );
 }
