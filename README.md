@@ -15,7 +15,7 @@ Skills 꾸미기
 
 - HTML
 - CSS
-- Styled Components
+- Styled Components!
 - React
 - Tailwind CSS
 - npm
