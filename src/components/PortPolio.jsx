@@ -9,88 +9,42 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 // import the React
 import { useEffect } from "react";
 import { useRef } from "react";
-import Imac from "../assets/Imac.jpg";
-import Iphone from "../assets/Iphone.png";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function PortPolio() {
   useEffect(() => {
-    gsap.to("#portSection1", {
+    gsap.from("#portMuflixText", {
       ease: "none",
-      x: 200,
-      width: 200,
-      rotate: 720,
-      duration: 0.2,
-      color: "white",
-      scrollTrigger: {
-        trigger: ".home",
-        scrub: 1,
-        start: "20% bottom",
-        end: "top bottom",
-      },
-    });
-    gsap.from("#portMainText", {
-      ease: "none",
-      opacity: 0,
-      y: 100,
-      color: "white",
-      scrollTrigger: {
-        trigger: ".home",
-        scrub: 1,
-        start: "center bottom",
-        end: "top bottom",
-      },
-    });
-    gsap.to("#portMuflixCont", {
-      ease: "none",
-      x: 200,
-      width: 200,
-      rotate: 720,
-      duration: 0.2,
+      scale: 20,
+      y: 400,
+      text: "ProJectProJect",
+      duration: 0.5,
       color: "white",
       scrollTrigger: {
         trigger: "#muflixCont",
-        scrub: 1,
-        start: "center bottom",
-        end: "top bottom",
+        scrub: 2,
+        start: "top bottom",
+        end: "center bottom",
         markers: true,
       },
     });
   });
 
   return (
-    <section className="home text-white z-10 bg-black flex">
-      <div className="flex flex-col w-full h-full">
-        <div className="mb-8">
-          <p
-            id="portSection1"
-            className="text-black text-center font-nanum-square-neo-heavy text-3xl"
-          >
-            PortPolo
-          </p>
-        </div>
+    <section className="home text-white z-10 flex">
+      <div className="flex flex-col items-center w-full h-full">
         <div className="w-full  flex-col flex items-center justify-center">
-          <div className="w-full z-10">
+          <div className="w-full flex justify-center z-10">
             <p
-              id="portMuflixCont"
-              className="text-red-500 font-nanum-square-neo-heavy text-4xl mt-24 absolute"
+              id="portMuflixText"
+              className="text-white mt-12 font-nanum-square-neo-heavy text-4xl absolute"
             >
-              SoloProJect
+              portfolio
             </p>
             <div
               id="muflixCont"
               className="w-full flex-col bg-red-500 h-[100vh] flex justify-center items-center"
-            >
-              <img src={Imac} alt="" />
-            </div>
-            {/* <img src={Iphone} alt="" /> */}
-          </div>
-          <div className="w-full flex-col z-10 bg-sky-200 h-[100vh] flex justify-center items-center">
-            <p id="portMainText" className="text-2xl">
-              SoloProJect
-            </p>
-            <img src={Imac} alt="" />
-            {/* <img src={Iphone} alt="" /> */}
+            ></div>
           </div>
         </div>
       </div>
