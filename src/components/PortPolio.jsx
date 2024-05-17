@@ -9,6 +9,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 // import the React
 import { useEffect } from "react";
 import { useRef } from "react";
+import PortComp from "./PortComp";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function PortPolio() {
@@ -41,10 +42,9 @@ function PortPolio() {
             >
               portfolio
             </p>
-            <div
-              id="muflixCont"
-              className="w-full flex-col bg-red-500 h-[100vh] flex justify-center items-center"
-            ></div>
+            <div className="w-full flex h-full bg-red-100 items-center justify-center">
+              <PortComp />
+            </div>
           </div>
         </div>
       </div>
