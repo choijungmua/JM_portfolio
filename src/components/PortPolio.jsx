@@ -29,6 +29,18 @@ function PortPolio() {
         markers: true,
       },
     });
+    gsap.from(".PortSection1", {
+      ease: "none",
+      x: -400,
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: ".PortSecCom",
+        scrub: 2,
+        start: "center bottom",
+        end: "center bottom",
+        markers: true,
+      },
+    });
   });
 
   return (
@@ -38,12 +50,14 @@ function PortPolio() {
           <div className="w-full flex justify-center z-10">
             <p
               id="portMuflixText"
-              className="text-white mt-12 font-nanum-square-neo-heavy text-4xl absolute"
+              className="text-white font-nanum-square-neo-heavy text-4xl absolute"
             >
               portfolio
             </p>
-            <div className="w-full flex h-full bg-red-100 items-center justify-center">
-              <PortComp />
+            <div className="PortSecCom w-full flex h-full bg-red-100 items-center ">
+              <div className="PortSection1 ml-24 mt-72">
+                <PortComp />
+              </div>
             </div>
           </div>
         </div>
