@@ -57,6 +57,15 @@ function PortPolio() {
             <div className="PortSecCom w-full flex h-full bg-red-100 items-center ">
               <div className="PortSection1 ml-24 mt-72">
                 <PortComp />
+              </div>{" "}
+              <div className="PortSection1 ml-24 mt-72">
+                <PortComp />
+              </div>{" "}
+              <div className="PortSection1 ml-24 mt-72">
+                <PortComp />
+              </div>{" "}
+              <div className="PortSection1 ml-24 mt-72">
+                <PortComp />
               </div>
             </div>
           </div>
