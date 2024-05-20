@@ -4,8 +4,8 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import AboutMe from "./AboutMe";
 import Intro from "./Intro";
-import EndIntro from "./EndIntro";
 import MiddleIntro from "./MiddleIntro";
+import StartIntro from "./StartIntro";
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 
@@ -31,7 +31,6 @@ function SubAbout() {
         duration: { min: 0.1, max: 0.1 },
       },
       invalidateOnRefresh: true,
-      anticipatePin: 1,
     });
   }, []);
   return (
@@ -40,14 +39,15 @@ function SubAbout() {
         <section className="panel w-[100vw] flex">
           <AboutMe />
         </section>
+        {/* 스투시 검정색 비니 이미지 */}
+        <section className="panel w-[100vw] h-[100vh] flex justify-center items-center">
+          <StartIntro />
+        </section>{" "}
+        <section className="relative panel w-[100vw] h-[100vh] flex justify-center items-center">
+          <MiddleIntro />
+        </section>
         <section className="panel w-[100vw]">
           <Intro />
-        </section>
-        <section className="panel w-[100vw] h-[100vh] flex justify-center items-center">
-          <MiddleIntro />
-        </section>{" "}
-        <section className="panel w-[100vw] h-[100vh] flex justify-center items-center">
-          <EndIntro />
         </section>
       </div>
     </div>

@@ -14,19 +14,21 @@ function SubAbout() {
       scrollTrigger: {
         trigger: "#introCont",
         scrub: true,
-        start: "center center",
-        end: "30% top",
+        start: "bottom 30%",
+        end: "bottom top",
+        // markers: true,
       },
       ease: "none", // easing 효과 없음
     });
     gsap.to(".blurRoundBall", {
-      x: 2000,
-      scale: 100,
+      x: 1600,
+      scale: 30,
       scrollTrigger: {
         trigger: "#introCont",
         scrub: true,
-        start: "center center",
+        start: "bottom 30%",
         end: "bottom top",
+        // markers: true,
       },
       ease: "none", // easing 효과 없음
     });

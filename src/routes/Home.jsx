@@ -22,8 +22,6 @@ import PortPolio from "../components/PortPolio";
 // import AboutMe from "../components/AboutMe";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 function Home() {
-  const [xy, setxy] = useState({ x: 0, y: 0 });
-
   return (
     <div className="bg-black text-white">
       <NightSky />

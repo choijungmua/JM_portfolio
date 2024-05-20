@@ -8,7 +8,6 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import wire from "../../assets/wire.svg";
-import Iphone from "../UI/Iphone";
 import SkillCard from "../UI/SkillCard";
 import { useRecoilValue } from "recoil";
 import gientCard from "../../atoms/gientCard";
@@ -21,12 +20,13 @@ function SkilledBy() {
     gsap.from(".animationMy", {
       x: window.innerWidth,
       ease: "none",
+      delay: 5,
       scrollTrigger: {
         trigger: ".skillCont",
-        start: "bottom bottom",
-        end: "bottom bottom",
+        start: "30% top",
+        end: "center top",
         duration: 1,
-        scrub: 1,
+        scrub: 2,
         // markers: true,
       },
     });
@@ -35,9 +35,9 @@ function SkilledBy() {
       ease: "none",
       scrollTrigger: {
         trigger: ".skillCont",
-        start: "bottom bottom",
-        end: "bottom bottom",
-        scrub: 1,
+        start: "30% top",
+        end: "center top",
+        scrub: 2,
         duration: 1,
         // markers: true,
       },
@@ -96,10 +96,6 @@ function SkilledBy() {
         </p> */}
         {!Card ? (
           <div className="w-full h-full flex flex-col justify-center items-center">
-            <div className="skillCont z-10 pointer-events-none opacity-40 absolute flex justify-center items-center flex-col text-[150px] gap-2 font-nanum-square-neo-ExtraBold">
-              <p className="animationMy">My</p>
-              <p className="animationSkills">Skills</p>
-            </div>
             <div className="skillCont w-full h-full relative flex flex-col gap-5 justify-center items-center">
               <div className="animationMy flex gap-5">
                 <div id="Card" className="">
