@@ -48,7 +48,7 @@ function SubAbout() {
          font-nanum-square-neo-Bold text-6xl p-1 whitespace-nowrap"
         >
           <p id="introText" className="">
-            저는모든문제에쉽게접근하는개발자가되고싶습니다
+            저는 문제의 방향성을 제시할 수 있는 개발자가 꿈입니다.
           </p>
         </p>
       </div>

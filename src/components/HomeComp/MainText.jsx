@@ -69,10 +69,10 @@ function MainText() {
                 alt=""
                 className="reactImg flex w-[100px] h-[100px]"
               />
-              <p className="mb-3 text-xl">개발자로서 생각하는 가치관</p>
-              <p>얼마나 내가 웹에 대해 진정성을 가지는가.</p>
-              <p>내가 만든 웹의 완성도를 얼마나 높이는가</p>
-              <p>사용자 중심적인 웹을 만들기위해 노력하는가.</p>
+              <p className="mb-3 text-xl">CHAPTER</p>
+              <p>I. 나는 누구인가?</p>
+              <p>II. 나는 무엇을 사용하는가?</p>
+              <p>III. 나는 무엇을 사용하는지</p>
             </div>
           </div>
         </div>

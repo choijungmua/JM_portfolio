@@ -10,12 +10,11 @@ import { useEffect, useRef, useState } from "react";
 // import the section
 import Navigation from "../components/HomeComp/Navigation";
 import NightSky from "../components/UI/NightSky";
-import SubAbout from "../components/SubAbout";
+import SubAbout from "../components/About/SubAbout";
 // import The gsap
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import SubText from "../components/HomeComp/SubText";
 import MainText from "../components/HomeComp/MainText";
 import SkilledBy from "../components/HomeComp/SkilledBy";
 import Footer from "../components/HomeComp/Footer";
@@ -40,8 +39,6 @@ function Home() {
       {/* <Footer /> */}
       {/* Skills */}
       <SkilledBy />
-      {/* Horizontal */}
-      <SubText />
       {/* PortPoilo */}
       <PortPolio />
     </div>

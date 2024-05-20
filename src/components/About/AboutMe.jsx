@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import Vane from "../assets/Vane.png";
+import Vane from "../../assets/Vane.png";
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
 

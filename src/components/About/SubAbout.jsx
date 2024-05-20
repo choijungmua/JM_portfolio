@@ -2,12 +2,9 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import Vane from "../assets/Vane.png";
 import AboutMe from "./AboutMe";
 import Intro from "./Intro";
-import Me from "../assets/Me.jpg";
 import EndIntro from "./EndIntro";
-import Profile from "../assets/Profile.jpg";
 import MiddleIntro from "./MiddleIntro";
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);

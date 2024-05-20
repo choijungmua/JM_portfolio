@@ -1,4 +1,4 @@
-import Profile from "../assets/Profile.jpg";
+import Profile from "../../assets/Profile.jpg";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
 import TextPlugin from "gsap/TextPlugin";
@@ -52,7 +52,6 @@ function EndIntro() {
           <p className="text-red-400">노력</p>
           <p className="text-blue-400">배움</p>
         </div>
-        <p></p>
       </div>
     </>
   );
