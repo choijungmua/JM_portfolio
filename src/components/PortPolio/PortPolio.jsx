@@ -16,7 +16,6 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 import { useRef } from "react";
 import PortComp from "./PortComp";
-import PortPolioContainer from "./PortPolioContainer";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function PortPolio() {
@@ -51,14 +50,13 @@ function PortPolio() {
   };
   return (
     <section className="home h-[100vh] overflow-hidden text-white z-50 flex">
-      <div className="flex flex-col h-[300vh] items-center w-full ">
+      <div className="flex flex-col items-center w-full ">
         <p
           id="portMuflixText"
           className="text-white opacity-1 mt-36 text-center font-nanum-square-neo-heavy text-4xl"
         >
           PORTPOLIO
         </p>
-        <PortPolioContainer />
       </div>
     </section>
   );
