@@ -6,7 +6,7 @@ Skills 꾸미기
 
 ## GSAP으로 ScrollTrigger 활용
 
-> 2024-04-25
+> 2024-05-25
 > Skills 꾸미기
 > 개발목표
 > React, GSAP를 이용한 다양한 animation 구현 및 미디어쿼리를 이용한 반응형 웹사이트 구축
