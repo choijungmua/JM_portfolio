@@ -47,6 +47,24 @@ function PortPolio() {
     gsap.to("#conta", {
       x: "0vw",
     });
+    let sections = gsap.utils.toArray(".panel");
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".AboutCont",
+        pin: true,
+        scrub: 1,
+        start: "top top",
+        end: "bottom top",
+      },
+      snap: {
+        snapTo: 1 / (sections.length - 1),
+        inertia: false,
+        duration: { min: 0.1, max: 0.1 },
+      },
+      invalidateOnRefresh: true,
+    });
   };
   return (
     <section className="home h-[100vh] overflow-hidden text-white z-50 flex">
@@ -57,6 +75,13 @@ function PortPolio() {
         >
           PORTPOLIO
         </p>
+        <div className="AboutCont w-[500vw] h-[100vh] flex flex-nowrap ">
+          <section className="panel w-[100vw] flex"></section>
+          {/* 스투시 검정색 비니 이미지 */}
+          <section className="panel w-[100vw] h-[100vh] flex justify-center items-center"></section>{" "}
+          <section className="relative panel w-[100vw] h-[100vh] flex justify-center items-center"></section>
+          <section className="panel w-[100vw]"></section>
+        </div>
       </div>
     </section>
   );
