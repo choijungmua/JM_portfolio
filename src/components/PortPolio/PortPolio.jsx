@@ -16,6 +16,8 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 import { useRef } from "react";
 import PortComp from "./PortComp";
+import Captain from "../../assets/captain.jpg";
+import BlackJava from "../../assets/blackjava.jpg";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function PortPolio() {
@@ -47,27 +49,9 @@ function PortPolio() {
     gsap.to("#conta", {
       x: "0vw",
     });
-    let sections = gsap.utils.toArray(".panel");
-    gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".AboutCont",
-        pin: true,
-        scrub: 1,
-        start: "top top",
-        end: "bottom top",
-      },
-      snap: {
-        snapTo: 1 / (sections.length - 1),
-        inertia: false,
-        duration: { min: 0.1, max: 0.1 },
-      },
-      invalidateOnRefresh: true,
-    });
   };
   return (
-    <section className="home h-[100vh] overflow-hidden text-white z-50 flex">
+    <section className="home h-[100vh] text-white z-50 flex">
       <div className="flex flex-col items-center w-full ">
         <p
           id="portMuflixText"
@@ -75,12 +59,42 @@ function PortPolio() {
         >
           PORTPOLIO
         </p>
-        <div className="AboutCont w-[500vw] h-[100vh] flex flex-nowrap ">
-          <section className="panel w-[100vw] flex"></section>
-          {/* 스투시 검정색 비니 이미지 */}
-          <section className="panel w-[100vw] h-[100vh] flex justify-center items-center"></section>{" "}
-          <section className="relative panel w-[100vw] h-[100vh] flex justify-center items-center"></section>
-          <section className="panel w-[100vw]"></section>
+        <div className="w-full h-[100vh] bg-white">
+          <div className="w-full h-[70vh] flex p-2 gap-2">
+            <div className="w-1/2 h-full bg-black z-10">
+              <div className="w-[90%] mx-auto">
+                <img src={Captain} alt="" className="" />
+              </div>
+              <div className="text-center">
+                <p className="font-nanum-square-neo-Bold text-xl">
+                  영화 평점 및 추천 사이트
+                </p>
+                <button className="mt-2 bg-blue-700 rounded-full p-1 px-2 text-base font-nanum-square-neo-Bold">
+                  보러가기
+                </button>
+              </div>
+            </div>
+
+            <div className="w-1/2 h-full bg-black z-10 relative">
+              <div className="absolute flex w-full h-full justify-end items-center flex-col">
+                <div className="font-nanum-square-neo-heavy text-xl">
+                  투두리스트 및 색다른 기능구현
+                </div>
+                <button className="mt-2 mb-12 bg-blue-700 rounded-full p-1 px-2 text-base font-nanum-square-neo-Bold">
+                  보러가기
+                </button>
+              </div>
+              <div className="flex w-full h-full justify-center items-center">
+                <div className="w-[50%]">
+                  <img src={BlackJava} alt="" className="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="w-full h-[70vh] flex p-2 pt-0 gap-2">
+            <div className="w-1/2 h-full bg-black z-10"></div>
+            <div className="w-1/2 h-full bg-black z-10"></div>
+          </div>
         </div>
       </div>
     </section>
