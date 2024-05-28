@@ -92,8 +92,15 @@ function PortPolio() {
             </div>
           </div>
           <div className="w-full h-[70vh] flex p-2 pt-0 gap-2">
-            <div className="w-1/2 h-full bg-black z-10"></div>
-            <div className="w-1/2 h-full bg-black z-10"></div>
+            <div className="w-1/2 h-full bg-black z-10">
+              <div className="flex flex-col justify-center items-center w-full h-full">
+                <p>CLICK 한번으로 여행지를 PICK</p>
+                <button className="mt-2 bg-blue-700 rounded-full p-1 px-2 text-base font-nanum-square-neo-Bold">
+                  보러가기
+                </button>
+              </div>
+            </div>
+            <div className="w-1/2 h-full bg-black z-10">개설예정</div>
           </div>
         </div>
       </div>
