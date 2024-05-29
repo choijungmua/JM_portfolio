@@ -38,6 +38,30 @@ function PortPolio() {
         // markers: true,
       },
     });
+    gsap.to("#topProject", {
+      ease: "none",
+      opacity: 1,
+      duration: 3,
+      scrollTrigger: {
+        trigger: "#topProject",
+        scrub: 3,
+        start: "top center",
+        end: "30% center",
+        markers: true,
+      },
+    });
+    gsap.to("#bottomProject", {
+      ease: "none",
+      opacity: 1,
+      duration: 3,
+      scrollTrigger: {
+        trigger: "#bottomProject",
+        scrub: 3,
+        start: "top center",
+        end: "30% center",
+        markers: true,
+      },
+    });
   });
 
   const portPolioRightMove = () => {
@@ -61,46 +85,71 @@ function PortPolio() {
         </p>
         <div className="w-full h-[100vh] bg-white">
           <div className="w-full h-[70vh] flex p-2 gap-2">
+            {/* 영화 추천 사이트 */}
             <div className="w-1/2 h-full bg-black z-10">
-              <div className="w-[90%] mx-auto">
-                <img src={Captain} alt="" className="" />
-              </div>
-              <div className="text-center">
-                <p className="font-nanum-square-neo-Bold text-xl">
-                  영화 평점 및 추천 사이트
-                </p>
-                <button className="mt-2 bg-blue-700 rounded-full p-1 px-2 text-base font-nanum-square-neo-Bold">
-                  보러가기
-                </button>
+              <div
+                id="topProject"
+                className=" opacity-0 w-full h-full bg-black z-10"
+              >
+                <div className="w-[90%] mx-auto">
+                  <img src={Captain} alt="" className="" />
+                </div>
+                <div className="text-center">
+                  <p className="font-nanum-square-neo-Bold text-xl">
+                    영화 평점 및 추천 사이트
+                  </p>
+                  <button className="mt-2 bg-blue-700 rounded-full p-1 px-2 text-base font-nanum-square-neo-Bold">
+                    보러가기
+                  </button>
+                </div>
               </div>
             </div>
-
+            {/* 투두리스트 */}
             <div className="w-1/2 h-full bg-black z-10 relative">
-              <div className="absolute flex w-full h-full justify-end items-center flex-col">
-                <div className="font-nanum-square-neo-heavy text-xl">
-                  투두리스트 및 색다른 기능구현
+              <div
+                id="topProject"
+                className=" opacity-0 w-full h-full bg-black z-10"
+              >
+                <div className="absolute flex w-full h-full justify-end items-center flex-col">
+                  <div className="font-nanum-square-neo-heavy text-xl">
+                    투두리스트 및 색다른 기능구현
+                  </div>
+                  <button className="mt-2 mb-12 bg-blue-700 rounded-full p-1 px-2 text-base font-nanum-square-neo-Bold">
+                    보러가기
+                  </button>
                 </div>
-                <button className="mt-2 mb-12 bg-blue-700 rounded-full p-1 px-2 text-base font-nanum-square-neo-Bold">
-                  보러가기
-                </button>
-              </div>
-              <div className="flex w-full h-full justify-center items-center">
-                <div className="w-[50%]">
-                  <img src={BlackJava} alt="" className="" />
+                <div className="flex w-full h-full justify-center items-center">
+                  <div className="w-[50%]">
+                    <img src={BlackJava} alt="" className="" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="w-full h-[70vh] flex p-2 pt-0 gap-2">
+            {/* 클릭픽 */}
             <div className="w-1/2 h-full bg-black z-10">
-              <div className="flex flex-col justify-center items-center w-full h-full">
-                <p>CLICK 한번으로 여행지를 PICK</p>
-                <button className="mt-2 bg-blue-700 rounded-full p-1 px-2 text-base font-nanum-square-neo-Bold">
-                  보러가기
-                </button>
+              <div
+                id="bottomProject"
+                className=" opacity-0 w-full h-full bg-black z-10"
+              >
+                <div className="flex flex-col justify-center items-center w-full h-full">
+                  <p>CLICK 한번으로 여행지를 PICK</p>
+                  <button className="mt-2 bg-blue-700 rounded-full p-1 px-2 text-base font-nanum-square-neo-Bold">
+                    보러가기
+                  </button>
+                </div>
               </div>
             </div>
-            <div className="w-1/2 h-full bg-black z-10">개설예정</div>
+            {/* 개설예정 */}
+            <div className="w-1/2 h-full bg-black z-10">
+              <div
+                id="bottomProject"
+                className=" opacity-0 w-full h-full bg-black z-10"
+              >
+                개설예정
+              </div>
+            </div>
           </div>
         </div>
       </div>
