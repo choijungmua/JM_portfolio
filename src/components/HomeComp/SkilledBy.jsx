@@ -88,14 +88,10 @@ function SkilledBy() {
     });
   });
   return (
-    <div className="w-[100vw] h-[100vh]">
-      <div className="mainSkillCont w-full h-full">
-        {/* <p className="mb-24 w-full flex justify-center text-2xl font-nanum-square-neo-heavy">
-          <span className="mainSkillsLeft mr-2">My</span>
-          <span className="mainSkillsRight">Skills</span>
-        </p> */}
+    <div className="w-[100vw] h-[100vh] overflow-hidden">
+      <div className="mainSkillCont w-[100vw] h-full">
         {!Card ? (
-          <div className="w-full h-full flex flex-col justify-center items-center">
+          <div className="w-[100vw] h-full flex flex-col justify-center items-center overflow-hidden">
             <div className="skillCont w-full h-full relative flex flex-col gap-5 justify-center items-center">
               <div className="animationMy flex gap-5">
                 <div id="Card" className="">

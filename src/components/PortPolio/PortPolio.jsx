@@ -47,7 +47,7 @@ function PortPolio() {
         scrub: 3,
         start: "top center",
         end: "30% center",
-        markers: true,
+        // markers: true,
       },
     });
     gsap.to("#bottomProject", {
@@ -59,7 +59,7 @@ function PortPolio() {
         scrub: 3,
         start: "top center",
         end: "30% center",
-        markers: true,
+        // markers: true,
       },
     });
   });
@@ -75,15 +75,15 @@ function PortPolio() {
     });
   };
   return (
-    <section className="home h-[100vh] text-white z-50 flex">
-      <div className="flex flex-col items-center w-full ">
+    <section className="home text-white z-50 flex">
+      <div className="flex overflow-hidden flex-col items-center w-full ">
         <p
           id="portMuflixText"
           className="text-white opacity-1 mt-36 text-center font-nanum-square-neo-heavy text-4xl"
         >
           PORTPOLIO
         </p>
-        <div className="w-full h-[100vh] bg-white">
+        <div className="w-full bg-white">
           <div className="w-full h-[70vh] flex p-2 gap-2">
             {/* 영화 추천 사이트 */}
             <div className="w-1/2 h-full bg-black z-10">

@@ -35,7 +35,7 @@ function SubAbout() {
   }, []);
   return (
     <div className="w-full h-full overflow-hidden">
-      <div className="AboutCont w-[500vw] h-[100vh] flex flex-nowrap ">
+      <div className="AboutCont w-[400vw] h-[100vh] flex ">
         <section className="panel w-[100vw] flex">
           <AboutMe />
         </section>
@@ -46,7 +46,7 @@ function SubAbout() {
         <section className="relative panel w-[100vw] h-[100vh] flex justify-center items-center">
           <MiddleIntro />
         </section>
-        <section className="panel w-[100vw]">
+        <section className="panel w-[100vw] overflow-hidden">
           <Intro />
         </section>
       </div>
