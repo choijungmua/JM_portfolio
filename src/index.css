@@ -39,3 +39,10 @@
     font-family: "NanumSquareNeoRegular";
   }
 }
+/* 전체 가리기 */
+body {
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}

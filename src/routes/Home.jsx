@@ -23,7 +23,7 @@ import PortPolio from "../components/PortPolio/PortPolio";
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 function Home() {
   return (
-    <div className="w-[99vw] overflow-hidden bg-black text-white">
+    <div className=" bg-black text-white">
       <NightSky />
       {/* Navigation */}
       <Navigation />
