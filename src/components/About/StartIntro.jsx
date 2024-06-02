@@ -1,7 +1,6 @@
 // import React and other necessary libraries
 import React, { useEffect } from "react";
 import gsap from "gsap";
-import Me from "../../assets/Me.jpg";
 import ScrollTrigger from "gsap/ScrollTrigger";
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -9,22 +8,27 @@ gsap.registerPlugin(ScrollTrigger);
 function StartIntro() {
   // Create a ref for the about section
   useEffect(() => {
-    gsap.from("#meImg", {
+    gsap.to("#TextIntroStart", {
       ease: "none",
-      y: 1000,
+      scale: 5,
       scrollTrigger: {
-        trigger: ".meCont",
+        trigger: "#containerIntroStart",
         scrub: 3,
-        start: "bottom center",
-        end: "bottom center",
-        // markers: true,
+        start: "center center",
+        end: "bottom top",
+        markers: true,
       },
     });
   }, []);
   return (
     <>
-      <div className="meCont w-1/2">
-        <img src={Me} alt="" id="meImg" className=" rounded-2xl" />
+      <div
+        id="containerIntroStart"
+        className=" h-full flex items-center justify-center"
+      >
+        <p id="TextIntroStart" className=" text-2xl">
+          Legacy한 코드는 지양한다.
+        </p>
       </div>
     </>
   );
