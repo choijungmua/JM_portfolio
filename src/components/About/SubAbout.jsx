@@ -1,17 +1,19 @@
 // import React and other necessary libraries
-import React, { useEffect, useRef } from "react";
+import React, { useLayoutEffect, useRef } from "react";
 import gsap from "gsap";
 import AboutMe from "./AboutMe";
 import Intro from "./Intro";
 import MiddleIntro from "./MiddleIntro";
 import StartIntro from "./StartIntro";
+import ScrollTrigger from "gsap/all";
 // Register ScrollTrigger plugin
 
 function SubAbout() {
   // Create a ref for the about section
   const aboutRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
     let sections = gsap.utils.toArray(".panel");
     gsap.to(sections, {
       xPercent: -100 * (sections.length - 1),
