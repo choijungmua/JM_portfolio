@@ -3,10 +3,10 @@ import Home from "./routes/Home";
 import "./index.css";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import { useLayoutEffect } from "react";
+import { useEffect } from "react";
 gsap.registerPlugin(gsap, ScrollTrigger);
 function App() {
-  useLayoutEffect(() => {
+  useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
   });
   return (
