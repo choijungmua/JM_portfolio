@@ -6,12 +6,9 @@
 import { useEffect } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import wire from "../../assets/wire.svg";
 import SkillCard from "../UI/SkillCard";
 import { useRecoilValue } from "recoil";
 import gientCard from "../../atoms/gientCard";
-gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function SkilledBy() {
   const Card = useRecoilValue(gientCard);

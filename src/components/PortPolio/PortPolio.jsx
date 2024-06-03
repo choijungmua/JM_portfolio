@@ -9,9 +9,6 @@ import {
   FaAngleDoubleLeft,
   FaAngleDoubleRight,
 } from "react-icons/fa";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import PortMovie from "./PortMovie";
 // import the React
 import { useEffect } from "react";
@@ -22,7 +19,6 @@ import BlackJava from "../../assets/blackjava.jpg";
 import PortClick from "./PortClick";
 import PortJavaWeb from "./PortJavaWeb";
 import PortPort from "./PortPort";
-gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function PortPolio() {
   // useEffect(() => {

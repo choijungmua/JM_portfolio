@@ -1,13 +1,11 @@
 // import React and other necessary libraries
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import AboutMe from "./AboutMe";
 import Intro from "./Intro";
 import MiddleIntro from "./MiddleIntro";
 import StartIntro from "./StartIntro";
 // Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
 
 function SubAbout() {
   // Create a ref for the about section

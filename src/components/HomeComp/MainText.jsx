@@ -4,17 +4,11 @@
 //  gsap로 Main 페이지 꾸미기
 
 // import the React
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 // import The gsap Animation
 import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import TextPlugin from "gsap/TextPlugin";
-// import the react
-import { useRef } from "react";
 
 import react from "../../assets/react.gif";
-gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
 function MainText() {
   // timeline
   let textTimeLine = gsap.timeline();
