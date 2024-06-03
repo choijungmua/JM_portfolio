@@ -1,12 +1,9 @@
 import Profile from "../../assets/Profile.jpg";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import TextPlugin from "gsap/TextPlugin";
 import { useEffect } from "react";
 // Register ScrollTrigger plugin
 
 function MiddleIntro() {
-  gsap.registerPlugin(ScrollTrigger, TextPlugin);
   useEffect(() => {
     gsap.from("#profileImg", {
       ease: "none",
