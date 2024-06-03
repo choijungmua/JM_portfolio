@@ -1,6 +1,7 @@
 import { BsPerson } from "react-icons/bs";
 import ClickPick from "../../assets/clickpick_icon.png";
 import { FaRegStar } from "react-icons/fa";
+
 function PortPort() {
   return (
     <section id="topProject" className="w-full h-full z-10">

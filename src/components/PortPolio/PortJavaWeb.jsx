@@ -1,6 +1,33 @@
 import { BsPerson } from "react-icons/bs";
 import blackjava from "../../assets/blackjava.jpg";
+import javaPort1 from "../../assets/javaport.png";
+import javaPort2 from "../../assets/javaport2.png";
+import { useEffect, useState } from "react";
+import { useGSAP } from "@gsap/react";
+import { gsap } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import {
+  FaAngleRight,
+  FaAngleLeft,
+  FaAngleDoubleLeft,
+  FaAngleDoubleRight,
+} from "react-icons/fa";
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 function PortJavaWeb() {
+  const [javaPage, setJavaPage] = useState(1);
+  const AngleLeft = () => {
+    setJavaPage(1);
+    gsap.to("#javaImg", {
+      x: "0",
+    });
+  };
+  const AngleRight = () => {
+    setJavaPage(2);
+    gsap.to("#javaImg", {
+      x: "-100%",
+    });
+  };
   return (
     <section id="topProject" className="w-full h-full z-10">
       <div className="border-t-2 border-dashed opacity-70 my-4" />
@@ -13,8 +40,40 @@ function PortJavaWeb() {
         <p className="opacity-70 mt-4">투두리스트 및 다양한 바닐라 자바 웹</p>
         {/* 이미지 */}
         <div className=" w-full flex h-[50vh] my-4">
-          <div className="  flex flex-1 justify-center">
-            <div className="bg-white w-1/2 h-full"></div>
+          <div className="flex flex-1 justify-center items-center">
+            <div className="w-[10px] px-4 h-full  flex justify-center items-center">
+              <div className=" flex items-center justify-center">
+                <FaAngleLeft
+                  size={20}
+                  onClick={AngleLeft}
+                  className="hover:size-6"
+                />
+              </div>
+            </div>
+            <div className="w-1/2 flex justify-center">
+              <div className="flex justify-center ">
+                <div className="flex-col flex">
+                  <div className="flex overflow-hidden ">
+                    <div id="javaImg" className=" flex ">
+                      <img src={javaPort1} className="" alt="" />
+                      <img src={javaPort2} className="" alt="" />
+                    </div>
+                  </div>
+                  <div className="z-10 justify-center items-end">
+                    {javaPage}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-[10px] px-4 h-full  flex justify-center items-center">
+              <div className=" flex items-center justify-center">
+                <FaAngleRight
+                  size={20}
+                  onClick={AngleRight}
+                  className="hover:size-6"
+                />
+              </div>
+            </div>
           </div>
           <div className="flex-1 flex items-center justify-center">
             <div className="w-2/3 gap-5 flex text-left flex-col">
