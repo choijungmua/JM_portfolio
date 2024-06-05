@@ -35,6 +35,9 @@ function AboutMe() {
 
     return () => {
       timeI.kill(); // 컴포넌트가 언마운트 될 때 애니메이션 종료
+      timeRound.kill();
+      timeBar.kill();
+      gsap.killTweensOf("#CHOIJUNGMU");
     };
   }, []);
 
@@ -45,12 +48,12 @@ function AboutMe() {
     >
       <div className="text-[150px] w-[70%] font-nanum-square-neo-heavy">
         <p className="text-left flex text-violet-400">
-          Who <p className="isText ml-4"> i</p>s
+          Who <span className="isText ml-4"> i</span>s
         </p>
         <div className="w-1/2 bg-white flex h-[10px] rounded-full"></div>
         <div className="flex flex-row">
           <p id="CHOIJUNGMU" className="whitespace-nowrap flex">
-            CHO<p className="isText mr-8"> i</p> JUNG MU
+            CHO<span className="isText mr-8"> i</span> JUNG MU
           </p>
           <p className="animate-bounce">?</p>
         </div>

@@ -1,29 +1,38 @@
+import React, { useEffect } from "react";
 import Profile from "../../assets/Profile.jpg";
 import gsap from "gsap";
-import { useEffect } from "react";
-// Register ScrollTrigger plugin
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger plugin globally
+gsap.registerPlugin(ScrollTrigger);
 
 function MiddleIntro() {
   useEffect(() => {
-    gsap.from("#profileImg", {
-      ease: "none",
-      y: -1000,
-      scrollTrigger: {
-        trigger: "#profileCont",
-        scrub: 3,
-        start: "bottom center",
-        end: "bottom center",
-        // markers: true,
-      },
-    });
+    if (typeof window !== "undefined") {
+      gsap.from("#profileImg", {
+        ease: "none",
+        y: -1000,
+        scrollTrigger: {
+          trigger: "#profileCont",
+          scrub: 3,
+          start: "bottom center",
+          end: "bottom center",
+        },
+      });
+    }
   }, []);
+
   const Passion = () => {
-    gsap.to("", {});
+    gsap.to("#profileImg", {
+      scale: 1.2,
+      duration: 0.5,
+    });
   };
+
   return (
     <>
-      <div id="profileCont" className=" flex items-center justify-center">
-        <img src={Profile} alt="" id="profileImg" />
+      <div id="profileCont" className="flex items-center justify-center">
+        <img src={Profile} alt="Profile" id="profileImg" />
       </div>
       <div
         id="EndIntroCont"
@@ -33,7 +42,7 @@ function MiddleIntro() {
         <p>저의 키워드는 3가지로 나눌 수 있습니다.</p>
 
         <div className="flex gap-4 font-nanum-square-neo-Bold">
-          <p onClick={Passion} className="text-green-400">
+          <p onClick={Passion} className="text-green-400 cursor-pointer">
             열정
           </p>
           <p className="text-red-400">노력</p>
