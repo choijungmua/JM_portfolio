@@ -3,16 +3,13 @@ import blackjava from "../../assets/blackjava.jpg";
 import javaPort1 from "../../assets/javaport.png";
 import javaPort2 from "../../assets/javaport2.png";
 import { useEffect, useState } from "react";
-import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 import {
   FaAngleRight,
   FaAngleLeft,
   FaAngleDoubleLeft,
   FaAngleDoubleRight,
 } from "react-icons/fa";
-gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 function PortJavaWeb() {
   const [javaPage, setJavaPage] = useState(1);

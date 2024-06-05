@@ -1,10 +1,8 @@
 import React, { useEffect } from "react";
 import Profile from "../../assets/Profile.jpg";
 import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
 
 // Register ScrollTrigger plugin globally
-gsap.registerPlugin(ScrollTrigger);
 
 function MiddleIntro() {
   useEffect(() => {

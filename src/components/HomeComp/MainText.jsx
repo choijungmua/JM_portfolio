@@ -7,13 +7,9 @@
 import { useEffect } from "react";
 // import The gsap Animation
 import { gsap } from "gsap";
-
 import react from "../../assets/react.gif";
-import ScrollTrigger from "gsap/dist/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 function MainText() {
   // timeline
-  let textTimeLine = gsap.timeline();
   useEffect(() => {
     gsap.to(".reactImg", {
       scale: 10,
