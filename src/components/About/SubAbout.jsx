@@ -12,33 +12,24 @@ function SubAbout() {
   // Create a ref for the about section
   const aboutRef = useRef(null);
 
-  useLayoutEffect(() => {
-    gsap.registerPlugin(gsap, ScrollTrigger);
-    if (typeof window !== "undefined") {
-      let sections = gsap.utils.toArray(".panel");
-      gsap.to(sections, {
-        xPercent: -100 * (sections.length - 1),
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".AboutCont",
-          pin: true,
-          scrub: 1,
-          start: "top top",
-          end: "bottom top",
-        },
-        snap: {
-          snapTo: 1 / (sections.length - 1),
-          inertia: false,
-          duration: { min: 0.1, max: 0.1 },
-        },
-      });
-    }
-  }, []);
-
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      ScrollTrigger.refresh();
-    }
+    let sections = gsap.utils.toArray(".panel");
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".AboutCont",
+        pin: true,
+        scrub: 1,
+        start: "top top",
+        end: "bottom top",
+      },
+      snap: {
+        snapTo: 1 / (sections.length - 1),
+        inertia: false,
+        duration: { min: 0.1, max: 0.1 },
+      },
+    });
   }, []);
 
   return (
