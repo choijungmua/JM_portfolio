@@ -8,6 +8,8 @@ import { useEffect } from "react";
 // import The gsap Animation
 import { gsap } from "gsap";
 import react from "../../assets/react.gif";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 function MainText() {
   // timeline
   useEffect(() => {
