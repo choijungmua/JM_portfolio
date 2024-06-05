@@ -2,7 +2,9 @@
 <div align="center">
   <a href""></a>
 Click Me!
+<!-- <img alt="portfolio" title="portfolio"  width="140" src="![portfolio](https://github.com/choijungmua/JM_portfolio/assets/158401607/d79f418c-b480-43a4-a7e6-1d92e049fa26)"/> -->
 </div>
+
 
 <p align="center">GSAP 애니메이션 프레임워크를 이용해 만든 Web 포트폴리오입니다.</p>
 ## 업데이트 내용
