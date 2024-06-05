@@ -5,34 +5,33 @@ import AboutMe from "./AboutMe";
 import Intro from "./Intro";
 import MiddleIntro from "./MiddleIntro";
 import StartIntro from "./StartIntro";
-import ScrollTrigger from "gsap/all";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(useGSAP, gsap, ScrollTrigger);
 // Register ScrollTrigger plugin
 
 function SubAbout() {
   // Create a ref for the about section
   const aboutRef = useRef(null);
 
-  useLayoutEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  useGSAP(() => {
     let sections = gsap.utils.toArray(".panel");
-    const ctx = gsap.context(() => {
-      gsap.to(sections, {
-        xPercent: -100 * (sections.length - 1),
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".AboutCont",
-          pin: true,
-          scrub: 1,
-          start: "top top",
-          end: "bottom top",
-        },
-        snap: {
-          snapTo: 1 / (sections.length - 1),
-          inertia: false,
-          duration: { min: 0.1, max: 0.1 },
-        },
-        invalidateOnRefresh: true,
-      });
+    gsap.to(sections, {
+      xPercent: -100 * (sections.length - 1),
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".AboutCont",
+        pin: true,
+        scrub: 1,
+        start: "top top",
+        end: "bottom top",
+      },
+      snap: {
+        snapTo: 1 / (sections.length - 1),
+        inertia: false,
+        duration: { min: 0.1, max: 0.1 },
+      },
+      invalidateOnRefresh: true,
     });
   }, []);
   return (

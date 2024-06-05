@@ -7,7 +7,7 @@ import { useEffect } from "react";
 gsap.registerPlugin(gsap, ScrollTrigger);
 function App() {
   useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(gsap, ScrollTrigger);
   });
   return (
     <Router>

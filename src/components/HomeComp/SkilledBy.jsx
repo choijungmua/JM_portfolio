@@ -9,7 +9,6 @@ import { useGSAP } from "@gsap/react";
 import SkillCard from "../UI/SkillCard";
 import { useRecoilValue } from "recoil";
 import gientCard from "../../atoms/gientCard";
-
 function SkilledBy() {
   const Card = useRecoilValue(gientCard);
   const cardArray = gsap.utils.toArray("#Card");
