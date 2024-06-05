@@ -5,7 +5,7 @@ import Intro from "./Intro";
 import MiddleIntro from "./MiddleIntro";
 import StartIntro from "./StartIntro";
 import ScrollTrigger from "gsap/ScrollTrigger";
-
+gsap.registerPlugin(ScrollTrigger);
 // Register ScrollTrigger plugin
 
 function SubAbout() {
