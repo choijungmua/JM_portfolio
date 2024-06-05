@@ -7,36 +7,31 @@ import StartIntro from "./StartIntro";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 // Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
 
 function SubAbout() {
   // Create a ref for the about section
   const aboutRef = useRef(null);
 
   useLayoutEffect(() => {
+    gsap.registerPlugin(gsap, ScrollTrigger);
     if (typeof window !== "undefined") {
       let sections = gsap.utils.toArray(".panel");
-      const ctx = gsap.context(() => {
-        gsap.to(sections, {
-          xPercent: -100 * (sections.length - 1),
-          ease: "none",
-          scrollTrigger: {
-            trigger: ".AboutCont",
-            pin: true,
-            scrub: 1,
-            start: "top top",
-            end: "bottom top",
-          },
-          snap: {
-            snapTo: 1 / (sections.length - 1),
-            inertia: false,
-            duration: { min: 0.1, max: 0.1 },
-          },
-          invalidateOnRefresh: true,
-        });
+      gsap.to(sections, {
+        xPercent: -100 * (sections.length - 1),
+        ease: "none",
+        scrollTrigger: {
+          trigger: ".AboutCont",
+          pin: true,
+          scrub: 1,
+          start: "top top",
+          end: "bottom top",
+        },
+        snap: {
+          snapTo: 1 / (sections.length - 1),
+          inertia: false,
+          duration: { min: 0.1, max: 0.1 },
+        },
       });
-
-      return () => ctx.revert();
     }
   }, []);
 

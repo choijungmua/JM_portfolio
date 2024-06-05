@@ -19,7 +19,7 @@ const cardExplain = atom({
   default: "", // default value (aka initial value)
 });
 const cardSubText = atom({
-  key: "cardMainText", // unique ID (with respect to other atoms/selectors)
+  key: "cardSubText", // unique ID (with respect to other atoms/selectors)
   default: "", // default value (aka initial value)
 });
 

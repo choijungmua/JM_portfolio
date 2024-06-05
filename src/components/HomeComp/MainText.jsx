@@ -13,27 +13,6 @@ function MainText() {
   // timeline
   let textTimeLine = gsap.timeline();
   useEffect(() => {
-    textTimeLine.to("#yourElement", 1, {
-      delay: 0.5,
-      text: "GROW DEVELOPER",
-      ease: "none",
-    });
-    textTimeLine.to("#yourElement1", 1, {
-      delay: 0.5,
-      text: "CHOI JUNG MU",
-      ease: "none",
-    });
-    textTimeLine.to("#yourElement2", 1, {
-      delay: 0.5,
-      text: "PORTPOLIO",
-      ease: "none",
-    });
-    textTimeLine.to("#yourElement", 1, {
-      delay: 0.5,
-      text: "FRONTEND DEVELOPER",
-      ease: "none",
-      background: "orange",
-    });
     gsap.to(".reactImg", {
       scale: 10,
       opacity: 0,

@@ -38,51 +38,7 @@ function SkilledBy() {
         // markers: true,
       },
     });
-
-    gsap.from(".mainSkillsLeft", {
-      x: -window.innerWidth,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".mainSkillCont",
-        start: "top 90%",
-        end: "20% 100%",
-        scrub: 1,
-        duration: 1,
-        // markers: true,
-      },
-    });
-
-    gsap.from(".mainSkillsRight", {
-      x: window.innerWidth,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".mainSkillCont",
-        start: "top 90%",
-        end: "20% 100%",
-        scrub: 1,
-        duration: 1,
-        // markers: true,
-      },
-    });
   }, []);
-  useEffect(() => {
-    gsap.to(".Skill2", {
-      width: "400px",
-      height: "500px",
-      ease: "ease-in",
-      rotateY: "360deg",
-    });
-    gsap.to("#cardArray", {
-      rotateY: "360deg",
-      ease: "ease-in",
-      scrollTrigger: {
-        trigger: "#cardArray",
-        scrub: 1,
-        start: "center bottom",
-        end: "center center",
-      },
-    });
-  });
   return (
     <div className="w-[100vw] h-[100vh] overflow-hidden">
       <div className="mainSkillCont w-[100vw] h-full">
