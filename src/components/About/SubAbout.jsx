@@ -1,42 +1,54 @@
-// import React and other necessary libraries
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useLayoutEffect, useEffect, useRef } from "react";
 import gsap from "gsap";
 import AboutMe from "./AboutMe";
 import Intro from "./Intro";
 import MiddleIntro from "./MiddleIntro";
 import StartIntro from "./StartIntro";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-gsap.registerPlugin(useGSAP, gsap, ScrollTrigger);
+import ScrollTrigger from "gsap/ScrollTrigger";
+
 // Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 function SubAbout() {
   // Create a ref for the about section
   const aboutRef = useRef(null);
 
-  useGSAP(() => {
-    let sections = gsap.utils.toArray(".panel");
-    gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: "aboutRef",
-        pin: true,
-        scrub: 1,
-        start: "top top",
-        end: "bottom top",
-      },
-      snap: {
-        snapTo: 1 / (sections.length - 1),
-        inertia: false,
-        duration: { min: 0.1, max: 0.1 },
-      },
-      invalidateOnRefresh: true,
-    });
+  useLayoutEffect(() => {
+    if (typeof window !== "undefined") {
+      let sections = gsap.utils.toArray(".panel");
+      const ctx = gsap.context(() => {
+        gsap.to(sections, {
+          xPercent: -100 * (sections.length - 1),
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".AboutCont",
+            pin: true,
+            scrub: 1,
+            start: "top top",
+            end: "bottom top",
+          },
+          snap: {
+            snapTo: 1 / (sections.length - 1),
+            inertia: false,
+            duration: { min: 0.1, max: 0.1 },
+          },
+          invalidateOnRefresh: true,
+        });
+      });
+
+      return () => ctx.revert();
+    }
   }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      ScrollTrigger.refresh();
+    }
+  }, []);
+
   return (
     <div className="w-full h-full overflow-hidden">
-      <div ref={aboutRef} className="AboutCont w-[400vw] h-[100vh] flex ">
+      <div className="AboutCont w-[400vw] h-[100vh] flex">
         <section className="panel w-[100vw] flex">
           <AboutMe />
         </section>
@@ -54,4 +66,5 @@ function SubAbout() {
     </div>
   );
 }
+
 export default SubAbout;
