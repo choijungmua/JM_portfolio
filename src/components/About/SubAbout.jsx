@@ -20,7 +20,7 @@ function SubAbout() {
       xPercent: -100 * (sections.length - 1),
       ease: "none",
       scrollTrigger: {
-        trigger: ".AboutCont",
+        trigger: "aboutRef",
         pin: true,
         scrub: 1,
         start: "top top",
@@ -36,7 +36,7 @@ function SubAbout() {
   }, []);
   return (
     <div className="w-full h-full overflow-hidden">
-      <div className="AboutCont w-[400vw] h-[100vh] flex ">
+      <div ref={aboutRef} className="AboutCont w-[400vw] h-[100vh] flex ">
         <section className="panel w-[100vw] flex">
           <AboutMe />
         </section>
