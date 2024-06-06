@@ -1,6 +1,29 @@
 import { BsPerson } from "react-icons/bs";
 import MUFLIX from "../../assets/MUFLIX.jpg";
+import { gsap } from "gsap";
+import { useState } from "react";
+import {
+  FaAngleRight,
+  FaAngleLeft,
+  FaAngleDoubleLeft,
+  FaAngleDoubleRight,
+} from "react-icons/fa";
+import Muflix1 from "../../assets/MuflixPort.png";
+import Muflix2 from "../../assets/MuflixPort2.png";
 function PortMovie() {
+  const [MoviePage, setMoviePage] = useState(1);
+  const MovieAngleLeft = () => {
+    setMoviePage(1);
+    gsap.to("#MovieImg", {
+      x: "0",
+    });
+  };
+  const MovieAngleRight = () => {
+    setMoviePage(2);
+    gsap.to("#MovieImg", {
+      x: "-100%",
+    });
+  };
   return (
     <section id="topProject" className=" w-full h-full z-10">
       <div className="border-t-2 border-dashed opacity-70 my-4" />
@@ -15,8 +38,40 @@ function PortMovie() {
         </p>
         {/* 이미지 */}
         <div className=" w-full flex h-[50vh] my-4">
-          <div className="  flex flex-1 justify-center">
-            <div className="bg-white w-1/2 h-full"></div>
+          <div className="flex flex-1 justify-center items-center">
+            <div className="w-[10px] px-4 h-full  flex justify-center items-center">
+              <div className=" flex items-center justify-center">
+                <FaAngleLeft
+                  size={20}
+                  onClick={MovieAngleLeft}
+                  className="hover:size-6"
+                />
+              </div>
+            </div>
+            <div className="w-1/2 flex justify-center">
+              <div className="flex justify-center ">
+                <div className="flex-col flex">
+                  <div className="flex overflow-hidden ">
+                    <div id="MovieImg" className=" flex h-full ">
+                      <img src={Muflix1} className="" alt="" />
+                      <img src={Muflix2} className="" alt="" />
+                    </div>
+                  </div>
+                  <div className="z-10 justify-center items-end">
+                    {MoviePage}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-[10px] px-4 h-full  flex justify-center items-center">
+              <div className=" flex items-center justify-center">
+                <FaAngleRight
+                  size={20}
+                  onClick={MovieAngleRight}
+                  className="hover:size-6"
+                />
+              </div>
+            </div>
           </div>
           <div className="flex-1 flex items-center justify-center">
             <div className="w-2/3 gap-5 flex text-left flex-col">

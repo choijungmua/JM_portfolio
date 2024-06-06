@@ -19,65 +19,54 @@ import BlackJava from "../../assets/blackjava.jpg";
 import PortClick from "./PortClick";
 import PortJavaWeb from "./PortJavaWeb";
 import PortPort from "./PortPort";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 function PortPolio() {
-  // useEffect(() => {
-  //   gsap.from("#portMuflixText", {
-  //     ease: "none",
-  //     scale: 5,
-  //     y: -100,
-  //     opacity: 0,
-  //     text: "ProJectProJect",
-  //     duration: 0.5,
-  //     color: "white",
-  //     scrollTrigger: {
-  //       trigger: ".home",
-  //       scrub: 2,
-  //       start: "top center",
-  //       end: "top center",
-  //       // markers: true,
-  //     },
-  //   });
-  //   gsap.to("#topProject", {
-  //     ease: "none",
-  //     opacity: 1,
-  //     duration: 3,
-  //     scrollTrigger: {
-  //       trigger: "#topProject",
-  //       scrub: 3,
-  //       start: "top center",
-  //       end: "30% center",
-  //       // markers: true,
-  //     },
-  //   });
-  //   gsap.to("#bottomProject", {
-  //     ease: "none",
-  //     opacity: 1,
-  //     duration: 3,
-  //     scrollTrigger: {
-  //       trigger: "#bottomProject",
-  //       scrub: 3,
-  //       start: "top center",
-  //       end: "30% center",
-  //       // markers: true,
-  //     },
-  //   });
-  // });
+  useEffect(() => {
+    // Animate the PORTPOLIO text
+    gsap.from("#portMuflixText", {
+      ease: "none",
+      scale: 5,
+      y: -100,
+      opacity: 0,
+      text: "ProJectProJect",
+      duration: 0.5,
+      color: "white",
+      scrollTrigger: {
+        trigger: ".home",
+        scrub: 2,
+        start: "top center",
+        end: "top center",
+        // markers: true,
+      },
+    });
 
-  // const portPolioRightMove = () => {
-  //   gsap.to("#conta", {
-  //     x: () => +"-60vw",
-  //   });
-  // };
-  // const portPolioLeftMove = () => {
-  //   gsap.to("#conta", {
-  //     x: "0vw",
-  //   });
-  // };
+    // Animate each PortCanvas section
+    gsap.utils.toArray(".PortCanvas").forEach((canvas) => {
+      gsap.fromTo(
+        canvas,
+        { opacity: 0 },
+        {
+          opacity: 1,
+          scrollTrigger: {
+            trigger: canvas,
+            scrub: 2,
+            start: "20% center",
+            end: "bottom 70%",
+            markers: true,
+          },
+        }
+      );
+    });
+  }, []);
 
   return (
     <section className="home text-white z-50 flex">
-      <div className="flex overflow-hidden flex-col items-center w-full ">
+      <div className="flex overflow-hidden flex-col items-center w-full">
         <p
           id="portMuflixText"
           className="text-white opacity-1 mt-36 text-center font-nanum-square-neo-heavy text-4xl"
@@ -86,19 +75,19 @@ function PortPolio() {
         </p>
         <div className="flex-col w-[80vw] flex p-2 gap-2">
           {/* 자바 웹 */}
-          <div className="w-full h-full z-10">
+          <div className="PortCanvas opacity-0 w-full h-full z-10">
             <PortJavaWeb />
           </div>
           {/* 클릭픽 */}
-          <div className="w-full h-full z-10">
+          <div className="PortCanvas opacity-0 w-full h-full z-10">
             <PortClick />
           </div>
           {/* 영화 추천 사이트 */}
-          <div className="w-full h-full z-10">
+          <div className="PortCanvas opacity-0 w-full h-full z-10">
             <PortMovie />
           </div>
           {/* 포트폴리오 */}
-          <div className="w-full h-full z-10">
+          <div className="PortCanvas opacity-0 w-full h-full z-10">
             <PortPort />
           </div>
         </div>

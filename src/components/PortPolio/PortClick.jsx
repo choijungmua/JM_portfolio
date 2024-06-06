@@ -1,6 +1,29 @@
 import { BsPerson } from "react-icons/bs";
 import ClickPick from "../../assets/clickpick_icon.png";
+import { useEffect, useState } from "react";
+import ClickPickPort1 from "../../assets/ClickPickPort.png";
+import ClickPickPort2 from "../../assets/ClickPickPort2.png";
+import { gsap } from "gsap";
+import {
+  FaAngleRight,
+  FaAngleLeft,
+  FaAngleDoubleLeft,
+  FaAngleDoubleRight,
+} from "react-icons/fa";
 function PortClick() {
+  const [clickPage, setClickPage] = useState(1);
+  const clickAngleLeft = () => {
+    setClickPage(1);
+    gsap.to("#ClickImg", {
+      x: "0",
+    });
+  };
+  const clickAngleRight = () => {
+    setClickPage(2);
+    gsap.to("#ClickImg", {
+      x: "-100%",
+    });
+  };
   return (
     <section id="topProject" className="w-full h-full z-10">
       <div className="border-t-2 border-dashed opacity-70 my-4" />
@@ -15,8 +38,40 @@ function PortClick() {
         </p>
         {/* 이미지 */}
         <div className=" w-full flex h-[50vh] my-4">
-          <div className="  flex flex-1 justify-center">
-            <div className="bg-white w-1/2 h-full"></div>
+          <div className="flex flex-1 justify-center items-center">
+            <div className="w-[10px] px-4 h-full  flex justify-center items-center">
+              <div className=" flex items-center justify-center">
+                <FaAngleLeft
+                  size={20}
+                  onClick={clickAngleLeft}
+                  className="hover:size-6"
+                />
+              </div>
+            </div>
+            <div className="w-1/2 flex justify-center">
+              <div className="flex justify-center ">
+                <div className="flex-col flex">
+                  <div className="flex overflow-hidden ">
+                    <div id="ClickImg" className=" flex ">
+                      <img src={ClickPickPort1} className="" alt="" />
+                      <img src={ClickPickPort2} className="" alt="" />
+                    </div>
+                  </div>
+                  <div className="z-10 justify-center items-end">
+                    {clickPage}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-[10px] px-4 h-full  flex justify-center items-center">
+              <div className=" flex items-center justify-center">
+                <FaAngleRight
+                  size={20}
+                  onClick={clickAngleRight}
+                  className="hover:size-6"
+                />
+              </div>
+            </div>
           </div>
           <div className="flex-1 flex items-center justify-center">
             <div className="w-2/3 gap-5 flex text-left flex-col">
