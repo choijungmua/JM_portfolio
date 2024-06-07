@@ -14,7 +14,7 @@ function StartIntro() {
           scrub: 3,
           start: "center center",
           end: "bottom top",
-          markers: true,
+          // markers: true,
         },
       });
     }

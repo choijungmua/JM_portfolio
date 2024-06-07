@@ -13,17 +13,12 @@ import PortMovie from "./PortMovie";
 // import the React
 import { useEffect } from "react";
 import { useRef } from "react";
-import PortComp from "./PortComp";
 import Captain from "../../assets/captain.jpg";
 import BlackJava from "../../assets/blackjava.jpg";
 import PortClick from "./PortClick";
 import PortJavaWeb from "./PortJavaWeb";
 import PortPort from "./PortPort";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
 
 function PortPolio() {
   useEffect(() => {
@@ -57,7 +52,7 @@ function PortPolio() {
             scrub: 2,
             start: "20% center",
             end: "bottom 70%",
-            markers: true,
+            // markers: true,
           },
         }
       );
