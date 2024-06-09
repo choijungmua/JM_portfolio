@@ -7,7 +7,6 @@
 import React from "react";
 
 // import the section
-import Navigation from "../components/HomeComp/Navigation";
 import NightSky from "../components/UI/NightSky";
 import SubAbout from "../components/About/SubAbout";
 // import The gsap
@@ -21,7 +20,6 @@ function Home() {
     <div className=" bg-black text-white">
       <NightSky />
       {/* Navigation */}
-      <Navigation />
       {/* MainPage */}
 
       <MainText />
