@@ -28,10 +28,10 @@ function MainText() {
   }, []);
 
   return (
-    <div>
-      <div className="mainCont w-[100vw] h-[100vh]">
-        <div className="absolute flex flex-col text-4xl gap-1 w-full mt-24 items-center font-nanum-square-neo-heavy ">
-          <p className="text-6xl">Front End Developer</p>
+    <div className="w-[100vw] h-[100vh] flex justify-center">
+      <div className="mainCont w-[60vw] flex justify-center h-[100vh]">
+        <div className="absolute sm:text-xl flex flex-col text-4xl gap-1 w-full mt-24 items-center font-nanum-square-neo-heavy ">
+          <p className="text-6xl sm:text-3xl">Front End Developer</p>
           <p>Choi Jung Mu Portfolio</p>
         </div>
         <div className="flex w-full justify-center">

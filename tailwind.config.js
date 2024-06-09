@@ -2,6 +2,11 @@
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    screens: {
+      lg: { max: "1023px" },
+      md: { max: "767px" },
+      sm: { max: "639px" },
+    },
     extend: {
       fontFamily: {
         "nanum-square-neo-heavy": ["NanumSquareNeoHeavy", "sans-serif"],

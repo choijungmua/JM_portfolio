@@ -46,7 +46,7 @@ function AboutMe() {
       ref={aboutRef}
       className="flex w-[100vw] relative flex-col justify-center items-center"
     >
-      <div className="text-[150px] w-[70%] font-nanum-square-neo-heavy">
+      <div className="text-[150px] lg:text-[80px] w-[70%] font-nanum-square-neo-heavy">
         <p className="text-left flex text-violet-400">
           Who <span className="isText ml-4"> i</span>s
         </p>
@@ -58,13 +58,13 @@ function AboutMe() {
           <p className="animate-bounce">?</p>
         </div>
         <div>
-          <div className="w-[800px] h-[200px] bg-gray-900 rounded-full items-center flex">
+          <div className="w-[800px] lg:w-[600px] lg:h-[150px] h-[200px] bg-gray-900 rounded-full items-center flex">
             <div className="text-6xl w-full h-full justify-center items-center flex">
               #열정 #노력 #배움
             </div>
             <div
               id="roundMove"
-              className="rounded-full opacity-30 bg-white flex w-[200px] h-[200px] absolute"
+              className="rounded-full opacity-30 bg-white flex w-[200px] lg:h-[150px] h-[200px] absolute"
             ></div>
           </div>
         </div>
