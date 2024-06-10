@@ -10,44 +10,21 @@ function SubAbout() {
   // Create a ref for the about section
   const aboutRef = useRef(null);
 
-  useEffect(() => {
-    let sections = gsap.utils.toArray(".panel");
-    gsap.to(sections, {
-      xPercent: -100 * (sections.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".AboutCont",
-        pin: true,
-        scrub: 1,
-        start: "top top",
-        end: "bottom top",
-      },
-      snap: {
-        snapTo: 1 / (sections.length - 1),
-        inertia: false,
-        duration: { min: 0.1, max: 0.1 },
-      },
-    });
-  }, []);
-
   return (
-    <div className="w-full h-full overflow-hidden">
-      <div className="AboutCont w-[400vw] h-[100vh] flex">
-        <section className="panel w-[100vw] flex">
-          <AboutMe />
-        </section>
-        {/* 스투시 검정색 비니 이미지 */}
-        <section className="panel w-[100vw] h-[100vh] flex justify-center items-center">
-          <StartIntro />
-        </section>{" "}
-        <section className="relative panel w-[100vw] h-[100vh] flex justify-center items-center">
-          <MiddleIntro />
-        </section>
-        <section className="panel w-[100vw] overflow-hidden">
-          <Intro />
-        </section>
+    <section className="w-full h-full flex flex-col items-center overflow-hidden">
+      <div className="panel w-[100vw] flex">
+        <AboutMe />
       </div>
-    </div>
+      <div className="w-[60vw] h-[100vh] ">
+        <p className="text-xl font-nanum-square-neo-Bold">
+          코드를 사용함에 있어 나와의 약속
+          <div className="border-b-2 w-[20%]"></div>
+        </p>
+
+        <p>레거시한 코드를 지양하고</p>
+        <p>모두가 보기 쉽도록 코드를 리팩토링 할 것입니다.</p>
+      </div>
+    </section>
   );
 }
 
