@@ -19,8 +19,8 @@ function SkilledBy() {
       delay: 5,
       scrollTrigger: {
         trigger: ".skillCont",
-        start: "30% top",
-        end: "center top",
+        start: "30% center",
+        end: "center center",
         duration: 1,
         scrub: 2,
         // markers: true,
@@ -31,8 +31,8 @@ function SkilledBy() {
       ease: "none",
       scrollTrigger: {
         trigger: ".skillCont",
-        start: "30% top",
-        end: "center top",
+        start: "30% center",
+        end: "center center",
         scrub: 2,
         duration: 1,
         // markers: true,
