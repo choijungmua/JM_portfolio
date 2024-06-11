@@ -8,7 +8,7 @@ function SkillCard({ MainText, SubText, Icon, Explain }) {
     setCard((card) => !card);
   };
   return (
-    <div className=" cardContainer w-[200px] h-[250px] flex flex-start text-center text-black">
+    <div className=" cardContainer sm:w-[100px] sm:h-[125px] w-[200px] h-[250px] flex flex-start text-center text-black">
       <div onClick={cardClick} className="item w-full h-full rounded-3xl  ">
         <div className="front w-full h-full  rounded-3xl text-center flex flex-col items-center justify-center bg-white text-black">
           <div className="w-full h-auto flex flex-col items-center justify-center">

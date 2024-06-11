@@ -45,7 +45,7 @@ function SkilledBy() {
         {!Card ? (
           <div className="w-[100vw] h-full flex flex-col justify-center items-center overflow-hidden">
             <div className="skillCont w-full h-full relative flex flex-col gap-5 justify-center items-center">
-              <div className="animationMy flex gap-5">
+              <div className="animationMy flex sm:block gap-5">
                 <div id="Card" className="">
                   <SkillCard
                     MainText={"GitHub"}
@@ -91,7 +91,7 @@ function SkilledBy() {
                   />
                 </div>
               </div>
-              <div className="animationSkills flex gap-5">
+              <div className="animationSkills sm:block flex gap-5">
                 {" "}
                 <div id="Card" className="">
                   <SkillCard
