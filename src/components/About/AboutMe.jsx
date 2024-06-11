@@ -1,55 +1,49 @@
 // import React and other necessary libraries
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
-
+import Profile from "../../assets/Profile.jpg";
 function AboutMe() {
   // Create a ref for the about section
   const aboutRef = useRef(null);
 
   useEffect(() => {
-    const timeRound = gsap.timeline({ delay: 2 }); // 무한 반복하는 타임라인 생성
-
-    timeRound.to("#roundMove", {
-      rotationY: 180,
-      x: "600px",
-      yoyo: true,
-      repeat: -1,
-      duration: 4,
-      ease: "power4.inOut",
-    });
-
     gsap.to(".textAboutAnimation", {
-      duration: 3,
-      text: "Hello:)",
+      duration: 2,
+      text: "Who Is JungMu?",
       scrollTrigger: {
         trigger: ".textContainer",
-        scrub: 3,
-        start: "bottom center",
+        scrub: 2,
+        start: "top center",
         end: "bottom center",
-        markers: true,
+        // markers: true,
       },
     });
-    return () => {
-      timeRound.kill();
-    };
   }, []);
 
   return (
     <div
       ref={aboutRef}
-      className="flex w-[100vw] relative flex-col justify-center items-center"
+      className="flex w-[100vw] h-[100vh] relative flex-col justify-center items-center"
     >
-      <div className="textContainer text-[150px] lg:text-[80px] w-[70%] flex justify-center flex-col items-center font-nanum-square-neo-heavy">
-        <p className="textAboutAnimation">gdgd</p>
-        <div>
-          <div className="w-[800px] lg:w-[600px] lg:h-[150px] h-[200px] bg-gray-900 rounded-full items-center flex">
-            <div className="text-6xl w-full h-full justify-center items-center flex">
-              #열정 #노력 #배움
+      <div className="textContainer font-nanum-square-neo-heavy sm:text-2xl text-4xl flex w-full flex-col items-center justify-center">
+        <p className="textAboutAnimation">Index</p>
+      </div>
+      <div className="aboutImg w-full h-full  flex justify-center">
+        <div className="flex  justify-center w-[300px] items-center">
+          <img src={Profile} className=" rounded-full" alt="" />
+          <div className="absolute flex justify-center items-center -z-10">
+            <div className="flex absolute justify-center items-center w-[150px] rounded-full h-[150px] bg-green-400">
+              열정
             </div>
-            <div
-              id="roundMove"
-              className="rounded-full opacity-30 bg-white flex w-[200px] lg:h-[150px] h-[200px] absolute"
-            ></div>
+            <div className="flex absolute justify-center items-center w-[150px] rounded-full h-[150px] bg-violet-400">
+              노력
+            </div>
+            <div className="flex absolute justify-center items-center w-[150px] rounded-full h-[150px] bg-red-400">
+              성장
+            </div>
+            <div className="flex absolute justify-center items-center w-[150px] rounded-full h-[150px] bg-sky-400">
+              꿈
+            </div>
           </div>
         </div>
       </div>

@@ -14,12 +14,12 @@ function PortPort() {
         {/* 소제목 및 설명 */}
         <p className="opacity-70 mt-4">지금 현재 보고있는 사이트입니다.</p>
         {/* 이미지 */}
-        <div className=" w-full flex h-[50vh] my-4">
+        <div className=" w-full sm:flex-col flex sm:h-[100vh] h-[50vh] my-4">
           <div className="  flex flex-1 justify-center">
             <div className="bg-white w-1/2 h-full"></div>
           </div>
           <div className="flex-1 flex items-center justify-center">
-            <div className="w-2/3 gap-5 flex text-left flex-col">
+            <div className="w-2/3 sm:w-full gap-5 flex text-left flex-col">
               <div className="w-full flex justify-center items-center">
                 <FaRegStar size={60} />
               </div>
@@ -62,13 +62,13 @@ function PortPort() {
 
           <div className="flex absolute">
             <div>
-              <div className="flex justify-center items-center gap-2">
+              <div className="flex sm:justify-start justify-center items-center gap-2">
                 <p>인원수 : </p>
                 <div className="flex">
                   <BsPerson size={24} />
                 </div>
               </div>
-              <div className="mt-4 opacity-70 flex justify-center items-center">
+              <div className="mt-4 sm:mt-2 opacity-70 flex justify-center items-center">
                 <BsPerson size={18} />
                 <p className="text-sm font-nanum-square-neo-Light">
                   아이콘의 개수당 인원수를 의미합니다.
@@ -77,8 +77,8 @@ function PortPort() {
             </div>
           </div>
           {/* Read Me */}
-          <div className="w-full h-full items-center flex justify-end pr-12">
-            <button className=" opacity-70 my-2 rounded-full p-1 px-2 text-base font-nanum-square-neo-Bold">
+          <div className="w-full h-full items-center flex justify-end sm:pr-0 pr-12">
+            <button className=" opacity-70 sm-my-0 my-2 rounded-full p-1 px-2 text-base font-nanum-square-neo-Bold">
               Read Me.
             </button>
           </div>

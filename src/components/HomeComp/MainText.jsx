@@ -116,7 +116,7 @@ function MainText() {
     <div className="w-[100vw] h-[100vh] flex justify-center">
       <div className="mainCont w-[60vw] flex justify-center h-[100vh]">
         <div className="flex w-full justify-center">
-          <div className="absolute w-full h-full flex-col flex justify-center items-center font-nanum-square-neo-heavy text-6xl">
+          <div className="absolute w-full h-full flex-col flex justify-center items-center font-nanum-square-neo-heavy sm:text-4xl text-6xl">
             <p className="MainTextHello"></p>
             <div className=" mt-4 mainTextChoice opacity-0">
               <div className="gap-12 flex">
@@ -129,7 +129,7 @@ function MainText() {
               </div>
             </div>
           </div>
-          <div className="flex bottom-36 absolute text-base">
+          <div className="flex top-56 absolute text-base">
             <div className="flex items-center flex-col">
               <img
                 src={react}
