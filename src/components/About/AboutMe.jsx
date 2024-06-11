@@ -7,18 +7,8 @@ function AboutMe() {
   const aboutRef = useRef(null);
 
   useEffect(() => {
-    const timeI = gsap.timeline({}); // 무한 반복하는 타임라인 생성
     const timeRound = gsap.timeline({ delay: 2 }); // 무한 반복하는 타임라인 생성
-    const timeBar = gsap.timeline({}); // 무한 반복하는 타임라인 생성
 
-    timeI.to(".isText", {
-      rotationX: 360,
-      yoyo: true,
-      repeat: -1,
-      delay: 3,
-      duration: 2, // 1초 동안 회전
-      ease: "none", // easing 효과 없음
-    });
     timeRound.to("#roundMove", {
       rotationY: 180,
       x: "600px",
@@ -27,17 +17,20 @@ function AboutMe() {
       duration: 4,
       ease: "power4.inOut",
     });
-    gsap.from("#CHOIJUNGMU", {
-      rotationX: 180,
-      duration: 2,
-      ease: "power1.inOut",
-    });
 
+    gsap.to(".textAboutAnimation", {
+      duration: 3,
+      text: "Hello:)",
+      scrollTrigger: {
+        trigger: ".textContainer",
+        scrub: 3,
+        start: "bottom center",
+        end: "bottom center",
+        markers: true,
+      },
+    });
     return () => {
-      timeI.kill(); // 컴포넌트가 언마운트 될 때 애니메이션 종료
       timeRound.kill();
-      timeBar.kill();
-      gsap.killTweensOf("#CHOIJUNGMU");
     };
   }, []);
 
@@ -46,17 +39,8 @@ function AboutMe() {
       ref={aboutRef}
       className="flex w-[100vw] relative flex-col justify-center items-center"
     >
-      <div className="text-[150px] lg:text-[80px] w-[70%] font-nanum-square-neo-heavy">
-        <p className="text-left flex text-violet-400">
-          Who <span className="isText ml-4"> i</span>s
-        </p>
-        <div className="w-1/2 bg-white flex h-[10px] rounded-full"></div>
-        <div className="flex flex-row">
-          <p id="CHOIJUNGMU" className="whitespace-nowrap flex">
-            CHO<span className="isText mr-8"> i</span> JUNG MU
-          </p>
-          <p className="animate-bounce">?</p>
-        </div>
+      <div className="textContainer text-[150px] lg:text-[80px] w-[70%] flex justify-center flex-col items-center font-nanum-square-neo-heavy">
+        <p className="textAboutAnimation">gdgd</p>
         <div>
           <div className="w-[800px] lg:w-[600px] lg:h-[150px] h-[200px] bg-gray-900 rounded-full items-center flex">
             <div className="text-6xl w-full h-full justify-center items-center flex">

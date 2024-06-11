@@ -8,7 +8,7 @@ import StartIntro from "./StartIntro";
 
 function SubAbout() {
   return (
-    <section className="w-full h-full flex flex-col items-center overflow-hidden">
+    <section className="yesClickScrollMove w-full h-full flex flex-col items-center overflow-hidden">
       <div className="panel w-[100vw] flex">
         <AboutMe />
       </div>
