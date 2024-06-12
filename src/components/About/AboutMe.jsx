@@ -25,8 +25,8 @@ function AboutMe() {
       scrollTrigger: {
         trigger: ".aboutImg",
         scrub: 2,
-        start: "top 20%",
-        end: "top center",
+        start: "top center",
+        end: "20% center",
         // markers: true,
       },
     });
@@ -37,8 +37,8 @@ function AboutMe() {
       scrollTrigger: {
         trigger: ".aboutImg",
         scrub: 2,
-        start: "top 20%",
-        end: "top center",
+        start: "top center",
+        end: "20% center",
         // markers: true,
       },
     });
@@ -49,8 +49,8 @@ function AboutMe() {
       scrollTrigger: {
         trigger: ".aboutImg",
         scrub: 2,
-        start: "top 20%",
-        end: "top center",
+        start: "top center",
+        end: "20% center",
         // markers: true,
       },
     });
@@ -61,8 +61,8 @@ function AboutMe() {
       scrollTrigger: {
         trigger: ".aboutImg",
         scrub: 2,
-        start: "top 20%",
-        end: "top center",
+        start: "top center",
+        end: "20% center",
         // markers: true,
       },
     });
@@ -75,6 +75,9 @@ function AboutMe() {
     >
       <div className="textContainer font-nanum-square-neo-heavy sm:text-2xl text-4xl flex w-full flex-col items-center justify-center">
         <p className="mt-24 textAboutAnimation">Index</p>
+        <p className="text-base font-nanum-square-neo-Light mt-2">
+          각 아이콘을 클릭해보세요.
+        </p>
       </div>
       <div className="aboutImg w-full h-full  flex justify-center">
         <div className="flex  justify-center w-[300px] items-center">
@@ -95,7 +98,6 @@ function AboutMe() {
           </div>
         </div>
       </div>
-      <p>이러한 개발 열정으로 임하고있습니다.</p>
     </div>
   );
 }
