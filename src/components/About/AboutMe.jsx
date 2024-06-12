@@ -18,6 +18,54 @@ function AboutMe() {
         // markers: true,
       },
     });
+    gsap.to(".a", {
+      x: 300,
+      y: 100,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".aboutImg",
+        scrub: 2,
+        start: "top 20%",
+        end: "top center",
+        // markers: true,
+      },
+    });
+    gsap.to(".b", {
+      x: -300,
+      y: 100,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".aboutImg",
+        scrub: 2,
+        start: "top 20%",
+        end: "top center",
+        // markers: true,
+      },
+    });
+    gsap.to(".c", {
+      x: 300,
+      y: -100,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".aboutImg",
+        scrub: 2,
+        start: "top 20%",
+        end: "top center",
+        // markers: true,
+      },
+    });
+    gsap.to(".d", {
+      x: -300,
+      y: -100,
+      opacity: 1,
+      scrollTrigger: {
+        trigger: ".aboutImg",
+        scrub: 2,
+        start: "top 20%",
+        end: "top center",
+        // markers: true,
+      },
+    });
   }, []);
 
   return (
@@ -26,27 +74,28 @@ function AboutMe() {
       className="flex w-[100vw] h-[100vh] relative flex-col justify-center items-center"
     >
       <div className="textContainer font-nanum-square-neo-heavy sm:text-2xl text-4xl flex w-full flex-col items-center justify-center">
-        <p className="textAboutAnimation">Index</p>
+        <p className="mt-24 textAboutAnimation">Index</p>
       </div>
       <div className="aboutImg w-full h-full  flex justify-center">
         <div className="flex  justify-center w-[300px] items-center">
           <img src={Profile} className=" rounded-full" alt="" />
-          <div className="absolute flex justify-center items-center -z-10">
-            <div className="flex absolute justify-center items-center w-[150px] rounded-full h-[150px] bg-green-400">
+          <div className="absolute flex justify-center items-center">
+            <div className="a opacity-0 flex absolute justify-center items-center w-[150px] rounded-full h-[150px] bg-green-400">
               열정
             </div>
-            <div className="flex absolute justify-center items-center w-[150px] rounded-full h-[150px] bg-violet-400">
+            <div className="b opacity-0 flex absolute justify-center items-center w-[150px] rounded-full h-[150px] bg-violet-400">
               노력
             </div>
-            <div className="flex absolute justify-center items-center w-[150px] rounded-full h-[150px] bg-red-400">
+            <div className="c opacity-0 flex absolute justify-center items-center w-[150px] rounded-full h-[150px] bg-red-400">
               성장
             </div>
-            <div className="flex absolute justify-center items-center w-[150px] rounded-full h-[150px] bg-sky-400">
+            <div className="d opacity-0 flex absolute justify-center items-center w-[150px] rounded-full h-[150px] bg-sky-400">
               꿈
             </div>
           </div>
         </div>
       </div>
+      <p>이러한 개발 열정으로 임하고있습니다.</p>
     </div>
   );
 }
