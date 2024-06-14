@@ -127,15 +127,20 @@ function AboutMe() {
       textTimeLine.to(".aboutText1", {
         delay: 2,
         duration: 1,
-        text: "개발자로서의 약속",
+        text: "많이 준비한 것은 없지만 ",
       });
       textTimeLine.to(".aboutText2", {
         duration: 1,
-        text: "약속약속",
+        text: "편안하게 봐주세요:)",
       });
       textTimeLine.to(".aboutText3", {
         duration: 1,
-        text: "파이팅",
+        text: "감사합니다",
+      });
+      textTimeLine.to(window, {
+        duration: 2,
+        delay: 1,
+        scrollTo: ".mainSkillCont",
       });
     }
   };

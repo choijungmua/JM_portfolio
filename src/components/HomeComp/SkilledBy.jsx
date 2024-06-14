@@ -11,36 +11,12 @@ import { useRecoilValue } from "recoil";
 import gientCard from "../../atoms/gientCard";
 function SkilledBy() {
   const Card = useRecoilValue(gientCard);
-  const cardArray = gsap.utils.toArray("#Card");
-  useGSAP(() => {
-    gsap.from(".animationMy", {
-      x: window.innerWidth,
-      ease: "none",
-      delay: 5,
-      scrollTrigger: {
-        trigger: ".skillCont",
-        start: "30% center",
-        end: "center center",
-        duration: 1,
-        scrub: 2,
-        // markers: true,
-      },
-    });
-    gsap.from(".animationSkills", {
-      x: -window.innerWidth,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".skillCont",
-        start: "30% center",
-        end: "center center",
-        scrub: 2,
-        duration: 1,
-        // markers: true,
-      },
-    });
-  }, []);
+  useGSAP(() => {}, []);
   return (
     <div className="w-[100vw] h-[100vh] overflow-hidden">
+      <div className="mt-24 absolute w-full flex justify-center">
+        <p>제 Skill 스택은 이렇습니다.</p>
+      </div>
       <div className="mainSkillCont w-[100vw] h-full">
         {!Card ? (
           <div className="w-[100vw] h-full flex flex-col justify-center items-center overflow-hidden">
