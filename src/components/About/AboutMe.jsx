@@ -68,38 +68,76 @@ function AboutMe() {
     });
   }, []);
 
+  let firstClick = 0;
   const aboutImgClick = () => {
-    gsap.to(".a", {
-      opacity: 0,
-      display: "none",
-    });
-    gsap.to(".b", {
-      opacity: 0,
-      display: "none",
-    });
-    gsap.to(".c", {
-      opacity: 0,
-      display: "none",
-    });
-    gsap.to(".d", {
-      opacity: 0,
-      display: "none",
-    });
-    gsap.to(".im", {
-      x: -300,
-    });
-    aboutTextTimeLine.to(".aboutText1", {
-      duration: 2,
-      text: "안녕하십니까 저는 프론트엔드 개발자 최정무입니다.",
-    });
-    aboutTextTimeLine.to(".aboutText2", {
-      duration: 2,
-      text: "저는 의미있는 배움과 좋은 성장을 이루기 위해 개발합니다.",
-    });
-    aboutTextTimeLine.to(".aboutText3", {
-      duration: 2,
-      text: "개발에 진정성 있게 다가가고 싶고 더 많은 것을 배우고 싶습니다.",
-    });
+    if (firstClick === 0) {
+      gsap.to(".a", {
+        opacity: 0,
+        display: "none",
+      });
+      gsap.to(".b", {
+        opacity: 0,
+        display: "none",
+      });
+      gsap.to(".c", {
+        opacity: 0,
+        display: "none",
+      });
+      gsap.to(".d", {
+        opacity: 0,
+        display: "none",
+      });
+      gsap.to(".im", {
+        x: -300,
+      });
+      aboutTextTimeLine.to(".aboutText1", {
+        duration: 1,
+        text: "안녕하십니까 저는 프론트엔드 개발자 최정무입니다.",
+      });
+      aboutTextTimeLine.to(".aboutText2", {
+        duration: 1,
+        text: "저는 의미있는 배움과 좋은 성장을 이루기 위해 개발합니다.",
+      });
+      aboutTextTimeLine.to(".aboutText3", {
+        duration: 1,
+        text: "개발에 진정성 있게 다가가고 싶고 더 많은 것을 배우고 싶습니다.",
+      });
+      firstClick++;
+    } else if (firstClick === 1) {
+      gsap.to(".im", {
+        x: 300,
+      });
+      const textTimeLine = gsap.timeline();
+
+      gsap.to(".aboutText1", {
+        x: -300,
+        textAlign: "right",
+        text: "",
+      });
+      gsap.to(".aboutText2", {
+        x: -300,
+        textAlign: "right",
+        text: "",
+      });
+      gsap.to(".aboutText3", {
+        x: -300,
+        textAlign: "right",
+        text: "",
+      });
+      textTimeLine.to(".aboutText1", {
+        delay: 2,
+        duration: 1,
+        text: "개발자로서의 약속",
+      });
+      textTimeLine.to(".aboutText2", {
+        duration: 1,
+        text: "약속약속",
+      });
+      textTimeLine.to(".aboutText3", {
+        duration: 1,
+        text: "파이팅",
+      });
+    }
   };
   return (
     <div
@@ -137,14 +175,10 @@ function AboutMe() {
               </div>
             </div>
           </div>
-          <div className="flex overflow-hidden flex-col absolute ml-72">
+          <div className="flex flex-col absolute ml-72">
             <p className="aboutText1"></p>
             <p className="aboutText2"></p>
             <p className="aboutText3"></p>
-            <div className="flex w-full justify-center">
-              <p>ㅎㅇ</p>
-              <p>ㅂㅇ</p>
-            </div>
           </div>
         </div>
       </div>
