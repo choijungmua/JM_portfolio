@@ -11,11 +11,20 @@ import { useRecoilValue } from "recoil";
 import gientCard from "../../atoms/gientCard";
 function SkilledBy() {
   const Card = useRecoilValue(gientCard);
-  useGSAP(() => {}, []);
+  useGSAP(() => {
+    gsap.to(".SkillsText", {
+      duration: 1,
+      text: "제 Skill 스택은 이렇습니다.",
+    });
+    gsap.to(".SkillsText", {
+      duration: 1,
+      text: "제 Skill 스택은 이렇습니다.",
+    });
+  }, []);
   return (
     <div className="w-[100vw] h-[100vh] overflow-hidden">
-      <div className="mt-24 absolute w-full flex justify-center">
-        <p>제 Skill 스택은 이렇습니다.</p>
+      <div className="SkillsText mt-24 absolute w-full flex justify-center">
+        <p></p>
       </div>
       <div className="mainSkillCont w-[100vw] h-full">
         {!Card ? (
