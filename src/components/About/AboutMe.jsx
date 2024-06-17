@@ -1,11 +1,12 @@
 // import React and other necessary libraries
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Profile from "../../assets/Profile.jpg";
 function AboutMe() {
   // Create a ref for the about section
   const aboutRef = useRef(null);
   const aboutTextTimeLine = gsap.timeline();
+  const [aboutImgMouseEnter, setAboutImgMouseEnter] = useState(0);
   useEffect(() => {
     gsap.to(".textAboutAnimation", {
       duration: 2,
@@ -144,6 +145,12 @@ function AboutMe() {
       });
     }
   };
+  const aboutImgHover = () => {
+    setAboutImgMouseEnter(1);
+  };
+  const aboutImgLeave = () => {
+    setAboutImgMouseEnter(0);
+  };
   return (
     <div
       ref={aboutRef}
@@ -158,13 +165,23 @@ function AboutMe() {
       <div className="aboutImg w-full h-full  flex justify-center">
         <div className="w-full  relative h-full flex justify-center items-center">
           <div className="flex  justify-center w-[300px] items-center">
-            <img
-              src={Profile}
-              onClick={aboutImgClick}
-              className="im rounded-full"
-              alt=""
-            />
-
+            <div className="im flex justify-center items-center">
+              <img
+                src={Profile}
+                onClick={aboutImgClick}
+                onMouseEnter={aboutImgHover}
+                onMouseLeave={aboutImgLeave}
+                className="rounded-full hover:opacity-50"
+                alt=""
+              />
+              <p
+                className={`${
+                  !aboutImgMouseEnter ? `hidden` : `inline`
+                } absolute pointer-events-none`}
+              >
+                Click Me!
+              </p>
+            </div>
             <div className="absolute flex justify-center items-center">
               <div className="a opacity-0 flex absolute justify-center items-center w-[150px] rounded-full h-[150px] bg-green-400">
                 열정

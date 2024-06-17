@@ -28,62 +28,77 @@ function MainText() {
     });
     mainTextTimeLine.to(".MainTextHello", {
       duration: 1,
+      delay: 1,
       text: "Hello:)",
     });
     mainTextTimeLine.to(".MainTextHello", {
       duration: 1,
+      delay: 1,
       text: "안녕하세요",
     });
     mainTextTimeLine.to(".MainTextHello", {
       duration: 1,
+      delay: 1,
       text: "Bonjour",
     });
     mainTextTimeLine.to(".MainTextHello", {
       duration: 1,
+      delay: 1,
       text: "Hola",
     });
     mainTextTimeLine.to(".MainTextHello", {
       duration: 1,
+      delay: 1,
       text: "こんにちは",
     });
     mainTextTimeLine.to(".MainTextHello", {
       duration: 1,
+      delay: 1,
       text: "你好",
     });
     mainTextTimeLine.to(".MainTextHello", {
       duration: 1,
+      delay: 1,
       text: "Hallo ",
     });
     mainTextTimeLine.to(".MainTextHello", {
       duration: 1,
+      delay: 1,
       text: "Ciao  ",
     });
     mainTextTimeLine.to(".MainTextHello", {
       duration: 1,
+      delay: 1,
       text: "Olá  ",
     });
     mainTextTimeLine.to(".MainTextHello", {
       duration: 1,
+      delay: 1,
       text: "Привет  ",
     });
     mainTextTimeLine.to(".MainTextHello", {
       duration: 1,
+      delay: 1,
       text: "Guten Tag ",
     });
     mainTextTimeLine.to(".MainTextHello", {
       duration: 1,
+      delay: 1,
       text: "Ahoj ",
     });
     mainTextTimeLine.to(".MainTextHello", {
       duration: 1,
+      delay: 1,
       text: "Hej ",
     });
     mainTextTimeLine.to(".MainTextHello", {
       duration: 1,
+      delay: 1,
       text: "Tere ",
     });
     mainTextTimeLine.to(".MainTextHello", {
       duration: 2,
+      delay: 1,
       text: "",
     });
     mainTextTimeLine.to(".MainTextHello", {
