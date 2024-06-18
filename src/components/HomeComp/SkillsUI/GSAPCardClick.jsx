@@ -2,7 +2,7 @@ import gsap from "gsap";
 import { useEffect } from "react";
 function GSAPCardClick() {
   return (
-    <div className=" bg-white gap-2 rounded-3xl flex-col items-center justify-center w-[30vw] h-[60vh] flex p-4 overflow-hidden text-black">
+    <div className=" bg-white gap-2 rounded-3xl flex-col items-center p-4 justify-center w-[50vw] lg:w-[70vw] sm:w-[100vw] md:w-[80vw] h-[60vh] flex overflow-hidden text-black">
       <div className="Hello">
         <div className="w-[100px]">
           <img src={require("../../../assets/gsap.png")} alt="" />
