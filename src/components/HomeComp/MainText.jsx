@@ -131,10 +131,17 @@ function MainText() {
     <div className="w-[100vw] h-[100vh] flex justify-center">
       <div className="mainCont w-[60vw] flex justify-center h-[100vh]">
         <div className="flex w-full justify-center">
-          <div className="absolute w-full h-full flex-col flex justify-center items-center font-nanum-square-neo-heavy sm:text-4xl text-6xl">
-            <p className="MainTextHello"></p>
+          <div className=" gap-12 w-full h-full flex-col flex justify-center items-center font-nanum-square-neo-heavy sm:text-2xl text-6xl">
+            <div className="">
+              <img
+                src={react}
+                alt=""
+                className="reactImg flex w-[100px] h-[100px]"
+              />
+            </div>
+            <p className="MainTextHello whitespace-nowrap"></p>
             <div className=" mt-4 mainTextChoice opacity-0">
-              <div className="gap-12 flex">
+              <div className="gap-12 font-nanum-square-neo-ExtraBold flex">
                 <p onClick={scrollDownYes} className="text-red-600">
                   Yes
                 </p>
@@ -142,15 +149,6 @@ function MainText() {
                   No
                 </p>
               </div>
-            </div>
-          </div>
-          <div className="flex top-56 absolute text-base">
-            <div className="flex items-center flex-col">
-              <img
-                src={react}
-                alt=""
-                className="reactImg flex w-[100px] h-[100px]"
-              />
             </div>
           </div>
         </div>
