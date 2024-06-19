@@ -91,17 +91,13 @@ function PortClick() {
                 시간이 되었으며, 앞으로 성장해 나갈 제 목표입니다.
               </p>
               <div className="border opacity-70"></div>
-              <div className="flex-col opacity-70 flex text-end">
-                <p>제작기간 : 4개월</p>
-                <p>2024-05</p>
-              </div>
             </div>
           </div>
         </div>
         {/* Stack */}
-        <div className="w-full">
-          <div className="whitespace-nowrap w-full flex justify-end gap-1">
-            <div>
+        <div className="w-full ">
+          <div className="whitespace-nowrap gap-2 w-full flex justify-end gap-1">
+            <div className="flex gap-2 flex-col">
               <div className="rounded-full  border px-2 flex items-center">
                 <p>Recoil</p>
               </div>
@@ -118,7 +114,7 @@ function PortClick() {
                 <p>ReactQuery</p>
               </div>
             </div>
-            <div className="">
+            <div className="flex gap-2 flex-col">
               <div className="rounded-full border px-2 flex items-center">
                 <p>FRAMER-MOTION</p>
               </div>
@@ -133,8 +129,12 @@ function PortClick() {
               </div>
             </div>
           </div>
+          <div className="flex-col opacity-70 flex text-end">
+            <p>제작기간 : 4개월</p>
+            <p>2024-05</p>
+          </div>
 
-          <div className="flex absolute">
+          <div className="flex mt-4 absolute">
             <div>
               <div className="flex justify-center sm:justify-start items-center gap-2">
                 <p>인원수 : </p>
@@ -154,7 +154,7 @@ function PortClick() {
           </div>
           {/* Read Me */}
           <div className="w-full h-full sm:pr-0 items-center flex justify-end pr-12">
-            <button className="sm-my-0 opacity-70 my-2 rounded-full p-1 px-2 text-base font-nanum-square-neo-Bold">
+            <button className=" sm-my-0 opacity-70 my-2 rounded-full p-1 px-2 text-base font-nanum-square-neo-Bold">
               Read Me.
             </button>
           </div>

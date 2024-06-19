@@ -50,9 +50,9 @@ function PortFolio() {
           scrollTrigger: {
             trigger: canvas,
             scrub: 2,
-            start: "20% center",
-            end: "bottom 70%",
-            // markers: true,
+            start: "top center",
+            end: "center 70%",
+            markers: true,
           },
         }
       );
@@ -66,7 +66,7 @@ function PortFolio() {
           id="portMuflixText"
           className="text-white opacity-1 mt-36 text-center font-nanum-square-neo-heavy text-4xl"
         >
-          PORTPOLIO
+          PORTFOLIO
         </p>
         <div className="flex-col w-[80vw] flex p-2 gap-2">
           {/* 자바 웹 */}

@@ -128,7 +128,7 @@ function MainText() {
   };
 
   return (
-    <div className="w-[100vw] h-[100vh] flex justify-center">
+    <div className="w-[100vw] h-[100vh] flex justify-center overflow-hidden">
       <div className="mainCont w-[60vw] flex justify-center h-[100vh]">
         <div className="flex w-full justify-center">
           <div className=" gap-12 w-full h-full flex-col flex justify-center items-center font-nanum-square-neo-heavy sm:text-2xl text-6xl">

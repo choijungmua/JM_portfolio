@@ -98,7 +98,7 @@ function PortMovie() {
         </div>
         {/* Stack */}
         <div className="w-full">
-          <div className="w-full flex justify-end gap-1">
+          <div className=" w-full flex justify-end gap-1">
             <div className="rounded-full  border px-2 flex items-center">
               <p>React</p>
             </div>
@@ -108,13 +108,13 @@ function PortMovie() {
             <div className="rounded-full border px-2 flex items-center">
               <p>SCSS</p>
             </div>
-            <div className="rounded-full border px-2 flex items-center">
+            <div className="rounded-full whitespace-nowrap border px-2 flex items-center">
               <p>Styled Component</p>
             </div>
           </div>
           <div className="flex absolute">
             <div>
-              <div className="flex justify-center sm:justify-start items-center gap-2">
+              <div className="mt-4 flex justify-center sm:justify-start items-center gap-2">
                 <p>인원수 : </p>
                 <BsPerson size={24} />
               </div>

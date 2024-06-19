@@ -62,7 +62,7 @@ function PortPort() {
 
           <div className="flex absolute">
             <div>
-              <div className="flex sm:justify-start justify-center items-center gap-2">
+              <div className="mt-4 flex sm:justify-start justify-center items-center gap-2">
                 <p>인원수 : </p>
                 <div className="flex">
                   <BsPerson size={24} />

@@ -220,8 +220,8 @@ function AboutMe() {
             <p className="aboutText2"></p>
             <p className="aboutText3"></p>
           </div>
-          <div className="text-center text-base hidden sm:inline md:inline">
-            <p className="">
+          <div className="text-center text-sm font-nanum-square-neo-Light hidden sm:inline md:inline">
+            <p className="mt-8 ">
               안녕하십니까 저는 프론트엔드 개발자 최정무입니다.
             </p>
             <p className="">
