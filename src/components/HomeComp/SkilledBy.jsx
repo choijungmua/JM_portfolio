@@ -19,6 +19,7 @@ import GSAPCardClick from "./SkillsUI/GSAPCardClick";
 import SassCardClick from "./SkillsUI/SassCardClick";
 import GitHubCardClick from "./SkillsUI/GitHubCardClick";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
+import { TfiAngleDoubleDown } from "react-icons/tfi";
 
 function SkilledBy() {
   const [Card, setCard] = useRecoilState(gientCard);
@@ -62,12 +63,21 @@ function SkilledBy() {
       x: 0,
     });
   };
+  // 포트폴리오로 움직이기
+  const onMovePortfolio = () => {
+    gsap.to(window, {
+      duration: 2,
+      delay: 1,
+      scrollTo: ".javaWeb",
+    });
+  };
   return (
     <div className="w-[100vw] h-[100vh] overflow-hidden">
       <div className=" mt-24 absolute whitespace-nowrap w-full text-2xl sm:text-xl flex flex-col items-center justify-center">
         <p className="SkillsText"></p>
         <p className="SkillsMainNameText"></p>
       </div>
+
       <div className="mainSkillCont w-[100vw] h-full">
         {!Card ? (
           <div className="w-[100vw] h-full flex flex-col justify-center items-center overflow-hidden">
@@ -226,11 +236,17 @@ function SkilledBy() {
               >
                 <SkillCard
                   MainText={"NodeJs"}
-                  SubText={"잘하기위해 노력할것입니다."}
                   Icon={require("../../assets/NodeJs.png")}
                   Explain={"Explain"}
                 />
               </div>
+            </div>
+            <div
+              onClick={onMovePortfolio}
+              className="flex flex-col p-4 justify-center animate-bounce mb-10 items-center"
+            >
+              <p>Portfolio</p>
+              <TfiAngleDoubleDown size={18} />
             </div>
           </div>
         ) : (

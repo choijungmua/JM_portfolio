@@ -20,7 +20,7 @@ import PortJavaWeb from "./PortJavaWeb";
 import PortPort from "./PortPort";
 import gsap from "gsap";
 
-function PortPolio() {
+function PortFolio() {
   useEffect(() => {
     // Animate the PORTPOLIO text
     gsap.from("#portMuflixText", {
@@ -70,7 +70,7 @@ function PortPolio() {
         </p>
         <div className="flex-col w-[80vw] flex p-2 gap-2">
           {/* 자바 웹 */}
-          <div className="PortCanvas opacity-0 w-full h-full z-10">
+          <div className="PortCanvas javaWeb opacity-0 w-full h-full z-10">
             <PortJavaWeb />
           </div>
           {/* 클릭픽 */}
@@ -91,4 +91,4 @@ function PortPolio() {
   );
 }
 
-export default PortPolio;
+export default PortFolio;

@@ -13,7 +13,7 @@ import SubAbout from "../components/About/SubAbout";
 import MainText from "../components/HomeComp/MainText";
 import SkilledBy from "../components/HomeComp/SkilledBy";
 import Footer from "../components/HomeComp/Footer";
-import PortPolio from "../components/PortPolio/PortPolio";
+import PortFolio from "../components/PortFolio/PortFolio";
 // import AboutMe from "../components/AboutMe";
 function Home() {
   return (
@@ -31,7 +31,7 @@ function Home() {
       {/* Skills */}
       <SkilledBy />
       {/* PortPoilo */}
-      <PortPolio />
+      <PortFolio />
       <Footer />
     </div>
   );
