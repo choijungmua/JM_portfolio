@@ -169,6 +169,35 @@ function AboutMe() {
   const aboutImgLeave = () => {
     setAboutImgMouseEnter(0);
   };
+
+  const onClickA = () => {
+    gsap.to(".a", {
+      x: 0,
+      y: 0,
+      opacity: 0,
+    });
+  };
+  const onClickB = () => {
+    gsap.to(".b", {
+      x: 0,
+      y: 0,
+      opacity: 0,
+    });
+  };
+  const onClickC = () => {
+    gsap.to(".c", {
+      x: 0,
+      y: 0,
+      opacity: 0,
+    });
+  };
+  const onClickD = () => {
+    gsap.to(".d", {
+      x: 0,
+      y: 0,
+      opacity: 0,
+    });
+  };
   return (
     <div
       ref={aboutRef}
@@ -201,16 +230,28 @@ function AboutMe() {
               </p>
             </div>
             <div className="absolute flex justify-center items-center sm:hidden md:hidden">
-              <div className="a opacity-0 flex absolute justify-center items-center w-[150px] sm:w-[100px] sm:h-[100px] rounded-full h-[150px] bg-green-400">
+              <div
+                onClick={onClickA}
+                className="a opacity-0 flex absolute justify-center items-center w-[150px] sm:w-[100px] sm:h-[100px] rounded-full h-[150px] bg-green-400"
+              >
                 열정
               </div>
-              <div className="b opacity-0 flex absolute justify-center items-center w-[150px] sm:w-[100px] sm:h-[100px] rounded-full h-[150px] bg-violet-400">
+              <div
+                onClick={onClickB}
+                className="b opacity-0 flex absolute justify-center items-center w-[150px] sm:w-[100px] sm:h-[100px] rounded-full h-[150px] bg-violet-400"
+              >
                 노력
               </div>
-              <div className="c opacity-0 flex absolute justify-center items-center w-[150px] sm:w-[100px] sm:h-[100px] rounded-full h-[150px] bg-red-400">
+              <div
+                onClick={onClickC}
+                className="c opacity-0 flex absolute justify-center items-center w-[150px] sm:w-[100px] sm:h-[100px] rounded-full h-[150px] bg-red-400"
+              >
                 성장
               </div>
-              <div className="d opacity-0 flex absolute justify-center items-center w-[150px] sm:w-[100px] sm:h-[100px] rounded-full h-[150px] bg-sky-400">
+              <div
+                onClick={onClickD}
+                className="d opacity-0 flex absolute justify-center items-center w-[150px] sm:w-[100px] sm:h-[100px] rounded-full h-[150px] bg-sky-400"
+              >
                 꿈
               </div>
             </div>
