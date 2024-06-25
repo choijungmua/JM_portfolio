@@ -69,42 +69,33 @@ function Footer() {
 
     return (
       <div className="w-[100vw] h-[100vh]">
-        <div className="w-full h-full flex justify-center items-center">
-          <form ref={form} onSubmit={sendEmail}>
-            <label>
-              답변 받으실 이메일
-              <input
-                type="email"
-                name="user_email"
-                placeholder="ex)abcd@naver.com"
-                className="text-black"
-                required
-              />
-            </label>
-
-            <label>
-              문의 제목
-              <input
-                type="text"
-                name="ask_title"
-                placeholder="제목을 입력해주세요.(20자 이내)"
-                maxLength={20}
-                className="text-black"
-                required
-              />
-            </label>
-
-            <label>
-              문의 내용
-              <textarea
-                name="ask_message"
-                placeholder="문의 내용을 입력해주세요."
-                className="text-black"
-                required
-              />
-            </label>
-
-            <button type="submit">문의하기</button>
+        <div className="w-full h-full flex justify-center items-center flex-col">
+          {/* SEND */}
+          <p className="text-2xl font-nanum-square-neo-Bold mb-8">SEND ME</p>
+          {/* FORM */}
+          <form ref={form} onSubmit={sendEmail} className="flex flex-col">
+            <label>Name</label>
+            <input
+              type="text"
+              name="user_name"
+              className="text-black rounded-lg px-2 "
+            />
+            <label>Email</label>
+            <input
+              type="email"
+              name="user_email"
+              className="text-black rounded-lg px-2 "
+            />
+            <label>Message</label>
+            <input name="message" className="text-black rounded-lg px-2 " />
+            <input
+              type="submit"
+              value="Send"
+              className="text-black rounded-lg px-2 "
+            />
+            <button type="submit" className="text-white" value="문의하기">
+              전송
+            </button>
           </form>
         </div>
       </div>
