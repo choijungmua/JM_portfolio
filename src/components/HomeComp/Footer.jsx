@@ -94,7 +94,7 @@ function Footer() {
               className="text-black rounded-lg px-2 "
             />
             <button type="submit" className="text-white" value="문의하기">
-              전송
+              전송test
             </button>
           </form>
         </div>
