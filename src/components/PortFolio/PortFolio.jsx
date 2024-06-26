@@ -52,7 +52,7 @@ function PortFolio() {
             scrub: 2,
             start: "top center",
             end: "center 70%",
-            markers: true,
+            // markers: true,
           },
         }
       );
