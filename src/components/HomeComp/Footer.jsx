@@ -116,8 +116,8 @@ function Footer() {
 
   return (
     <>
-      <div className="guestWriteContainer">
-        <div className="guestWrite opacity-0 flex-col absolute z-10 mt-12 w-[100vw] h-[100vh] flex justify-center items-center">
+      <div className="guestWriteContainer overflow-hidden">
+        <div className="guestWrite overflow-hidden opacity-0 flex-col absolute z-10 mt-12 w-[100vw] h-[100vh] flex justify-center items-center">
           <div className="p-2 flex w-[700px]  justify-center h-[50px] flex-col items-center text-center overflow-hidden rounded-xl font-nanum-square-neo-heavy text-4xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
             <p className="footerTL1 absolute">시청해주셔서 감사합니다.</p>
             <p className="footerTL2 absolute opacity-0">재미있게 보셨다면</p>
