@@ -160,7 +160,7 @@ function SkilledBy() {
                           Explain={"Explain"}
                         />
                       </div>
-                      <div id="Card" className=" ">
+                      <div id="Card" className="">
                         <SkillCard
                           MainText={"TypeScript"}
                           SubText={"잘하기위해 노력할것입니다."}

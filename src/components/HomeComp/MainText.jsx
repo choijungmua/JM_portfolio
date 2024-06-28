@@ -27,77 +27,77 @@ function MainText() {
       },
     });
     mainTextTimeLine.to(".MainTextHello", {
-      duration: 1,
-      delay: 1,
+      duration: 0.5,
+      delay: 0.5,
       text: "Hello:)",
     });
     mainTextTimeLine.to(".MainTextHello", {
-      duration: 1,
-      delay: 1,
+      duration: 0.5,
+      delay: 0.5,
       text: "안녕하세요",
     });
     mainTextTimeLine.to(".MainTextHello", {
-      duration: 1,
-      delay: 1,
+      duration: 0.5,
+      delay: 0.5,
       text: "Bonjour",
     });
     mainTextTimeLine.to(".MainTextHello", {
-      duration: 1,
-      delay: 1,
+      duration: 0.5,
+      delay: 0.5,
       text: "Hola",
     });
     mainTextTimeLine.to(".MainTextHello", {
-      duration: 1,
-      delay: 1,
+      duration: 0.5,
+      delay: 0.5,
       text: "こんにちは",
     });
     mainTextTimeLine.to(".MainTextHello", {
-      duration: 1,
-      delay: 1,
+      duration: 0.5,
+      delay: 0.5,
       text: "你好",
     });
     mainTextTimeLine.to(".MainTextHello", {
-      duration: 1,
-      delay: 1,
+      duration: 0.5,
+      delay: 0.5,
       text: "Hallo ",
     });
     mainTextTimeLine.to(".MainTextHello", {
-      duration: 1,
-      delay: 1,
+      duration: 0.5,
+      delay: 0.5,
       text: "Ciao  ",
     });
     mainTextTimeLine.to(".MainTextHello", {
-      duration: 1,
-      delay: 1,
+      duration: 0.5,
+      delay: 0.5,
       text: "Olá  ",
     });
     mainTextTimeLine.to(".MainTextHello", {
-      duration: 1,
-      delay: 1,
+      duration: 0.5,
+      delay: 0.5,
       text: "Привет  ",
     });
     mainTextTimeLine.to(".MainTextHello", {
-      duration: 1,
-      delay: 1,
+      duration: 0.5,
+      delay: 0.5,
       text: "Guten Tag ",
     });
     mainTextTimeLine.to(".MainTextHello", {
-      duration: 1,
-      delay: 1,
+      duration: 0.5,
+      delay: 0.5,
       text: "Ahoj ",
     });
     mainTextTimeLine.to(".MainTextHello", {
-      duration: 1,
-      delay: 1,
+      duration: 0.5,
+      delay: 0.5,
       text: "Hej ",
     });
     mainTextTimeLine.to(".MainTextHello", {
-      duration: 1,
-      delay: 1,
+      duration: 0.5,
+      delay: 0.5,
       text: "Tere ",
     });
     mainTextTimeLine.to(".MainTextHello", {
-      duration: 2,
+      duration: 1,
       delay: 1,
       text: "",
     });

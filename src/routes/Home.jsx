@@ -5,7 +5,7 @@
 
 // import the React
 import React from "react";
-
+import { useState } from "react";
 // import the section
 import NightSky from "../components/UI/NightSky";
 import SubAbout from "../components/About/SubAbout";
@@ -15,9 +15,10 @@ import SkilledBy from "../components/HomeComp/SkilledBy";
 import Footer from "../components/HomeComp/Footer";
 import PortFolio from "../components/PortFolio/PortFolio";
 // import AboutMe from "../components/AboutMe";
+
 function Home() {
   return (
-    <div className=" bg-black text-white">
+    <div className=" bg-black text-white ">
       <NightSky />
       {/* Navigation */}
       {/* MainPage */}
@@ -33,6 +34,7 @@ function Home() {
       {/* PortPoilo */}
       <PortFolio />
       <Footer />
+      {/* Contact Me! */}
     </div>
   );
 }

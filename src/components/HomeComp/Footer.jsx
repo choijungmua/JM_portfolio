@@ -3,10 +3,12 @@ import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase"; // Firebase 설정 가져오기
 import { doc, setDoc } from "firebase/firestore";
 import gsap from "gsap";
+import Me from "../../assets/Profile.jpg";
 function Footer() {
   // 배열로 방명록의 List값 저장
   const [dataList, setDataList] = useState([]);
   const footerTimeLine = gsap.timeline();
+  const footerEndingTimeLine = gsap.timeline();
   const fetchData = async () => {
     // 비동기 식으로 Firebase의 값 읽어오기
     try {
@@ -38,22 +40,9 @@ function Footer() {
   }, []);
 
   useEffect(() => {
-    // Footer 진입 시 opacity 값 변경
-    gsap.to(".guestWrite", {
-      opacity: 1,
-      scrollTrigger: {
-        trigger: ".guestWrite",
-        start: "20% center",
-        end: "40% center",
-        duration: 1,
-        scrub: 1,
-        // markers: true,
-      },
-    });
     // gsap timeline
     footerTimeLine.from(".footerTL1", {
       y: 100,
-
       duration: 0.5,
     });
     // gsap timeline
@@ -78,6 +67,27 @@ function Footer() {
       y: 1000,
       opacity: 0,
       duration: 0.5,
+    });
+    // Footer gsap End Timeline
+    footerEndingTimeLine.to(".FooterEndText", {
+      text: "시청해주셔서 감사합니다.",
+      duration: 3,
+    });
+    footerEndingTimeLine.to(".FooterEndText", {
+      delay: 1,
+      opacity: 0,
+    });
+    footerEndingTimeLine.to(".CallMeFooter1", {
+      delay: 0.2,
+      opacity: 1,
+    });
+    footerEndingTimeLine.to(".CallMeFooter2", {
+      delay: 0.2,
+      opacity: 1,
+    });
+    footerEndingTimeLine.to(".CallMeFooter3", {
+      delay: 0.2,
+      opacity: 1,
     });
   }, []);
   const [guestName, setGuestName] = useState("");
@@ -114,44 +124,110 @@ function Footer() {
     });
   };
 
+  const onClickGuestBook = () => {
+    gsap.to(".CallMeFooter4", {
+      opacity: 1,
+      z: 10,
+    });
+    gsap.to(".CallMeFooter5", {
+      opacity: 0,
+      z: -10,
+    });
+  };
+  const onClickContactMe = () => {
+    gsap.to(".CallMeFooter5", {
+      opacity: 1,
+      z: 10,
+    });
+    gsap.to(".CallMeFooter4", {
+      opacity: 0,
+      z: -10,
+    });
+  };
   return (
     <>
-      <div className="guestWriteContainer overflow-hidden">
-        <div className="guestWrite overflow-hidden opacity-0 flex-col absolute z-10 mt-12 w-[100vw] h-[100vh] flex justify-center items-center">
-          <div className="p-2 flex w-[700px]  justify-center h-[50px] flex-col items-center text-center overflow-hidden rounded-xl font-nanum-square-neo-heavy text-4xl bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500">
-            <p className="footerTL1 absolute">시청해주셔서 감사합니다.</p>
-            <p className="footerTL2 absolute opacity-0">재미있게 보셨다면</p>
-            <p className="footerTL3 absolute opacity-1 overflow-hidden">
-              방명록과 연락도 남겨주세요
-            </p>
+      {/* 방명록 */}
+      <div className="guestWriteContainer flex justify-center overflow-hidden">
+        {/* 시청해주셔서 감사합니다. */}
+        <div className="flex w-[100vw] h-[100vh] absolute justify-center items-center">
+          <div className="FooterEndText font-nanum-square-neo-Bold text-3xl"></div>
+        </div>
+        {/*  */}
+        <div className="flex text-center z-10 w-[80vw] h-[100vh] absolute justify-center items-center">
+          <div className="flex  justify-center">
+            <div className="w-[40vw] ">
+              {/* 이남자의 포트폴리오 */}
+              <p className="CallMeFooter1  opacity-0 font-nanum-square-neo-ExtraBold text-xl mb-4">
+                이 남자의 포트폴리오가 맘에 드셨나요?
+              </p>
+              <div className="flex justify-center gap-5 items-center">
+                {/* 연락바람 */}
+                <div className=" flex flex-col">
+                  <div className="CallMeFooter2 hover:text-2xl gap-2 items-center flex opacity-0">
+                    <p
+                      onClick={onClickContactMe}
+                      className="text-lg hover:text-xl hover:font-nanum-square-neo-Bold"
+                    >
+                      📞Contact Me
+                    </p>
+                    <div className="text-xs opacity-80">{`>`}</div>
+                  </div>
+                  {/* 방명록 */}
+                  <div className="CallMeFooter3 gap-2 items-center flex opacity-0">
+                    <p
+                      onClick={onClickGuestBook}
+                      className="text-lg hover:text-xl hover:font-nanum-square-neo-Bold"
+                    >
+                      📕Write Guest Book
+                    </p>
+                    <div className="text-xs opacity-80">{`>`}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* 방문록 작성하기 */}
+            <div className="CallMeFooter4 opacity-0">
+              <div className="w-[40vw] h-full justify-center items-center flex">
+                <div className="guestWrite ">
+                  <form action="" className="flex gap-2">
+                    <div className="flex gap-2 justify-center items-center">
+                      <label htmlFor="name">이름</label>
+                      <input
+                        id="name"
+                        type="text"
+                        onChange={onGuestNameValue}
+                        className="p-2 text-center text-black rounded-lg"
+                      />
+                    </div>
+                    <div className="flex gap-2 justify-center items-center">
+                      <label htmlFor="contents">내용</label>
+                      <input
+                        type="text"
+                        id="contents"
+                        onChange={onGuestContentsValue}
+                        className="p-2 text-center text-black rounded-lg"
+                      />
+                    </div>
+                    <button onClick={onGuestSubmit}>작성하기</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div className=""></div>
           </div>
-          <form action="" className="flex items-center flex-col gap-2">
-            <p className="mt-12">방명록</p>
-            <div className="flex gap-2 justify-center items-center">
-              <label htmlFor="name">이름</label>
-              <input
-                id="name"
-                type="text"
-                onChange={onGuestNameValue}
-                className="p-2 text-center text-black rounded-lg"
-              />
-            </div>
-            <div className="flex gap-2 justify-center items-center">
-              <label htmlFor="contents">내용</label>
-              <input
-                type="text"
-                id="contents"
-                onChange={onGuestContentsValue}
-                className="p-2 text-center text-black rounded-lg"
-              />
-            </div>
-            <button onClick={onGuestSubmit}>작성하기</button>
-          </form>
         </div>
       </div>
-      <div className="guestViewContainer mt-12 w-[100vw] h-[100vh] opacity-0">
+      {/* 방문록 */}
+      <div className="guestViewContainer text-center mt-12 w-[100vw] h-[100vh] opacity-0">
         <div className="w-full flex flex-col items-center h-full">
+          <p className="text-yellow-400 my-4 font-nanum-square-neo-Bold text-xl">
+            방명록 작성자 수{dataList.length + 1}
+          </p>
           <div className="w-[50vw] flex flex-col items-center">
+            <div className="mt-2 text-base flex justify-center gap-2 items-center">
+              <p className="w-[100px] h-[30px]">이름:{guestName}</p>
+              <p className="w-[300px] h-[30px]">내용:{guestContents}</p>
+            </div>
             {/* 배열 출력하기 */}
             {dataList.length > 0 ? (
               dataList.map((item, index) => (
@@ -161,8 +237,8 @@ function Footer() {
                       className="mt-2 text-base flex justify-center gap-2 items-center"
                       key={key}
                     >
-                      <p className="w-[150px] h-[30px]">이름:{key}</p>
-                      <p className="w-[150px] h-[30px]">내용:{value}</p>
+                      <p className="w-[100px] h-[30px]">이름:{key}</p>
+                      <p className="w-[300px] h-[30px]">내용:{value}</p>
                     </div>
                   ))}
                 </div>

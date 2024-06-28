@@ -5,10 +5,12 @@ import Profile from "../../assets/Profile.jpg";
 function AboutMe() {
   // Create a ref for the about section
   const aboutRef = useRef(null);
-  let aboutTextTimeLine = gsap.timeline();
+  const aboutTextTimeLine = gsap.timeline();
   const [aboutImgMouseEnter, setAboutImgMouseEnter] = useState(0);
   const [textNone, setTextNone] = useState(0); // textNone 상태를 관리
   const [clicked, setClicked] = useState(false); // 클릭 여부를 추적하는 상태
+  const aboutTextMobileTimeLine = gsap.timeline();
+
   useEffect(() => {
     gsap.to(".textAboutAnimation", {
       duration: 2,
@@ -69,6 +71,41 @@ function AboutMe() {
         // markers: true,
       },
     });
+    // 모바일 gsap
+    aboutTextMobileTimeLine.to(".mobileText1", {
+      duration: 2,
+      text: "안녕하십니까 저는 프론트엔드 개발자 최정무입니다.",
+      scrollTrigger: {
+        trigger: ".aboutImg",
+        scrub: 2,
+        start: "top center",
+        end: "center center",
+        // markers: true,
+      },
+    });
+    aboutTextMobileTimeLine.to(".mobileText2", {
+      duration: 2,
+      text: "저는 의미있는 배움과 좋은 성장을 이루기 위해 개발합니다.",
+      scrollTrigger: {
+        trigger: ".aboutImg",
+        scrub: 2,
+        start: "top center",
+        end: "center center",
+        // markers: true,
+      },
+    });
+
+    aboutTextMobileTimeLine.to(".mobileText3", {
+      duration: 2,
+      text: "개발에 진정성 있게 다가가고 싶고 더 많은 것을 배우고 싶습니다.",
+      scrollTrigger: {
+        trigger: ".aboutImg",
+        scrub: 2,
+        start: "top center",
+        end: "center center",
+        // markers: true,
+      },
+    });
   }, []);
 
   const aboutImgClick = () => {
@@ -91,7 +128,7 @@ function AboutMe() {
         display: "none",
       });
       aboutTextTimeLine.to(".im", {
-        x: -200,
+        x: -300,
       });
       aboutTextTimeLine.to(".aboutText1", {
         duration: 0.5,
@@ -99,14 +136,14 @@ function AboutMe() {
       });
       aboutTextTimeLine.to(".aboutText2", {
         duration: 0.5,
-        text: "저는 의미있는 배움과 좋은 성장을 이루기 위해 개발합니다.",
+        text: "저는 꿈, 성장, 노력 열정이라는 키워드로 개발에 집중하고 있습니다.",
       });
       aboutTextTimeLine.to(".aboutText3", {
         duration: 0.5,
-        text: "개발에 진정성 있게 다가가고 싶고 더 많은 것을 배우고 싶습니다.",
+        text: "어려운 상황이 닥쳐도 팀원과 이겨내며 소통 할 것입니다.",
       });
       aboutTextTimeLine.to(".aboutText1", {
-        delay: 1,
+        delay: 2,
         text: "",
       });
       aboutTextTimeLine.to(".aboutText2", {
@@ -116,35 +153,35 @@ function AboutMe() {
         text: "",
       });
       aboutTextTimeLine.to(".im", {
-        x: 200,
+        x: 300,
       });
 
       aboutTextTimeLine.to(".aboutText1", {
-        x: -200,
+        x: -300,
         textAlign: "right",
         text: "",
       });
       aboutTextTimeLine.to(".aboutText2", {
-        x: -200,
+        x: -300,
         textAlign: "right",
         text: "",
       });
       aboutTextTimeLine.to(".aboutText3", {
-        x: -200,
+        x: -300,
         textAlign: "right",
         text: "",
       });
       aboutTextTimeLine.to(".aboutText1", {
-        text: "많이 준비한 것은 없지만 ",
+        text: "개발에 진정성 있게 다가가고 싶고 더 많은 것을 배우고 싶습니다.",
       });
       aboutTextTimeLine.to(".aboutText2", {
-        text: "편안하게 봐주세요:)",
+        text: "좋은 팀원을 이끌어 나가는 분들께",
       });
       aboutTextTimeLine.to(".aboutText3", {
-        text: "감사합니다",
+        text: "이 포트폴리오를 추천드립니다. 감사합니다.",
       });
       aboutTextTimeLine.to(".aboutText1", {
-        delay: 1,
+        delay: 2,
         text: "",
       });
       aboutTextTimeLine.to(".aboutText2", {
@@ -262,15 +299,9 @@ function AboutMe() {
             <p className="aboutText3"></p>
           </div>
           <div className="text-center text-sm font-nanum-square-neo-Light hidden sm:inline md:inline">
-            <p className="mt-8 ">
-              안녕하십니까 저는 프론트엔드 개발자 최정무입니다.
-            </p>
-            <p className="">
-              저는 의미있는 배움과 좋은 성장을 이루기 위해 개발합니다.
-            </p>
-            <p className="">
-              개발에 진정성 있게 다가가고 싶고 더 많은 것을 배우고 싶습니다.
-            </p>
+            <p className="mt-8 mobileText1 "></p>
+            <p className="mobileText2"></p>
+            <p className="mobileText3"></p>
           </div>
         </div>
       </div>
