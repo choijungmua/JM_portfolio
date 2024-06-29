@@ -146,79 +146,8 @@ function Footer() {
   };
   return (
     <>
-      {/* 방명록 */}
-      <div className="guestWriteContainer flex justify-center overflow-hidden">
-        {/* 시청해주셔서 감사합니다. */}
-        <div className="flex w-[100vw] h-[100vh] absolute justify-center items-center">
-          <div className="FooterEndText font-nanum-square-neo-Bold text-3xl"></div>
-        </div>
-        {/*  */}
-        <div className="flex text-center z-10 w-[80vw] h-[100vh] absolute justify-center items-center">
-          <div className="flex  justify-center">
-            <div className="w-[40vw] ">
-              {/* 이남자의 포트폴리오 */}
-              <p className="CallMeFooter1  opacity-0 font-nanum-square-neo-ExtraBold text-xl mb-4">
-                이 남자의 포트폴리오가 맘에 드셨나요?
-              </p>
-              <div className="flex justify-center gap-5 items-center">
-                {/* 연락바람 */}
-                <div className=" flex flex-col">
-                  <div className="CallMeFooter2 hover:text-2xl gap-2 items-center flex opacity-0">
-                    <p
-                      onClick={onClickContactMe}
-                      className="text-lg hover:text-xl hover:font-nanum-square-neo-Bold"
-                    >
-                      📞Contact Me
-                    </p>
-                    <div className="text-xs opacity-80">{`>`}</div>
-                  </div>
-                  {/* 방명록 */}
-                  <div className="CallMeFooter3 gap-2 items-center flex opacity-0">
-                    <p
-                      onClick={onClickGuestBook}
-                      className="text-lg hover:text-xl hover:font-nanum-square-neo-Bold"
-                    >
-                      📕Write Guest Book
-                    </p>
-                    <div className="text-xs opacity-80">{`>`}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* 방문록 작성하기 */}
-            <div className="CallMeFooter4 opacity-0">
-              <div className="w-[40vw] h-full justify-center items-center flex">
-                <div className="guestWrite ">
-                  <form action="" className="flex gap-2">
-                    <div className="flex gap-2 justify-center items-center">
-                      <label htmlFor="name">이름</label>
-                      <input
-                        id="name"
-                        type="text"
-                        onChange={onGuestNameValue}
-                        className="p-2 text-center text-black rounded-lg"
-                      />
-                    </div>
-                    <div className="flex gap-2 justify-center items-center">
-                      <label htmlFor="contents">내용</label>
-                      <input
-                        type="text"
-                        id="contents"
-                        onChange={onGuestContentsValue}
-                        className="p-2 text-center text-black rounded-lg"
-                      />
-                    </div>
-                    <button onClick={onGuestSubmit}>작성하기</button>
-                  </form>
-                </div>
-              </div>
-            </div>
-            <div className=""></div>
-          </div>
-        </div>
-      </div>
       {/* 방문록 */}
-      <div className="guestViewContainer text-center mt-12 w-[100vw] h-[100vh] opacity-0">
+      <div className="guestViewContainer absolute pointer-events-none text-center w-[100vw] h-[100vh] opacity-0">
         <div className="w-full flex flex-col items-center h-full">
           <p className="text-yellow-400 my-4 font-nanum-square-neo-Bold text-xl">
             방명록 작성자 수{dataList.length + 1}
@@ -246,6 +175,91 @@ function Footer() {
             ) : (
               <p>데이터를 불러오는 중입니다...</p>
             )}
+          </div>
+        </div>
+      </div>
+      {/* 방명록 */}
+      <div className="guestWriteContainer flex justify-center overflow-hidden">
+        {/* 시청해주셔서 감사합니다. */}
+        <div className="flex w-[100vw] h-[100vh] justify-center items-center">
+          <div className="FooterEndText font-nanum-square-neo-Bold text-3xl"></div>
+        </div>
+        {/*  */}
+        <div className="flex text-center z-10 w-[80vw] h-[100vh] absolute justify-center items-center">
+          <div className="flex flex-col">
+            <div className="w-[40vw] ">
+              {/* 이남자의 포트폴리오 */}
+              <p className="CallMeFooter1  opacity-0 font-nanum-square-neo-ExtraBold text-xl mb-4">
+                이 남자의 포트폴리오가 맘에 드셨나요?
+              </p>
+              <div className="flex justify-center gap-5 items-center">
+                {/* 연락바람 */}
+                <div className=" flex flex-col relative">
+                  <div className="CallMeFooter2  hover:text-2xl gap-2 items-center flex opacity-0">
+                    <p
+                      onClick={onClickContactMe}
+                      className="text-lg hover:text-xl hover:font-nanum-square-neo-Bold"
+                    >
+                      📞Contact Me
+                    </p>
+                    <div className="text-xs opacity-80">{`>`}</div>
+                  </div>
+                  {/* 방명록 */}
+                  <div className="CallMeFooter3 gap-2 items-center flex opacity-0">
+                    <p
+                      onClick={onClickGuestBook}
+                      className="text-lg hover:text-xl hover:font-nanum-square-neo-Bold"
+                    >
+                      📕Write Guest Book
+                    </p>
+                    <div className="text-xs opacity-80">{`>`}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-12 w-full relative ">
+              {/* 연락처 */}
+              <div className="CallMeFooter5 absolute w-full  flex justify-center">
+                <div className="border-b-2 pb-4 w-full justify-center flex text-left border-dashed">
+                  <div className="">
+                    <p className="">이름 : 최정무</p>
+                    <p className="">연락 : 010-3948-1599</p>
+                    <p className="">메일 : chlwjd022@gmail.com</p>
+                  </div>
+                </div>
+              </div>
+              {/* 방문록 작성하기 */}
+              <div className="CallMeFooter4 w-[40vw] opacity-0 h-full justify-center items-center flex">
+                <div className="guestWrite w-full ">
+                  <form action="" className="flex-col flex gap-5">
+                    <div className="flex w-full gap-2 justify-center items-center">
+                      <label className="whitespace-nowrap" htmlFor="name">
+                        이름
+                      </label>
+                      <input
+                        id="name"
+                        type="text"
+                        onChange={onGuestNameValue}
+                        className="p-2 w-[70%] text-center text-black rounded-lg"
+                      />
+                    </div>
+                    <div className="flex w-full gap-2 justify-center items-center">
+                      <label className="whitespace-nowrap" htmlFor="contents">
+                        내용
+                      </label>
+                      <input
+                        type="text"
+                        id="contents"
+                        onChange={onGuestContentsValue}
+                        className="p-2 text-center w-[70%]  h-[100px] text-black rounded-lg"
+                      />
+                    </div>
+                    <button onClick={onGuestSubmit}>작성하기</button>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
