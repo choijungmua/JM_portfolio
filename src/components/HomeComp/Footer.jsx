@@ -125,23 +125,27 @@ function Footer() {
   };
 
   const onClickGuestBook = () => {
-    gsap.to(".CallMeFooter4", {
-      opacity: 1,
-      z: 10,
-    });
     gsap.to(".CallMeFooter5", {
+      display: "none",
       opacity: 0,
       z: -10,
+    });
+    gsap.to(".CallMeFooter4", {
+      display: "block",
+      opacity: 1,
+      z: 10,
     });
   };
   const onClickContactMe = () => {
-    gsap.to(".CallMeFooter5", {
-      opacity: 1,
-      z: 10,
-    });
     gsap.to(".CallMeFooter4", {
+      display: "none",
       opacity: 0,
       z: -10,
+    });
+    gsap.to(".CallMeFooter5", {
+      display: "block",
+      opacity: 1,
+      z: 10,
     });
   };
   return (
@@ -220,9 +224,13 @@ function Footer() {
 
             <div className="mt-12 w-full relative ">
               {/* 연락처 */}
-              <div className="CallMeFooter5 absolute w-full  flex justify-center">
+              <div className="CallMeFooter5 w-full opacity-0 flex justify-center">
                 <div className="border-b-2 pb-4 w-full justify-center flex text-left border-dashed">
                   <div className="">
+                    <p className="text-center  font-nanum-square-neo-Bold text-lg ">
+                      연락 망
+                    </p>
+                    <div className="border-b-2 my-2 border opacity-70"></div>
                     <p className="">이름 : 최정무</p>
                     <p className="">연락 : 010-3948-1599</p>
                     <p className="">메일 : chlwjd022@gmail.com</p>
@@ -234,23 +242,21 @@ function Footer() {
                 <div className="guestWrite w-full ">
                   <form action="" className="flex-col flex gap-5">
                     <div className="flex w-full gap-2 justify-center items-center">
-                      <label className="whitespace-nowrap" htmlFor="name">
-                        이름
-                      </label>
                       <input
                         id="name"
                         type="text"
+                        required
+                        placeholder="이름을 임력해주세요"
                         onChange={onGuestNameValue}
                         className="p-2 w-[70%] text-center text-black rounded-lg"
                       />
                     </div>
                     <div className="flex w-full gap-2 justify-center items-center">
-                      <label className="whitespace-nowrap" htmlFor="contents">
-                        내용
-                      </label>
                       <input
                         type="text"
                         id="contents"
+                        required
+                        placeholder="내용을 임력해주세요"
                         onChange={onGuestContentsValue}
                         className="p-2 text-center w-[70%]  h-[100px] text-black rounded-lg"
                       />
