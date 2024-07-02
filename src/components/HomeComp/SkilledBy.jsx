@@ -18,9 +18,10 @@ import StyledComponentsCardClick from "./SkillsUI/StyledComponentsCardClick";
 import GSAPCardClick from "./SkillsUI/GSAPCardClick";
 import SassCardClick from "./SkillsUI/SassCardClick";
 import GitHubCardClick from "./SkillsUI/GitHubCardClick";
+import FirebaseCardClick from "./SkillsUI/FirebaseCardClick";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import { TfiAngleDoubleDown } from "react-icons/tfi";
-
+import firebaseImg from "../../assets/firebase.jpg";
 function SkilledBy() {
   const [Card, setCard] = useRecoilState(gientCard);
   const card1 = useRecoilValue(cardMainText);
@@ -162,10 +163,10 @@ function SkilledBy() {
                       </div>
                       <div id="Card" className="">
                         <SkillCard
-                          MainText={"TypeScript"}
-                          SubText={"잘하기위해 노력할것입니다."}
-                          Icon={require("../../assets/TypeScript.png")}
-                          Explain={"Explain"}
+                        // MainText={"TypeScript"}
+                        // SubText={"잘하기위해 노력할것입니다."}
+                        // Icon={require("../../assets/TypeScript.png")}
+                        // Explain={"Explain"}
                         />
                       </div>
                       <div id="Card" className="">
@@ -235,8 +236,8 @@ function SkilledBy() {
                 className={`${skillsName !== "backEnd" ? `hidden` : `inline`}`}
               >
                 <SkillCard
-                  MainText={"NodeJs"}
-                  Icon={require("../../assets/NodeJs.png")}
+                  MainText={"Firebase"}
+                  Icon={require("../../assets/firebase.jpg")}
                   Explain={"Explain"}
                 />
               </div>
@@ -261,7 +262,7 @@ function SkilledBy() {
               {card1 === "GSAP" && <GSAPCardClick />}
               {card1 === "Sass" && <SassCardClick />}
               {card1 === "GitHub" && <GitHubCardClick />}
-              {card1 === "NodeJs" && "구현중"}
+              {card1 === "Firebase" && <FirebaseCardClick />}
             </div>
           </div>
         )}

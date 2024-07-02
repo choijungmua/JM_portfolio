@@ -4,6 +4,8 @@ import { db } from "../../firebase"; // Firebase 설정 가져오기
 import { doc, setDoc } from "firebase/firestore";
 import gsap from "gsap";
 import Me from "../../assets/Profile.jpg";
+import { FaGithub } from "react-icons/fa";
+import { FaBlog } from "react-icons/fa";
 function Footer() {
   // 배열로 방명록의 List값 저장
   const [dataList, setDataList] = useState([]);
@@ -190,10 +192,10 @@ function Footer() {
         </div>
         {/*  */}
         <div className="flex text-center z-10 w-[80vw] h-[100vh] absolute justify-center items-center">
-          <div className="flex flex-col">
+          <div className="flex items-center text-center flex-col">
             <div className="w-[40vw] ">
               {/* 이남자의 포트폴리오 */}
-              <p className="CallMeFooter1  opacity-0 font-nanum-square-neo-ExtraBold text-xl mb-4">
+              <p className="CallMeFooter1 sm:text-base sm:font-nanum-square-neo-Regular sm:whitespace-nowrap opacity-0 font-nanum-square-neo-ExtraBold text-xl mb-4">
                 이 남자의 포트폴리오가 맘에 드셨나요?
               </p>
               <div className="flex justify-center gap-5 items-center">
@@ -231,6 +233,10 @@ function Footer() {
                       연락 망
                     </p>
                     <div className="border-b-2 my-2 border opacity-70"></div>
+                    <div className="flex mb-4 justify-center gap-2">
+                      <FaGithub size={24} />
+                      <FaBlog size={24} />
+                    </div>
                     <p className="">이름 : 최정무</p>
                     <p className="">연락 : 010-3948-1599</p>
                     <p className="">메일 : chlwjd022@gmail.com</p>
@@ -248,7 +254,7 @@ function Footer() {
                         required
                         placeholder="이름을 임력해주세요"
                         onChange={onGuestNameValue}
-                        className="p-2 w-[70%] text-center text-black rounded-lg"
+                        className="p-2 sm:w-[100%] w-[70%] text-center text-black rounded-lg"
                       />
                     </div>
                     <div className="flex w-full gap-2 justify-center items-center">
@@ -258,7 +264,7 @@ function Footer() {
                         required
                         placeholder="내용을 임력해주세요"
                         onChange={onGuestContentsValue}
-                        className="p-2 text-center w-[70%]  h-[100px] text-black rounded-lg"
+                        className="p-2 sm:w-[100%] text-center w-[70%]  h-[100px] text-black rounded-lg"
                       />
                     </div>
                     <button onClick={onGuestSubmit}>작성하기</button>
