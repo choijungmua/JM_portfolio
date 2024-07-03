@@ -19,11 +19,17 @@ function NightSky() {
       <night-sky
         id="nightSky"
         className="w-[full] h-[full] absolute overflow-hidden "
+        // 별의 크기들
         layers="3"
+        // 별의 갯수
         density="20"
+        // X값 속도
         velocity-x="40"
+        // y값 속도
         velocity-y="40"
+        // 별 색깔
         star-color="#FFF"
+        // 부모에 따라감
         background-color="transparent"
       ></night-sky>
     </div>
