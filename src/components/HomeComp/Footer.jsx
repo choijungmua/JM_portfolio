@@ -9,12 +9,20 @@ import FooterGuestBook from "./FooterBox/FooterGuestBook";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase"; // Firebase 설정 가져오기
 import { doc, setDoc } from "firebase/firestore";
+import guestBooks from "../../atoms/guestBooks";
+import guestContents from "../../atoms/guestBooks";
+import { useRecoilValue } from "recoil";
 function Footer() {
   // 배열로 방명록의 List값 저장
   const [dataList, setDataList] = useState([]);
   // TimeLine
   const footerTimeLine = gsap.timeline();
-  const footerEndingTimeLine = gsap.timeline();
+  const footerEndingTimeLine = gsap.timeline({ paused: true });
+  // Route
+  const [footerPage, setFooterPage] = useState("");
+  //
+  const guestBook = useRecoilValue(guestBooks);
+  const guestContent = useRecoilValue(guestContents);
   useEffect(() => {
     // gsap timeline
     footerTimeLine.from(".footerTL1", {
@@ -47,10 +55,19 @@ function Footer() {
     // Footer gsap End Timeline
     footerEndingTimeLine.to(".FooterEndText", {
       text: "시청해주셔서 감사합니다.",
-      duration: 3,
+      duration: 2,
+      scrollTrigger: {
+        trigger: ".guestWriteContainer",
+        start: "top center",
+        // markers: true,
+        onEnter: () => footerEndingTimeLine.play(),
+      },
     });
     footerEndingTimeLine.to(".FooterEndText", {
       delay: 1,
+    });
+    footerEndingTimeLine.to(".FooterEndText", {
+      delay: 2,
       opacity: 0,
     });
     footerEndingTimeLine.to(".CallMeFooter1", {
@@ -68,41 +85,52 @@ function Footer() {
   }, []);
 
   const onClickGuestBook = () => {
-    gsap.to(".CallMeFooter5", {
-      display: "none",
-      opacity: 0,
-      z: -10,
-    });
-    gsap.to(".CallMeFooter4", {
-      display: "block",
-      opacity: 1,
-      z: 10,
-    });
+    setFooterPage("GuestBook");
   };
   const onClickContactMe = () => {
-    gsap.to(".CallMeFooter4", {
-      display: "none",
-      opacity: 0,
-      z: -10,
-    });
-    gsap.to(".CallMeFooter5", {
-      display: "block",
-      opacity: 1,
-      z: 10,
-    });
+    setFooterPage("ContactMe");
   };
+  const fetchData = async () => {
+    // 비동기 식으로 Firebase의 값 읽어오기
+    try {
+      const querySnapshot = await getDocs(collection(db, "guestBook")); // Firestore의 "Title" 컬렉션에서 데이터 가져오기
+
+      const fetchedData = [];
+      querySnapshot.forEach((doc) => {
+        const data = doc.data();
+        const item = {};
+
+        // 각 문서의 key와 value를 item 객체에 저장
+        for (let key in data) {
+          item[key] = data[key];
+        }
+
+        fetchedData.push(item); // 배열에 객체 추가
+      });
+
+      setDataList(fetchedData); // 상태 업데이트
+    } catch (error) {
+      console.error("Error fetching documents: ", error);
+    }
+  };
+
+  // 컴포넌트가 처음 마운트될 때 fetchData 호출
+  useEffect(() => {
+    // 비동기 식으로 Firebase의 값 읽어오기
+    fetchData();
+  }, []);
   return (
     <>
       {/* 방문록 */}
-      <div className="guestViewContainer absolute pointer-events-none text-center w-[100vw] h-[100vh] opacity-0">
+      <div className=" whitespace-nowrap guestViewContainer absolute pointer-events-none text-center w-[100vw] h-[100vh] opacity-0">
         <div className="w-full flex flex-col items-center h-full">
           <p className="text-yellow-400 my-4 font-nanum-square-neo-Bold text-xl">
             방명록 작성자 수{dataList.length + 1}
           </p>
           <div className="w-[50vw] flex flex-col items-center">
             <div className="mt-2 text-base flex justify-center gap-2 items-center">
-              {/* <p className="w-[100px] h-[30px]">이름:{guestName}</p>
-              <p className="w-[300px] h-[30px]">내용:{guestContents}</p> */}
+              <p className="w-[100px] h-[30px]">이름:{guestBook}</p>
+              <p className="w-[300px] h-[30px]">내용:{guestContent}</p>
             </div>
             {/* 배열 출력하기 */}
             {dataList.length > 0 ? (
@@ -167,9 +195,9 @@ function Footer() {
 
             <div className="mt-12 w-full relative ">
               {/* 연락처 */}
-              <FooterContact />
+              {footerPage === "ContactMe" && <FooterContact />}
               {/* 방문록 작성하기 */}
-              <FooterGuestBook />
+              {footerPage === "GuestBook" && <FooterGuestBook />}
             </div>
           </div>
         </div>

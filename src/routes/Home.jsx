@@ -1,7 +1,7 @@
 // copyright - Choi Jung mu
-// 2024-04-18 Update
+// 2024-07-04 Update
 // 업데이트 내용
-// gsap로 메인화면 꾸미기
+// GSAP - MouseMove
 
 // import the React
 import React, { useEffect } from "react";
@@ -23,13 +23,10 @@ function Home() {
     const cursor = document.querySelector(".mouseCursor");
 
     const handleMouseMove = (e) => {
+      // 마우스가 감지될 경우 gsap.to를 이용해 따라감.
       if (cursor) {
-        const container = cursor.closest(".Ct");
-        if (container) {
-          container.style.cursor = "none";
-        }
         gsap.to(cursor, {
-          duration: 0.1,
+          duration: 0.2,
           x: e.clientX,
           y: e.clientY,
         });
@@ -46,16 +43,12 @@ function Home() {
   return (
     <>
       <div className="bg-black  cursor-none text-white relative">
-        <div className="Ct mouseCursor opacity-70 fixed w-8 h-8 bg-white rounded-full z-10 pointer-events-none"></div>
+        <div className="Ct mouseCursor opacity-70 fixed w-8 h-8 bg-white rounded-full z-10 sm:hidden pointer-events-none"></div>
         <NightSky />
-        {/* Navigation */}
         {/* MainPage */}
         <MainText />
-        {/* About Me */}
-        {/* <AboutMe /> */}
         {/* SubAbout */}
         <SubAbout />
-        {/* <Footer /> */}
         {/* Skills */}
         <SkilledBy />
         {/* PortFolio */}
