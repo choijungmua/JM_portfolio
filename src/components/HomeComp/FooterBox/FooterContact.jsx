@@ -13,8 +13,12 @@ function FooterContact() {
             </p>
             <div className="border-b-2 my-2 border opacity-70"></div>
             <div className="flex mb-4 justify-center gap-2">
-              <FaGithub size={24} />
-              <FaBlog size={24} />
+              <a href="https://github.com/choijungmua">
+                <FaGithub size={24} />
+              </a>
+              <a href="https://cloudmaxstory.tistory.com/">
+                <FaBlog size={24} />
+              </a>
             </div>
             <p className="">이름 : 최정무</p>
             <p className="">연락 : 010-3948-1599</p>

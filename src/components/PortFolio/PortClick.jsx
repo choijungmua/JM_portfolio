@@ -153,11 +153,11 @@ function PortClick() {
             </div>
           </div>
           {/* Read Me */}
-          <div className="w-full h-full sm:pr-0 items-center flex justify-end pr-12">
+          {/* <div className="w-full h-full sm:pr-0 items-center flex justify-end pr-12">
             <button className=" sm-my-0 opacity-70 my-2 rounded-full p-1 px-2 text-base font-nanum-square-neo-Bold">
               Read Me.
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

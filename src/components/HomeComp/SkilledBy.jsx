@@ -163,10 +163,11 @@ function SkilledBy() {
                       </div>
                       <div id="Card" className="">
                         <SkillCard
-                        // MainText={"TypeScript"}
-                        // SubText={"잘하기위해 노력할것입니다."}
-                        // Icon={require("../../assets/TypeScript.png")}
-                        // Explain={"Explain"}
+                          // MainText={"TypeScript"}
+                          // SubText={"잘하기위해 노력할것입니다."}
+                          Icon={require("../../assets/TypeScript.png")}
+                          // Explain={"Explain"}
+                          MainText={"공부중"}
                         />
                       </div>
                       <div id="Card" className="">
@@ -255,7 +256,7 @@ function SkilledBy() {
             <div onClick={() => setCard(0)}>
               {card1 === "React" && <ReactCardClick />}
               {card1 === "Recoil" && <RecoilCardClick />}
-              {card1 === "TypeScript" && "구현중"}
+              {card1 === "공부중" && "구현중"}
               {card1 === "TailwindCSS" && <TailwindCSSCardClick />}
               {card1 === "Next.js" && <NextJsCardClick />}
               {card1 === "Styled Components" && <StyledComponentsCardClick />}

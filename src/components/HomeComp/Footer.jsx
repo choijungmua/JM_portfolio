@@ -12,6 +12,7 @@ import { doc, setDoc } from "firebase/firestore";
 import guestBooks from "../../atoms/guestBooks";
 import guestContents from "../../atoms/guestBooks";
 import { useRecoilValue } from "recoil";
+import FooterEmail from "./FooterBox/FooterEmail";
 function Footer() {
   // 배열로 방명록의 List값 저장
   const [dataList, setDataList] = useState([]);
@@ -82,6 +83,10 @@ function Footer() {
       delay: 0.2,
       opacity: 1,
     });
+    footerEndingTimeLine.to(".CallMeFooter4", {
+      delay: 0.2,
+      opacity: 1,
+    });
   }, []);
 
   const onClickGuestBook = () => {
@@ -89,6 +94,9 @@ function Footer() {
   };
   const onClickContactMe = () => {
     setFooterPage("ContactMe");
+  };
+  const onClickEmail = () => {
+    setFooterPage("Email");
   };
   const fetchData = async () => {
     // 비동기 식으로 Firebase의 값 읽어오기
@@ -175,7 +183,7 @@ function Footer() {
                       onClick={onClickContactMe}
                       className="text-lg hover:text-xl hover:font-nanum-square-neo-Bold"
                     >
-                      📞Contact Me
+                      📞연락망
                     </p>
                     <div className="text-xs opacity-80">{`>`}</div>
                   </div>
@@ -185,7 +193,17 @@ function Footer() {
                       onClick={onClickGuestBook}
                       className="text-lg hover:text-xl hover:font-nanum-square-neo-Bold"
                     >
-                      📕Write Guest Book
+                      📕방명록
+                    </p>
+                    <div className="text-xs opacity-80">{`>`}</div>
+                  </div>
+                  {/* Email */}
+                  <div className="CallMeFooter4 gap-2 items-center flex opacity-0">
+                    <p
+                      onClick={onClickEmail}
+                      className="text-lg hover:text-xl hover:font-nanum-square-neo-Bold"
+                    >
+                      📧이메일
                     </p>
                     <div className="text-xs opacity-80">{`>`}</div>
                   </div>
@@ -198,6 +216,8 @@ function Footer() {
               {footerPage === "ContactMe" && <FooterContact />}
               {/* 방문록 작성하기 */}
               {footerPage === "GuestBook" && <FooterGuestBook />}
+              {/* 이메일 작성하기 */}
+              {footerPage === "Email" && <FooterEmail />}
             </div>
           </div>
         </div>
