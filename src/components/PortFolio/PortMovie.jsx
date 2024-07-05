@@ -2,12 +2,7 @@ import { BsPerson } from "react-icons/bs";
 import MUFLIX from "../../assets/MUFLIX.jpg";
 import { gsap } from "gsap";
 import { useState } from "react";
-import {
-  FaAngleRight,
-  FaAngleLeft,
-  FaAngleDoubleLeft,
-  FaAngleDoubleRight,
-} from "react-icons/fa";
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import Muflix1 from "../../assets/MuflixPort.png";
 import Muflix2 from "../../assets/MuflixPort2.png";
 function PortMovie() {

@@ -1,15 +1,10 @@
 import { BsPerson } from "react-icons/bs";
 import ClickPick from "../../assets/clickpick_icon.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ClickPickPort1 from "../../assets/ClickPickPort.png";
 import ClickPickPort2 from "../../assets/ClickPickPort2.png";
 import { gsap } from "gsap";
-import {
-  FaAngleRight,
-  FaAngleLeft,
-  FaAngleDoubleLeft,
-  FaAngleDoubleRight,
-} from "react-icons/fa";
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 function PortClick() {
   const [clickPage, setClickPage] = useState(1);
   const clickAngleLeft = () => {

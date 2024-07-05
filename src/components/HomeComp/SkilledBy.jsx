@@ -21,7 +21,6 @@ import GitHubCardClick from "./SkillsUI/GitHubCardClick";
 import FirebaseCardClick from "./SkillsUI/FirebaseCardClick";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import { TfiAngleDoubleDown } from "react-icons/tfi";
-import firebaseImg from "../../assets/firebase.jpg";
 function SkilledBy() {
   const [Card, setCard] = useRecoilState(gientCard);
   const card1 = useRecoilValue(cardMainText);

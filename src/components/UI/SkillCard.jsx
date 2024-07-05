@@ -1,5 +1,4 @@
 import "./../Styles/Animation.scss";
-import { useState } from "react";
 import { useRecoilState } from "recoil";
 import gientCard from "../../atoms/gientCard";
 import cardMainText from "../../atoms/gientCard";

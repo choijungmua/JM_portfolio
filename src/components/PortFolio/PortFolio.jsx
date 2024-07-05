@@ -3,18 +3,9 @@
 //  업데이트 내용
 //  gsap 사용 익히기
 // import the GSAP
-import {
-  FaAngleRight,
-  FaAngleLeft,
-  FaAngleDoubleLeft,
-  FaAngleDoubleRight,
-} from "react-icons/fa";
 import PortMovie from "./PortMovie";
 // import the React
 import { useEffect } from "react";
-import { useRef } from "react";
-import Captain from "../../assets/captain.jpg";
-import BlackJava from "../../assets/blackjava.jpg";
 import PortClick from "./PortClick";
 import PortJavaWeb from "./PortJavaWeb";
 import PortPort from "./PortPort";

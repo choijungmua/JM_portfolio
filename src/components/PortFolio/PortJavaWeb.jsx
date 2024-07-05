@@ -2,14 +2,9 @@ import { BsPerson } from "react-icons/bs";
 import blackjava from "../../assets/blackjava.jpg";
 import javaPort1 from "../../assets/javaport.png";
 import javaPort2 from "../../assets/javaport2.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { gsap } from "gsap";
-import {
-  FaAngleRight,
-  FaAngleLeft,
-  FaAngleDoubleLeft,
-  FaAngleDoubleRight,
-} from "react-icons/fa";
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 
 function PortJavaWeb() {
   const [javaPage, setJavaPage] = useState(1);

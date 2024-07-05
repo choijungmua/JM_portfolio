@@ -3,12 +3,7 @@ import ClickPick from "../../assets/clickpick_icon.png";
 import { FaRegStar } from "react-icons/fa";
 import { useState } from "react";
 import gsap from "gsap";
-import {
-  FaAngleRight,
-  FaAngleLeft,
-  FaAngleDoubleLeft,
-  FaAngleDoubleRight,
-} from "react-icons/fa";
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import PortImg from "../../assets/PortImg.png";
 import PortImg2 from "../../assets/PortImg2.png";
 function PortPort() {

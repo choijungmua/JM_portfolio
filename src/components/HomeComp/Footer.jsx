@@ -1,14 +1,10 @@
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 
 import gsap from "gsap";
-import Me from "../../assets/Profile.jpg";
-import { FaGithub } from "react-icons/fa";
-import { FaBlog } from "react-icons/fa";
 import FooterContact from "./FooterBox/FooterContact";
 import FooterGuestBook from "./FooterBox/FooterGuestBook";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../../firebase"; // Firebase 설정 가져오기
-import { doc, setDoc } from "firebase/firestore";
 import guestBooks from "../../atoms/guestBooks";
 import guestContents from "../../atoms/guestBooks";
 import { useRecoilValue } from "recoil";

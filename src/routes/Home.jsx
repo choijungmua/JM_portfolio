@@ -43,7 +43,7 @@ function Home() {
   return (
     <>
       <div className="bg-black  cursor-none text-white relative">
-        <div className="Ct mouseCursor opacity-70 fixed w-8 h-8 bg-white rounded-full z-10 sm:hidden pointer-events-none"></div>
+        <div className="mouseCursor opacity-70 fixed w-8 h-8 bg-white rounded-full z-10 sm:hidden pointer-events-none"></div>
         <NightSky />
         {/* MainPage */}
         <MainText />
@@ -54,6 +54,7 @@ function Home() {
         {/* PortFolio */}
         <PortFolio />
         <Footer />
+
         {/* Contact Me! */}
       </div>
     </>
