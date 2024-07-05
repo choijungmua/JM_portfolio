@@ -5,33 +5,33 @@
 /* 나눔스퀘어네오 - Heavy */
 @font-face {
   font-family: "NanumSquareNeoHeavy";
-  src: url("./font/NanumSquareNeo-eHv.ttf") format("truetype");
+  src: url("../font/NanumSquareNeo-eHv.ttf") format("truetype");
 }
 
 /* 나눔스퀘어네오 - ExtraBold */
 
 @font-face {
   font-family: "NanumSquareNeoExtraBold";
-  src: url("./font/NanumSquareNeo-dEb.ttf") format("truetype");
+  src: url("../font/NanumSquareNeo-dEb.ttf") format("truetype");
 }
 
 /* 나눔스퀘어네오 - Bold */
 
 @font-face {
   font-family: "NanumSquareNeoBold";
-  src: url("./font/NanumSquareNeo-cBd.ttf") format("truetype");
+  src: url("../font/NanumSquareNeo-cBd.ttf") format("truetype");
 }
 /* 나눔스퀘어네오 - Regular */
 
 @font-face {
   font-family: "NanumSquareNeoRegular";
-  src: url("./font/NanumSquareNeo-bRg.ttf") format("truetype");
+  src: url("../font/NanumSquareNeo-bRg.ttf") format("truetype");
 }
 /* 나눔스퀘어네오 - Light */
 
 @font-face {
   font-family: "NanumSquareNeoLight";
-  src: url("./font/NanumSquareNeo-aLt.ttf") format("truetype");
+  src: url("../font/NanumSquareNeo-aLt.ttf") format("truetype");
 }
 
 @layer base {

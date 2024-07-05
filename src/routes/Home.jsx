@@ -6,7 +6,7 @@
 // import the React
 import React, { useEffect } from "react";
 // import the section
-import NightSky from "../components/UI/NightSky";
+import NightSky from "../components/NightSky";
 import SubAbout from "../components/About/SubAbout";
 // import The gsap
 import MainText from "../components/HomeComp/MainText";
