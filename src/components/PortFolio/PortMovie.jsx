@@ -79,9 +79,9 @@ function PortMovie() {
                 영화를 보여주는 웹을 제작하였습니다.
               </p>
               <p>
-                Next.js와 다양한 CSS 프레임워크를 사용하기 위해 제작하였습니다.
-                제작하면서 Next.js의 SSR의 개념에 대해서 잘 알게 되었고, Git으로
-                배포도 경험 할 수 있었습니다.
+                영화 공공 API를 요청하여 사용자에게 데이터를 제공하고, 배포하기
+                위해 제작하였습니다. git으로 배포하였습니다. 디자인을 중점적으로
+                공부해 보고싶었기에, SCSS와 Styled Component를 사용하였습니다.
               </p>
               <div className="border opacity-70"></div>
               <div className="flex-col opacity-70 flex text-end">
@@ -96,9 +96,6 @@ function PortMovie() {
           <div className=" w-full flex justify-end gap-1">
             <div className="rounded-full  border px-2 flex items-center">
               <p>React</p>
-            </div>
-            <div className="rounded-full border px-2 flex items-center">
-              <p>Next.js</p>
             </div>
             <div className="rounded-full border px-2 flex items-center">
               <p>SCSS</p>

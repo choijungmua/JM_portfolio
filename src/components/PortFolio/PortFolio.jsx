@@ -64,13 +64,14 @@ function PortFolio() {
           <div className="PortCanvas javaWeb opacity-0 mb-4 w-full h-full z-10">
             <PortJavaWeb />
           </div>
-          {/* 클릭픽 */}
-          <div className="PortCanvas opacity-0 mb-4 w-full h-full z-10">
-            <PortClick />
-          </div>
+
           {/* 영화 추천 사이트 */}
           <div className="PortCanvas opacity-0 mb-4 w-full h-full z-10">
             <PortMovie />
+          </div>
+          {/* 클릭픽 */}
+          <div className="PortCanvas opacity-0 mb-4 w-full h-full z-10">
+            <PortClick />
           </div>
           {/* 포트폴리오 */}
           <div className="PortCanvas opacity-0 mb-4 w-full h-full z-10">
