@@ -5,6 +5,9 @@
 </div>
 
 
+<img alt="intro" src="https://github.com/ClickPickProject/FrontEnd/assets/144521987/92377f41-25ed-452d-bf58-023ce9329b02"> <br /><br />
+
+> [!NOTE]
 
 <p align="center">GSAP 애니메이션 프레임워크를 이용해 만든 Web 포트폴리오입니다.</p>
 
