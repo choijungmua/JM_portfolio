@@ -236,7 +236,8 @@ function AboutMe() {
     });
   };
   return (
-    <div
+    <>
+ㅇ    <div
       ref={aboutRef}
       className="flex w-[100vw] h-[100vh] relative flex-col justify-center items-center"
     >
@@ -305,7 +306,12 @@ function AboutMe() {
           </div>
         </div>
       </div>
+    <div className='w-[100vw] flex justify-center items-center h-[30vh]'>
+      <p>열심히 하겠습니다.</p>
     </div>
+    </div>
+    </>
+
   );
 }
 
