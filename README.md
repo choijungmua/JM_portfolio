@@ -1,34 +1,29 @@
-<h1 align="center">포트폴리오</h1>
 <div align="center">
-  <a href""></a>
-Click Me!
-<!-- <img alt="portfolio" title="portfolio"  width="140" src="![portfolio](https://github.com/choijungmua/JM_portfolio/assets/158401607/d79f418c-b480-43a4-a7e6-1d92e049fa26)"/> -->
+
+  ## Portfolio Project
+[![5a503e6b-c462-4627-82ee-651f2cb2a1fc](https://github.com/user-attachments/assets/4305bbe1-e3bb-49bc-bd36-0b16975fb16f)](https://dev-blog-3p8v.vercel.app/)
 </div>
 
 
-<p align="center">GSAP 애니메이션 프레임워크를 이용해 만든 Web 포트폴리오입니다.</p>
-## 업데이트 내용
+<img alt="intro" src="https://github.com/ClickPickProject/FrontEnd/assets/144521987/92377f41-25ed-452d-bf58-023ce9329b02"> <br /><br />
 
-Skills 꾸미기
+> [!NOTE]
+
+<p align="center">GSAP 애니메이션 프레임워크를 이용해 만든 Web 포트폴리오입니다.</p>
+
 
 ## GSAP으로 ScrollTrigger 활용
+### 개발목표
 
-> 2024-06-01
-> Skills 꾸미기
-> 개발목표
-> React, GSAP를 이용한 다양한 animation 구현 및 미디어쿼리를 이용한 반응형 웹사이트 구축
+gsap로 사용자가 보기 편하고 역동적인 웹을 만들고 싶은 것이 목표입니다.
 
-##사용기술
+### 회고록
 
-- HTML
-- CSS
-- Styled Components!
-- React
-- Tailwind CSS
-- npm
-- GSAP- ScrollTrigger
-- Recoil
-  > 코드리뷰
-  > gsap를 이용하여 메인 페이지를 꾸미는데 디자인적인 요소와 나를 잘 표현하고 싶은데
-  > 잘 표현되지 않아 어려웠습니다. 그래서 웹사이트를 찾아보며 기술적인 요소와
-  > 템플릿 예시를 보니 어느정도 감이 왔습니다!
+깔끔하지 못한 폴더의 구조화 및 개발 도중 주석처리가 아쉬웠던 부분인 것 같습니다. 또한 PR처리 하는 과정에서 좀 더 내용을 집중적으로 적었으면 다른 개발자와 협업을 할 때도 보기 더 좋았을 것 같습니다.
+
+## Skills
+
+[![React](https://img.shields.io/badge/React.js-61DAFB?style=flat-square&logo=React&logoColor=blue&textColor=white)](https://ko.legacy.reactjs.org/)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=black)](https://tailwindcss.com/)
+[![Firebase](https://img.shields.io/badge/Firebase-DD2C00?style=flat-square&logo=Firebase&logoColor=black)](https://firebase.google.com/)
+[![Recoil](https://img.shields.io/badge/Recoil-3578E5?style=flat-square&logo=recoil&logoColor=white)](https://recoiljs.org/)
