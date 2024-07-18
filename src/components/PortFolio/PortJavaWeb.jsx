@@ -5,7 +5,8 @@ import javaPort2 from "../../assets/javaport2.png";
 import { useState } from "react";
 import { gsap } from "gsap";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
-
+import { AiFillGithub } from "react-icons/ai";
+import { IoLogoVercel } from "react-icons/io5";
 function PortJavaWeb() {
   const [javaPage, setJavaPage] = useState(1);
   const AngleLeft = () => {
@@ -85,10 +86,21 @@ function PortJavaWeb() {
                 구현하였습니다.
               </p>
               <div className="border opacity-70"></div>
+              
+              <a
+        href="https://github.com/choijungmua/VanillaJSWeb-FrontEnd"
+        className="flex flex-col items-center justify-center text-xs gap-1"
+      >
+        
+        <AiFillGithub size={25} className="hover:size-8" />
+        <p className=" ">GitHub</p>
+      </a>
               <div className="flex-col opacity-70 flex text-end">
                 <p>제작기간 : 1개월</p>
                 <p>2024-02</p>
+
               </div>
+              
             </div>
           </div>
         </div>

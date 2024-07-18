@@ -6,6 +6,8 @@ import gsap from "gsap";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import PortImg from "../../assets/PortImg.png";
 import PortImg2 from "../../assets/PortImg2.png";
+import { AiFillGithub } from "react-icons/ai";
+import { IoLogoVercel } from "react-icons/io5";
 function PortPort() {
   const [clickPage, setClickPage] = useState(1);
   const clickAngleLeft = () => {
@@ -87,9 +89,27 @@ function PortPort() {
                 웹입니다.
               </p>
               <div className="border opacity-70"></div>
+              <div className="flex gap-4 justify-center items-center">
+
+              <a
+        href="https://github.com/choijungmua/JM_portfolio"
+        className="flex flex-col items-center justify-center text-xs gap-1"
+      >
+        <AiFillGithub size={25} className="hover:size-8" />
+        <p className=" ">GitHub</p>
+      </a>
+      <a
+        href="https://dev-blog-3p8v.vercel.app/"
+        className="flex flex-col items-center justify-center text-xs gap-1"
+      >
+        <IoLogoVercel  size={25} className="hover:size-8" />
+        <p className=" ">Vercel</p>
+      </a>
+        </div>
               <div className="flex-col opacity-70 flex text-end">
                 <p>제작기간 : 1개월</p>
                 <p>2024-06</p>
+
               </div>
             </div>
           </div>

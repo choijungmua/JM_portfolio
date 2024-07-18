@@ -5,6 +5,8 @@ import { useState } from "react";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
 import Muflix1 from "../../assets/MuflixPort.png";
 import Muflix2 from "../../assets/MuflixPort2.png";
+import { AiFillGithub } from "react-icons/ai";
+import { FaGit } from "react-icons/fa";
 function PortMovie() {
   const [MoviePage, setMoviePage] = useState(1);
   const MovieAngleLeft = () => {
@@ -84,9 +86,27 @@ function PortMovie() {
                 공부해 보고싶었기에, SCSS와 Styled Component를 사용하였습니다.
               </p>
               <div className="border opacity-70"></div>
+              <div className="flex gap-4 justify-center items-center">
+
+              <a
+        href="https://github.com/choijungmua/Movie_Project-FrontEnd"
+        className="flex flex-col items-center justify-center text-xs gap-1"
+      >
+        <AiFillGithub size={25} className="hover:size-8" />
+        <p className=" ">GitHub</p>
+      </a>
+      <a
+        href="https://choijungmua.github.io/Movie_Project-FrontEnd/"
+        className="flex flex-col items-center justify-center text-xs gap-1"
+      >
+        <FaGit size={25} className="hover:size-8" />
+        <p className=" ">Git</p>
+      </a>
+        </div>
               <div className="flex-col opacity-70 flex text-end">
                 <p>제작기간 : 1주일</p>
                 <p>2024-04</p>
+
               </div>
             </div>
           </div>

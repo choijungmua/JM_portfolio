@@ -5,6 +5,8 @@ import ClickPickPort1 from "../../assets/ClickPickPort.png";
 import ClickPickPort2 from "../../assets/ClickPickPort2.png";
 import { gsap } from "gsap";
 import { FaAngleRight, FaAngleLeft } from "react-icons/fa";
+import { AiFillGithub } from "react-icons/ai";
+import { IoLogoVercel } from "react-icons/io5";
 function PortClick() {
   const [clickPage, setClickPage] = useState(1);
   const clickAngleLeft = () => {
@@ -85,10 +87,31 @@ function PortClick() {
                 많습니다. 이 프로젝트를 계기로 좀 더 성장의 발판에 기댈 수 있는
                 시간이 되었으며, 앞으로 성장해 나갈 제 목표입니다.
               </p>
+              
+              
               <div className="border opacity-70"></div>
+              <div className="flex gap-4 justify-center items-center">
+
+              <a
+        href="https://github.com/ClickPickProject/FrontEnd"
+        className="flex flex-col items-center justify-center text-xs gap-1"
+      >
+        <AiFillGithub size={25} className="hover:size-8" />
+        <p className=" ">GitHub</p>
+      </a>
+      <a
+        href="https://clickpick.vercel.app/"
+        className="flex flex-col items-center justify-center text-xs gap-1"
+      >
+        <IoLogoVercel size={25} className="hover:size-8" />
+        <p className=" ">Vercel</p>
+
+      </a>
+        </div>
             </div>
           </div>
         </div>
+        
         {/* Stack */}
         <div className="w-full ">
           <div className="whitespace-nowrap gap-2 w-full flex justify-end gap-1">
@@ -123,6 +146,7 @@ function PortClick() {
                 <p>Styled Components</p>
               </div>
             </div>
+
           </div>
           <div className="flex-col opacity-70 flex text-end">
             <p>제작기간 : 4개월</p>
