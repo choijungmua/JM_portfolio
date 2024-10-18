@@ -5,7 +5,6 @@
 </div>
 
 
-<img alt="intro" src="https://github.com/ClickPickProject/FrontEnd/assets/144521987/92377f41-25ed-452d-bf58-023ce9329b02"> <br /><br />
 
 > [!NOTE]
 
